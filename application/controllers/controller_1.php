@@ -17,7 +17,7 @@ class Controller_1 extends CI_Controller
 	{
 		$this->accueil();
 	}
-
+	
 	public function accueil()
 	{
 		$data = array();
