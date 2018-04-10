@@ -73,9 +73,6 @@ class UserTable extends CI_Model
                         ->where('email', (string) $email)
                         ->get()
                         ->result();
-<<<<<<< HEAD
-	}
-=======
 
         return array('Jean-Michel', 'Gynécologue');
     }
@@ -107,5 +104,4 @@ class UserTable extends CI_Model
     /**
      * 
      */
->>>>>>> a72e262ab3041813ac5d92ac0ee2293f326d9dff
 }

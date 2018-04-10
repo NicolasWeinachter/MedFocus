@@ -17,7 +17,7 @@
 
 		<header>
 			<div id="head">
-				<div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/Logo_couleur.png'); ?>" width=200px></a></div>
+				<div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo_couleur.png'); ?>" width=200px></a></div>
 				<div class="connexion">
 					<ul id="onglets">
 						<li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
@@ -51,21 +51,21 @@
   				<td>
   					Une vue de votre calendrier en un clin d'oeil pour vos patients et vous même </br>
   					</br> 
-  					<img src="<?php echo base_url('/assets/images/calendar-icon.png'); ?>" width=120px>
+  					<img src="<?php echo base_url('/assets/images/website/calendar-icon.png'); ?>" width=120px>
   				</td>
   				<td>
   					Une prise de rendez-vous en quelques clics 24h/24 7j/7</br>
   					</br> 
-  					<img src="<?php echo base_url('/assets/images/icone-ordinateur.png'); ?>" width=100px>
+  					<img src="<?php echo base_url('/assets/images/website/icone-ordinateur.png'); ?>" width=100px>
   				</td>
   				<td>
   					Un SMS de rappel 24h avant le rendez-vous </br>
   					</br> 
-  					<img src="<?php echo base_url('/assets/images/smartphone-icon.png'); ?>" width=100px>
+  					<img src="<?php echo base_url('/assets/images/website/smartphone-icon.png'); ?>" width=100px>
   				</td>
   				<td>Un suivi post-rendez vous afin d'obtenir un retour de votre consultation</br>
   					</br> 
-  					<img src="<?php echo base_url('/assets/images/message-icon.png'); ?>" width=100px>
+  					<img src="<?php echo base_url('/assets/images/website/message-icon.png'); ?>" width=100px>
   				</td>
   			</tbody>
 		</table>
