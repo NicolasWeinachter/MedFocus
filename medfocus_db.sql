@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 09 avr. 2018 à 15:33
+-- Généré le :  mar. 10 avr. 2018 à 12:47
 -- Version du serveur :  5.7.11-log
 -- Version de PHP :  5.6.31
 
@@ -25,30 +25,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `administrateur`
+-- Structure de la table `admin`
 --
 
-DROP TABLE IF EXISTS `administrateur`;
-CREATE TABLE IF NOT EXISTS `administrateur` (
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `level_admin` int(11) NOT NULL,
   PRIMARY KEY (`id_admin`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `avis`
---
-
-DROP TABLE IF EXISTS `avis`;
-CREATE TABLE IF NOT EXISTS `avis` (
-  `id_comment` int(11) NOT NULL AUTO_INCREMENT,
-  `email_patient` varchar(255) NOT NULL,
-  `email_pro` varchar(255) NOT NULL,
-  `date` int(11) NOT NULL,
-  `comment` text NOT NULL,
-  PRIMARY KEY (`id_comment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -72,35 +56,33 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 
 INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('i16uvefghshboodj95aofu21j171p4n2', '::1', 1523262754, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333236323735343b),
-('mcqhlomnpu04ai6nh50so6bp0uda0f11', '::1', 1523263247, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333236333234373b);
+('mcqhlomnpu04ai6nh50so6bp0uda0f11', '::1', 1523263247, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333236333234373b),
+('58mglv55f3tk5hvcl04j9a6a96rubpnf', '::1', 1523345556, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333334353534393b);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `patient`
+-- Structure de la table `comments`
 --
 
-DROP TABLE IF EXISTS `patient`;
-CREATE TABLE IF NOT EXISTS `patient` (
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(45) NOT NULL,
-  `surname` varchar(45) NOT NULL,
-  `bday` date NOT NULL,
-  `gender` varchar(8) NOT NULL,
-  `num_tel` int(20) NOT NULL,
-  `num_secu` int(13) NOT NULL,
-  PRIMARY KEY (`email`)
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id_comment` int(11) NOT NULL AUTO_INCREMENT,
+  `email_patient` varchar(255) NOT NULL,
+  `email_pro` varchar(255) NOT NULL,
+  `date` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  PRIMARY KEY (`id_comment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `professionnel`
+-- Structure de la table `pros`
 --
 
-DROP TABLE IF EXISTS `professionnel`;
-CREATE TABLE IF NOT EXISTS `professionnel` (
+DROP TABLE IF EXISTS `pros`;
+CREATE TABLE IF NOT EXISTS `pros` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(45) NOT NULL,
@@ -139,6 +121,25 @@ CREATE TABLE IF NOT EXISTS `rendez-vous` (
   `length` int(11) NOT NULL,
   `cause` varchar(255) NOT NULL,
   PRIMARY KEY (`id_rdv`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `surname` varchar(45) NOT NULL,
+  `bday` date NOT NULL,
+  `gender` varchar(8) NOT NULL,
+  `num_tel` int(20) NOT NULL,
+  `num_secu` int(13) NOT NULL,
+  PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 

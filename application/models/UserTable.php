@@ -3,7 +3,7 @@
 class UserTable extends CI_Model
 {
 
-    protected $table = 'patient';
+    protected $table = 'users';
 
     /**
 	 *	Ajoute un utilisateur
@@ -21,7 +21,7 @@ class UserTable extends CI_Model
 	public function add_user($email, $pwd, $name, $surname, $gender, $bday, $num_tel, $num_secu)
 	{
 		return $this->db->set('email', $email)
-                        ->set('password', $pwd)
+                        ->set('password', md5($pwd))
                         ->set('name', $name)
                         ->set('surname', $surname)
                         ->set('gender', $gender)
@@ -73,7 +73,5 @@ class UserTable extends CI_Model
                         ->where('email', (string) $email)
                         ->get()
                         ->result();
-
-        return array('Jean-Michel', 'Gynécologue');
 	}
 }
