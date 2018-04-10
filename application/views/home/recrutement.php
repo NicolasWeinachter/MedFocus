@@ -12,67 +12,46 @@
 </head>
 
 <body>
-	<div id="container1">
+    <div class="page">
+        <header class="container1">
+            <div id="head">
+                <div class="logo"><a href="Accueil.php"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+                <div class="connexion">
+                    <ul id="onglets">
+                        <li><a class="btn btn-outline-info" href="login_user.php" role="button">Mon compte</a></li>
+                        <li><a class="btn btn-outline-info" href="inscription_medecin.php" role="button">Professionnel de santé ?</a></li>
+                    </ul>
+                </div>
+            </div>  
+        </header>
+        <main class="site-content">
+            <h1 class="h1"><p class="light">Rejoignez le  <b>mouvement</b></p> </h1>
+            </br> 
+                <div id="container_main1" >
+                    <h3 class="light">Qui sommes-nous ?</h3>
+                    <p class="light">
+                        Nous sommes un groupe de 5 étudiants de <b>l'ECE Paris</b> qui développons cette nouvelle manière de prendre ses rendez-vous médicaux. 
+                        En effet, nous nous sommes déjà tous retrouvés à rechercher un médecin dans une nouvelle ville sans savoir vers qui se tourner.
+                        Il nous tenait à coeur de créer une <b>plateforme communautaire</b> où chacun peut partager son expérience médicale.
+                        Afin de faciliter les démarches, il nous a parru naturel de proposer le service de prise de rendez-vous en ligne via l'agenda connecté.
+                    </p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div id="container_main2" >
+                    <h3 class="light">Nos offres d'emploi</h3>
+                    <p class="light">
+                        En plein développement, nous recherchons un spécialiste de la législation dans l'e-santé qui pourrait nous aider dans toutes ces démarches.
+                    </p>
+                    <p>Vous êtes intéressé ? N'hésitez pas à nous <a class="lien-normal" href="mailto:contact@medfocus.fr">contacter</a>.</p>
+                </div>
+                <br>
+                <br>
+                <br>
+        </main>
 
-		<header>
-			<div id="head">
-				<div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo_couleur.png'); ?>" width=200px></a></div>
-				<div class="connexion">
-					<ul id="onglets">
-						<li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-						<li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		
-        <h1>Que recherchez vous ?</h1>
-        </br> 
-        <nav class="navbar navbar-light bg-light">
-  			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
-				<input class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search">
-				<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Rechercher</button>
- 			</form>
-		</nav>
-	</div>
-
-	<div id="container2">
-		</br> 
-		</br> 
-		</br> 
-		<h1>Vous êtes praticien ?</h1>
-		<p>  </p>
-		<h2>Essayez la version Premium avec la prise de rendez-vous en ligne !</h2>
-
-		<table class="table">
- 			<tbody>
-  				<td>
-  					Une vue de votre calendrier en un clin d'oeil pour vos patients et vous même </br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/calendar-icon.png'); ?>" width=120px>
-  				</td>
-  				<td>
-  					Une prise de rendez-vous en quelques clics 24h/24 7j/7</br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/icone-ordinateur.png'); ?>" width=100px>
-  				</td>
-  				<td>
-  					Un SMS de rappel 24h avant le rendez-vous </br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/smartphone-icon.png'); ?>" width=100px>
-  				</td>
-  				<td>Un suivi post-rendez vous afin d'obtenir un retour de votre consultation</br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/message-icon.png'); ?>" width=100px>
-  				</td>
-  			</tbody>
-		</table>
-		<a class="btn btn-secondary btn-lg" href="<?php echo site_url("pro/signup"); ?>" role="button">En savoir plus</a>
-		
-	</div>
-
-	<footer>
+        <footer>
 		<div id="containerFin">
 		<img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		<table class="table">
@@ -109,6 +88,7 @@
 		</table>
 	</div>
 	</footer>
+    </div>
 
 </body>
 </html>

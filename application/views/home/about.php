@@ -12,66 +12,53 @@
 </head>
 
 <body>
-	<div id="container1">
-
-		<header>
-			<div id="head">
-				<div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo_couleur.png'); ?>" width=200px></a></div>
-				<div class="connexion">
-					<ul id="onglets">
-						<li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-						<li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		
-        <h1>Que recherchez vous ?</h1>
+	<div id="container1_apropos">
+	 	<header>
+	 		<div id="head">
+            	<div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+            	<div class="connexion">
+                	<ul id="onglets">
+                    	<li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+                    	<li><a class="btn btn-outline-light" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                	</ul>
+            	</div>
+        	</div>
+        </header>
+        <h1 class="h1"><p class="bold">Notre mission :</p> <p class = "light">Mettre en relation les patients qui veulent donner leur avis avec ceux qui en ont besoin.</p> </h1>
         </br> 
-        <nav class="navbar navbar-light bg-light">
-  			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
-				<input class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search">
-				<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Rechercher</button>
- 			</form>
-		</nav>
 	</div>
 
 	<div id="container2">
-		</br> 
-		</br> 
-		</br> 
-		<h1>Vous êtes praticien ?</h1>
-		<p>  </p>
-		<h2>Essayez la version Premium avec la prise de rendez-vous en ligne !</h2>
-
+		<h1 class="h1">Qu'est-ce que Medfocus ?</h1>
 		<table class="table">
  			<tbody>
-  				<td>
-  					Une vue de votre calendrier en un clin d'oeil pour vos patients et vous même </br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/calendar-icon.png'); ?>" width=120px>
-  				</td>
-  				<td>
-  					Une prise de rendez-vous en quelques clics 24h/24 7j/7</br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/icone-ordinateur.png'); ?>" width=100px>
-  				</td>
-  				<td>
-  					Un SMS de rappel 24h avant le rendez-vous </br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/smartphone-icon.png'); ?>" width=100px>
-  				</td>
-  				<td>Un suivi post-rendez vous afin d'obtenir un retour de votre consultation</br>
-  					</br> 
-  					<img src="<?php echo base_url('/assets/images/website/message-icon.png'); ?>" width=100px>
-  				</td>
+  				<tr>
+                    <td>
+                        <img src="<?php echo base_url('/assets/images/website/valide.png'); ?>"  width=100px>
+                    </td>
+                    <td class="align-middle">
+                        Une nouvelle manière de prendre vos rdv médicaux sur internet. Faites confiance aux nombreux avis détaillés par critères des précédants patients.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="<?php echo base_url('/assets/images/website/communaute.png'); ?>"  width=100px>
+                    </td>
+                    <td class="align-middle">
+                        Une réelle communauté de patients et de médecins.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="<?php echo base_url('/assets/images/website/calendar.png'); ?>" width=100px>
+                    </td>
+                    <td class="align-middle">
+                        Une prise de rdv simplifiée grâce à l'agenda connecté.
+                    </td>
+                </tr>
   			</tbody>
-		</table>
-		<a class="btn btn-secondary btn-lg" href="<?php echo site_url("pro/signup"); ?>" role="button">En savoir plus</a>
-		
+		</table>		
 	</div>
-
 	<footer>
 		<div id="containerFin">
 		<img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
