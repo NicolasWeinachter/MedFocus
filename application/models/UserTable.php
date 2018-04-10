@@ -75,5 +75,33 @@ class UserTable extends CI_Model
                         ->result();
 
         return array('Jean-Michel', 'Gynécologue');
-	}
+    }
+    
+    /**
+     * Verifie l'existence d'un utilisateur
+     * 
+     * @param string $email 
+     * @return bool le resultat de la requête
+     */
+    function user_exists($email)
+    {
+        $this->db->select('*'); 
+        $this->db->from('users');
+        $this->db->where('email', $email);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+
+        if ($result)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * 
+     */
 }
