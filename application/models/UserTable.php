@@ -3,7 +3,7 @@
 class UserTable extends CI_Model
 {
 
-    protected $table = 'patient';
+    protected $table = 'users';
 
     /**
 	 *	Ajoute un utilisateur
