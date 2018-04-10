@@ -100,8 +100,6 @@ class UserTable extends CI_Model
                         ->where('email', (string) $email)
                         ->get()
                         ->result();
-
-        return array('Jean-Michel', 'Gynécologue');
     }
     
     /**
