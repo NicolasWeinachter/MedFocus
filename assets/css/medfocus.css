@@ -115,9 +115,12 @@ h2 {
     align-items: center;
 }
 
-#container2 {
+.container2 {
+    display: block;
     background-color: #FFFFFF;
     height: 600px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 td {
@@ -347,4 +350,17 @@ img.logo-fin {
 	margin-top: 40px;
 	width: 150px;
 
+}
+
+#contact{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+.container_main11{
+    display: block;
+    margin-left: 20px;
+    text-align: justify;
 }

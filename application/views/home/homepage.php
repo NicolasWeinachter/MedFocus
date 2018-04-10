@@ -28,7 +28,7 @@
 		
         <h1>Que recherchez vous ?</h1>
         </br> 
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar">
   			<form class="form-inline">
 				<input class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
 				<input class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search">
@@ -37,7 +37,7 @@
 		</nav>
 	</div>
 
-	<div id="container2">
+	<div class="container2">
 		</br> 
 		</br> 
 		</br> 
@@ -68,6 +68,8 @@
   				</td>
   			</tbody>
 		</table>
+		<br>
+		<br>
 		<a class="btn btn-secondary btn-lg" href="<?php echo site_url("pro/signup"); ?>" role="button">En savoir plus</a>
 		
 	</div>

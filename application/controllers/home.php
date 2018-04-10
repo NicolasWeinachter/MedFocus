@@ -95,6 +95,12 @@ class home extends CI_Controller
 	{
 		//	Maintenant, les variables sont disponibles dans la vue
 		$this->load->view('home/recrutement');
+    }
+    
+    public function cgu()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/cgu');
 	}
 
 	public function otherpage()

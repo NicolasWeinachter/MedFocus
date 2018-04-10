@@ -37,6 +37,8 @@
                                     Mail : <a class="lien-normal" href="mailto: contact@medfocus.fr">contact@medfocus.fr</a>
                                 </td>
                             </tr>
+                            <br>
+                            <br>
                             <tr>
                                 <td>
                                     <img src="<?php echo base_url('/assets/images/website/phone.png'); ?>" width =40px >
