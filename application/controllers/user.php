@@ -6,7 +6,6 @@ class user extends CI_Controller
 	{
 		//	Obligatoire
 		parent::__construct();
- 
     }
     
     public function index()
@@ -55,19 +54,19 @@ class user extends CI_Controller
         // Chargement du Modèle
         $this->load->model('UserTable');
 
-        $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[52]|alpha_dash|encode_php_tags');
-        $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[52]|alpha_dash|encode_php_tags');
+        $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
+        $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputBirth', '"Date de naissance"', 'trim|required|min_length[8]|max_length[10]|encode_php_tags');
         $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_length[10]|max_length[12]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputEmail', '"Email"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
         $this->form_validation->set_rules('inputPassword',   '"Mot de passe"', 'trim|required|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputPassword2', '"Mot de passe 2"', 'trim|required|matches[inputPassword]|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
 
-        $this->UserTable->add_user(inputEmail, inputPassword2, )
-
         //	Le formulaire est valide
         if($this->form_validation->run())
         {
+            //$this->UserTable->add_user("aaa@aaa.com", "inputPassword2", "inputName", "inputSurname", "inputBirth", "Male", "inputPhone", "0123");
+            
             //	On lance une requête
             $data = array();
             $data['user_info'] = $this->UserTable->get_info_user("aaa@aaa.com");
@@ -79,9 +78,6 @@ class user extends CI_Controller
         {
             $this->load->view('user/signup');
         }
-
-
-
     }
     
     public function profile()
@@ -89,11 +85,9 @@ class user extends CI_Controller
         // Chargement du Modèle
         $this->load->model('UserTable');
 
-        $resultat = $this->UserTable->add_user('vrevre@vrvr.com',
-						                        'Un super titre',
-						                        'Un super contenu !');
+        $info = $this->UserTable->get_info_user("aaa@aaa.com");
             
-        var_dump($resultat);
+        var_dump($info);
 
 	}
 }

@@ -21,7 +21,7 @@ class UserTable extends CI_Model
 	public function add_user($email, $pwd, $name, $surname, $gender, $bday, $num_tel, $num_secu)
 	{
 		return $this->db->set('email', $email)
-                        ->set('password', $pwd)
+                        ->set('password', md5($pwd))
                         ->set('name', $name)
                         ->set('surname', $surname)
                         ->set('gender', $gender)
@@ -73,6 +73,9 @@ class UserTable extends CI_Model
                         ->where('email', (string) $email)
                         ->get()
                         ->result();
+<<<<<<< HEAD
+	}
+=======
 
         return array('Jean-Michel', 'Gynécologue');
     }
@@ -104,4 +107,5 @@ class UserTable extends CI_Model
     /**
      * 
      */
+>>>>>>> a72e262ab3041813ac5d92ac0ee2293f326d9dff
 }

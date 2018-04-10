@@ -1,0 +1,150 @@
+#container1 {
+    background-color: #FFFFFF;
+    background-image: url('../images/Sans titre.png');
+    height: 400px;
+}
+
+#head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo {
+    margin: left;
+}
+
+#onglets li {
+    margin: 10px 0;
+    margin: 10px 2px 0 2px !important;
+    /* Pour les navigateurs autre que IE */
+    margin: 1px 2px 0 2px;
+    /* Pour IE  */
+}
+
+.connexion {
+    margin: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    font-size: 18;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container2 {
+    background-color: #FFFFFF;
+    height: 600px;
+}
+
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+img.logo-fin {
+    display: block;
+    margin: auto;
+}
+
+#containerFin {
+    background-color: #696969;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+#form {
+    /*formulaire connexion et inscription*/
+    display: block;
+    width: 500px;
+    /*largeur du bloc form */
+    height: 200px;
+    /* Longueur du bloc form*/
+    margin: auto;
+}
+
+#container1_user {
+    background-color: #FFFFFF;
+    height: 120px;
+}
+
+#container2_user {
+    background-color: #FFFFFF;
+    height: 600px;
+}
+
+.navbar_user {
+    /*menu profil utilisateur*/
+    display: block;
+    width: 500px;
+    margin: auto;
+}
+
+#container3_user {
+    display: block;
+    border-color: #808080;
+    border-width: 5px;
+    border-style: solid;
+    height: 400px;
+    width: 1100px;
+    margin: auto;
+}
+
+#info {
+    /*liste des infos*/
+    display: block;
+    margin: auto;
+}
+
+#container4_user {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note_medecin {
+    display: block;
+    border-color: #808080;
+    border-width: 2px;
+    border-style: solid;
+    height: 140px;
+    width: 500px;
+    margin: auto;
+}
+
+.avis_medecin {
+    display: block;
+    border-color: #808080;
+    border-width: 2px;
+    border-style: solid;
+    height: 140px;
+    width: 500px;
+    margin: auto;
+}
