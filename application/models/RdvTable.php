@@ -8,20 +8,16 @@ class RdvTable extends CI_Model
 	 *	Ajoute un rendez-vous
 	 *
 	 *	@param string $email_user
-     *	@param string $email_pro
      *	@param string $date
      *	@param string $time
-     *	@param int $length
      *	@param string $cause
 	 *	@return bool Le résultat de la requête
 	 */
-	public function add_rdv($email_user, $email_pro, $date, $time, $length, $cause)
+	public function add_rdv($email_user, $date, $time, $cause)
 	{
 		return $this->db->set('email_user', $email_user)
-                        ->set('email_pro', $email_pro)
                         ->set('date', $date)
                         ->set('time', $time)
-                        ->set('length', $length)
                         ->set('cause', $cause)
                         ->insert($this->table);
     }
