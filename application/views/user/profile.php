@@ -55,7 +55,7 @@
             <li class="list-group-item">Mon adresse email :</li>
         </ul>
         <br>
-        <p><a href="#" class="btn btn-info btn-sm">Modifier mes informations</a></p>
+        <p><a href="#" class="btn btn-info btn-200 btn-center">Modifier mes informations</a></p>
         
         </div>
     </div>
