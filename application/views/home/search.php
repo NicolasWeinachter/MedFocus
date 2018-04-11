@@ -56,8 +56,8 @@
                             <option value="0">Proximité:</option>
                             <option value="1">Dans un rayon d'un kilomètre</option>
                             <option value="2">Dans le quartier/arrondissement</option>
-                            <option value="2">Dans la ville</option> 
-                            <option value="2">Dans le département</option>                     
+                            <option value="3">Dans la ville</option> 
+                            <option value="4">Dans le département</option>                     
                         </select>
                     </td>
                     <td>
@@ -72,7 +72,18 @@
              </table>
         </header>
         <main class="site-content col-md-12">
-            
+            <div class="col-md-7 border d-flex flex-row">
+                <!-- variable-->
+                <img class="col-md-3 photo_profile_med p-2" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
+                <!--variable-->
+                <div class="nom_prenom_spe_adresse p-2">
+                    <p class="light"><b>Nom</b> Prénom</p> 
+                    <p class="light">Spécialité</p>
+                    <br>
+                    <p class="light">Adresse</p>
+                </div>
+                <!--variable-->
+            </div>
         </main>
 
         <footer>
