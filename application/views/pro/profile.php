@@ -40,7 +40,7 @@
         <div class="navbar_user">
 
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo base_url("pro/profil"); ?>"> Mes coordonnées</a></button>
+                <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo base_url("pro/profile"); ?>"> Mes coordonnées</a></button>
                 <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo base_url("pro/avis"); ?>">Mes retours patients</a></button>
                 <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo base_url("pro/rdv"); ?>">Mes rendez-vous</a></button>
             </div>
