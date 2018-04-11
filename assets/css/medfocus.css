@@ -464,7 +464,6 @@ img.logo-fin {
     display: block;
     width: 50%;
     height: 100%;
-<<<<<<< HEAD
 }
 
 /*modif camille pour les onglets*/
@@ -528,7 +527,26 @@ img.logo-fin {
 
 .background-white{
     background-color: #FFFFFF;
+<<<<<<< HEAD
+}
+
+.border{
+    border: darkslategrey;
+    display: block;
+    margin-top: 50px;
+    border-radius: 0.2em;
+    height: 800px;
+}
+
+.photo_profile_med{
+    height: 25%;    
+}
+
+.nom_prenom_spe_adresse{
+    margin-top: 2%
+=======
 =======
 >>>>>>> 52f35b07b4e4324dc0a867781c03eb28e90494e5
 >>>>>>> 31027af59f39c99d1cef3ff75352cb3cdde5561a
+>>>>>>> 942b07e8c8bb2e90ec13c52300b9a661b6c7d26e
 }
