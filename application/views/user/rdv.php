@@ -24,7 +24,7 @@
 
     <header>
       <div id="head">
-        <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo_couleur.png'); ?>" width=200px></a></div>
+        <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
         <div class="connexion">
           <ul id="onglets">
             <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
@@ -41,13 +41,12 @@
 
     <div class="navbar_user">
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/profile"); ?>"><FONT COLOR =#FFFFFF> Mes coordonnées</FONT></a></button>
-                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/avis"); ?>"><FONT COLOR =#FFFFFF> Mes avis</FONT></a></button>
-                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/rdv"); ?>"><FONT COLOR =#FFFFFF> Mes rendez-vous</FONT></a></button>
-                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/liste_medecin"); ?>"><FONT COLOR =#FFFFFF>Mes praticiens</FONT></a></button>
+                <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo site_url("user/profile"); ?>"> Mes coordonnées</a></button>
+                <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo site_url("user/avis"); ?>" role="button"> Mes avis</a></button>
+                <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo site_url("user/rdv"); ?>"> Mes rendez-vous</a></button>
+                <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="<?php echo site_url("user/liste_medecin"); ?>">Mes praticiens</a></button>
             </div>
-    </div>
-
+        </div>
     <br>
 
     <div id="container3_rdv">
