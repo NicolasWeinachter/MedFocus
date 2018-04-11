@@ -31,7 +31,7 @@
     </script>
     <style type="text/css">
         
-        </style>
+    </style>
 </head>
 <body>
         <h1>Mon espace personnel</h1>
