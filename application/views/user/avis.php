@@ -25,6 +25,7 @@
                 </div>
             </div>
         </header>
+    </div>
 
 
     <div id="container2_user">
