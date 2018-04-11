@@ -90,7 +90,7 @@ class ProTable extends CI_Model
      *  @param bool $premium
 	 *	@return bool Le résultat de la requête
      */
-    public function update_user($email, $pwd, $name, $surname, $bday, $gender, $job, $spe, $exp, $num_RPPS, $aga, $payment,
+    public function update_pro($email, $pwd, $name, $surname, $bday, $gender, $job, $spe, $exp, $num_RPPS, $aga, $payment,
     $carte_vitale, $address, $postcode, $city, $practical, $num_tel, $premium)
     {  
         $data = array (
