@@ -54,4 +54,17 @@ class ProTable extends CI_Model
                         ->insert($this->table);
     }
 
+    /**
+    *	Supprime un professionnel
+    *	
+    *	@param integer $email L'id de l'utilisateur à supprimer
+    *	@return bool Le résultat de la requête
+    */
+    public function delete_pro($email)
+    {
+        return $this->db->where('email', $email)
+                        ->delete($this->table);
+    }
+
+
 }
