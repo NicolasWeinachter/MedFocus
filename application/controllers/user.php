@@ -262,4 +262,25 @@ class user extends CI_Controller
             $this->load->view('user/rdv', $data, false);                  
         //}
     }
+
+
+    public function profile2()
+    {
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/profile2', $data, false);                  
+        //}
+    }
+
 }

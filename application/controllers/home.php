@@ -105,8 +105,42 @@ class home extends CI_Controller
 
     public function search()
 	{
-		//	Maintenant, les variables sont disponibles dans la vue
-		$this->load->view('home/search');
+		// Chargement de la bibliothèque
+        $this->load->library('form_validation');
+        $this->load->library('session');        
+        
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        // Chargement du Modèle
+		$this->load->model('ProTable');
+		
+		//	Le formulaire est valide
+        if($this->form_validation->run())
+        {
+            $profession = $this->input->post('spécialité');
+            $location = $this->input->post('location');
+
+			if($this->UserTable->check_pwd($email, $password))
+			{
+				//	On lance une requête
+				$results = array();
+				$results = $this->UserTable->get_pro_user($email);                
+				
+			}
+			else
+			{
+				//Pop-up Mauvais Mot de passe
+				echo ("pwd");
+			}   
+		}
+		else
+		{
+			//Pop-up Mauvais Mot de passe
+			echo ("exists");               
+		}
+
+        $this->load->view('pro/search',$results);
 	}
 
 
