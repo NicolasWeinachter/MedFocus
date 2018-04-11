@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="<?php echo base_url("assets/css/medfocus.css"); ?>" >
   <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
-  <link rel='stylesheet' href="<?php echo base_url("asset/calendar/fullcalendar.css"); ?>">
+  <link rel='stylesheet' href="<?php echo base_url("assets/calendar/fullcalendar.css"); ?>">
   <script src="<?php echo base_url("assets/calendar/lib/jquery.min.js"); ?>"></script>
   <script src="<?php echo base_url("assets/calendar/lib/moment.min.js"); ?>"></script>
   <script src="<?php echo base_url("assets/calendar/fullcalendar.js"); ?>"></script>
@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <div id="container1">
+  <div id="container1_user">
 
     <header>
       <div id="head">

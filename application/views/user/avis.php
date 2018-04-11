@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div id="container1">
+	<div id="container1_user">
 
         <header>
             <div id="head">
