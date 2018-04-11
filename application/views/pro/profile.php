@@ -32,7 +32,29 @@
 </head>
 
 <body>
+  <header>
+        <div id="head">
+            <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+            <div class="connexion">
+                <ul id="onglets">
+                    <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+                    <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
         <h1>Mon espace personnel</h1>
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6"></div>
+          <div class="col">
+            <img src="<?php echo base_url('assets/images/website/notif.png'); ?>" width=35px height =35px>
+            <a href="<?php echo site_url('pro/notif'); ?>" class="btn btn-outline-secondary btn-200">Notifications</a>
+          </div>
+        </div>
+        
+
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
                     <div class="row row_onglets">
