@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 11 avr. 2018 à 10:44
+-- Généré le :  mer. 11 avr. 2018 à 14:31
 -- Version du serveur :  5.7.11-log
 -- Version de PHP :  5.6.31
 
@@ -33,6 +33,21 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `level_admin` int(11) NOT NULL,
   PRIMARY KEY (`id_admin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `availability`
+--
+
+DROP TABLE IF EXISTS `availability`;
+CREATE TABLE IF NOT EXISTS `availability` (
+  `email_pro` int(255) NOT NULL,
+  `num_day` int(1) NOT NULL,
+  `start_hour` time NOT NULL,
+  `end_hour` time NOT NULL,
+  PRIMARY KEY (`email_pro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -141,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `rendez-vous` (
   `email_pro` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `length` int(11) NOT NULL,
   `cause` varchar(255) NOT NULL,
+  `id_service` int(11) NOT NULL,
   PRIMARY KEY (`id_rdv`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -158,6 +173,7 @@ CREATE TABLE IF NOT EXISTS `services` (
   `email_pro` varchar(255) NOT NULL,
   `name` varchar(50) NOT NULL,
   `price` int(11) NOT NULL,
+  `length` int(11) NOT NULL,
   PRIMARY KEY (`id_service`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
