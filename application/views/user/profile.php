@@ -1,4 +1,4 @@
-<?php var_dump($user_info); ?>
+<?php var_dump($email); ?>
 
 <!DOCTYPE html>
 <html>

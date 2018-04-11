@@ -99,7 +99,7 @@ class UserTable extends CI_Model
                         ->from($this->table)
                         ->where('email', (string) $email)
                         ->get()
-                        ->result();
+                        ->result_array();
     }
     
     /**
