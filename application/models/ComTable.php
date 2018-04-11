@@ -22,4 +22,17 @@ class ComTable extends CI_Model
                         ->insert($this->table);
     }
 
+    /**
+    *	Supprime un avis
+    *	
+    *	@param string $id_comment L'id de l'avis à supprimer
+    *	@return bool Le résultat de la requête
+    */
+    public function delete_comment($id_comment)
+    {
+        return $this->db->where('id_comment', $id_comment)
+                        ->delete($this->table);
+    }
+
+
 }
