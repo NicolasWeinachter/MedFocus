@@ -22,6 +22,22 @@ class ComTable extends CI_Model
                         ->insert($this->table);
     }
 
+
+    /**
+    *	Retourne tous les avis d'un utilisateur
+    *	
+    *	@param string $email L'id de l'utilisateur
+    *	@return objet Le résultat de la requête
+    */
+	public function get_user_comments($email)
+	{
+		return $this->db->select('*')
+                        ->from($this->table)
+                        ->where('email_patient', (string) $email)
+                        ->get()
+                        ->result_array();
+    }
+
     /**
     *	Supprime un avis
     *	
