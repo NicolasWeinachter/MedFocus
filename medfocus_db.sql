@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 11 avr. 2018 à 09:50
+-- Généré le :  mer. 11 avr. 2018 à 10:44
 -- Version du serveur :  5.7.11-log
 -- Version de PHP :  5.6.31
 
@@ -62,7 +62,10 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('321l7sqmahua5p0rgaeddp8bq35jpisu', '::1', 1523366143, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333336363031383b),
 ('i9a0ipiqpqnguv2stp8vn4nv2knj2mk2', '::1', 1523366673, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333336363637333b),
 ('rqp78sv6418nocoimbn85s7btgjrllvo', '::1', 1523370572, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333337303537323b),
-('4i2vdrpka1vvj7ll9o1hiikmt33vlaub', '::1', 1523429709, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333432393730393b);
+('4i2vdrpka1vvj7ll9o1hiikmt33vlaub', '::1', 1523429709, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333432393730393b),
+('n0c2m88oab8fdg2n8fncajh2oajk3om6', '::1', 1523442071, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333434313737363b757365726e616d657c733a373a225261706861656c223b656d61696c7c733a32323a227261706861656c616d79636f40676d61696c2e636f6d223b6c6f676765645f696e7c623a313b),
+('aoa9r0nm9fp8qb6mc0nn4fc8k8igqf5v', '::1', 1523442137, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333434323132383b757365726e616d657c733a373a225261706861656c223b656d61696c7c733a32323a227261706861656c616d79636f40676d61696c2e636f6d223b6c6f676765645f696e7c623a313b),
+('lqa7hh2t47h2e8e7jvmr0k0mq6k8gojk', '::1', 1523443281, 0x5f5f63695f6c6173745f726567656e65726174657c693a313532333434333236313b757365726e616d657c733a373a225261706861656c223b656d61696c7c733a32323a227261706861656c616d79636f40676d61696c2e636f6d223b6c6f676765645f696e7c623a313b);
 
 -- --------------------------------------------------------
 
@@ -78,6 +81,21 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `date` int(11) NOT NULL,
   `comment` text NOT NULL,
   PRIMARY KEY (`id_comment`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `diplomas`
+--
+
+DROP TABLE IF EXISTS `diplomas`;
+CREATE TABLE IF NOT EXISTS `diplomas` (
+  `id_diploma` int(11) NOT NULL AUTO_INCREMENT,
+  `email_pro` varchar(255) NOT NULL,
+  `year` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_diploma`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -131,6 +149,21 @@ CREATE TABLE IF NOT EXISTS `rendez-vous` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `services`
+--
+
+DROP TABLE IF EXISTS `services`;
+CREATE TABLE IF NOT EXISTS `services` (
+  `id_service` int(11) NOT NULL AUTO_INCREMENT,
+  `email_pro` varchar(255) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  PRIMARY KEY (`id_service`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `users`
 --
 
@@ -146,6 +179,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `num_secu` int(13) NOT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`email`, `password`, `name`, `surname`, `bday`, `gender`, `num_tel`, `num_secu`) VALUES
+('raphaelamyco@gmail.com', '701addd911ff6c2eca01e1b0a1100030', 'Cohen', 'Raphael', '1996-06-24', 'Male', 688383926, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

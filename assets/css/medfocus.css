@@ -464,6 +464,7 @@ img.logo-fin {
     display: block;
     width: 50%;
     height: 100%;
+<<<<<<< HEAD
 }
 
 /*modif camille pour les onglets*/
@@ -513,4 +514,21 @@ img.logo-fin {
 .center_onglets
 {
     text-align: center;
+=======
+<<<<<<< HEAD
+}
+
+.container1_search{
+    background-color: #17a2b8;
+}
+
+#navbar_search{
+    background-color: #a6d7d1;
+}
+
+.background-white{
+    background-color: #FFFFFF;
+=======
+>>>>>>> 52f35b07b4e4324dc0a867781c03eb28e90494e5
+>>>>>>> 31027af59f39c99d1cef3ff75352cb3cdde5561a
 }

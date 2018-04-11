@@ -41,23 +41,30 @@ class user extends CI_Controller
                 if($this->UserTable->check_pwd($email, $password))
                 {
                     //	On lance une requête
-                    $data = array();
-                    $data['user_info'] = (array)$this->UserTable->get_info_user($email);
-                
-                    $this->load->view('user/profile', $data);
+                    $query = array();
+                    $query = $this->UserTable->get_info_user($email);
+                    $data_user = $query['0'];
+
+                    $newdata = array(
+                        'username'  => $data_user['surname'],
+                        'email'     => $data_user['email'],
+                        'logged_in' => TRUE
+                    );
+
+                    $this->session->set_userdata($newdata);                    
+                    
+                    $this->profile();
                 }
                 else
                 {
                     //Pop-up Mauvais Mot de passe
                     echo ("pwd");
-                    
                 }   
             }
             else
             {
                 //Pop-up Mauvais Mot de passe
-                echo ("exists");
-                
+                echo ("exists");               
             }
         }
         //	Le formulaire est invalide ou vide
@@ -115,10 +122,10 @@ class user extends CI_Controller
                 $this->session->set_userdata($newdata);
             
                 $this->profile();
-
             }
-            else{
-
+            else
+            {
+                // adresse mail déjà utilisée
             }
         }
         //	Le formulaire est invalide ou vide
@@ -144,8 +151,10 @@ class user extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['user_info'] = $this->UserTable->get_info_user($email); 
-            $this->load->view('user/profile', $data, false);                  
+            $query = $this->UserTable->get_info_user($email);
+            $data_user = $query['0'];
+
+            $this->load->view('user/profile', $data_user, false);                  
         //}
     }
     
