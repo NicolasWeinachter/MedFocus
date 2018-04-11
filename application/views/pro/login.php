@@ -38,8 +38,8 @@
                 <label for="exampleInputPassword1">Mot de passe</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-                <button type="submit" class="btn btn-info"><a class="lien-normal text-blanc" href="<?php echo site_url("pro/profil"); ?>"> Accéder à mon compte </a></button>
-                <p><a href="<?php echo site_url("pro/subscribe_form_med_presentation"); ?>">Pas encore inscrit ?</a></p>
+                <button type="submit" class="btn btn-info"><a class="lien-normal text-blanc" href="<?php echo site_url("pro/profile"); ?>"> Accéder à mon compte </a></button>
+                <p><a href="<?php echo site_url("pro/subscribe_form_presentation"); ?>">Pas encore inscrit ?</a></p>
         </form>
     </div>
 
