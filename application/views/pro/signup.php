@@ -23,43 +23,40 @@
                 }
         //-->
     </script>
-    <style type="text/css">
-        
-    </style>
 </head>
 
 
 <body>
 
     <header>
-            <div id="head">
-                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
-                <div class="connexion">
-                    <ul id="onglets">
-                        <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-                        <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
-                    </ul>
-                </div>
+        <div id="head">
+            <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+            <div class="connexion">
+                <ul id="onglets">
+                    <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+                    <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                </ul>
             </div>
+        </div>
     </header>
 
         <h1>Création de votre compte professionnel</h1>
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
-                    <div class="row row_onglets">
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Presentation</span>
-                        </div>
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_honoraires" onclick="javascript:change_onglet('honoraires');">Vos honoraires</span>
-                        </div>
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_lieu" onclick="javascript:change_onglet('lieu');">Votre lieu de travail</span>
-                        </div>
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_contact" onclick="javascript:change_onglet('contact');">Contact</span>
-                        </div>
+                <div class="row row_onglets">
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Presentation</span>
                     </div>
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_honoraires" onclick="javascript:change_onglet('honoraires');">Vos honoraires</span>
+                    </div>
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_lieu" onclick="javascript:change_onglet('lieu');">Votre lieu de travail</span>
+                    </div>
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_contact" onclick="javascript:change_onglet('contact');">Contact</span>
+                    </div>
+                </div>
             </div>
             <div class="contenu_onglets">
                 <div class="contenu_onglet" id="contenu_onglet_presentation">
