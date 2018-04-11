@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="bootstrap-4.1.0/dist/css/bootstrap.min.css">
-    <script src="bootstrap-4.1.0/dist/js/bootstrap.min.js"></script>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/medfocus.css"); ?>" >
+    <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+    <title>MedFocus</title>
 
-    <title>Inscription compte pro</title>
     <script type="text/javascript">
         //<!--
                 function change_onglet(name)
@@ -22,8 +25,10 @@
     </script>
     <style type="text/css">
         
-        </style>
+    </style>
 </head>
+
+
 <body>
         <h1>Création de votre compte professionnel</h1>
         <div class="systeme_onglets center_onglets">
