@@ -80,7 +80,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					
+					<!--coucou -->
 					<th scope="col">MedFocus</th>
 					<th scope="col">Mentions légales</th>
 					<th scope="col">CGU</th>
