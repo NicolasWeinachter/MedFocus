@@ -1,6 +1,6 @@
 <?php
 
-class user extends CI_Controller
+class pro extends CI_Controller
 {
 	public function __construct()
 	{
@@ -154,7 +154,7 @@ class user extends CI_Controller
         //{
             $email = $this->session->userdata('email');
             $data['pro_info'] = $this->UserTable->get_info_pro($email); 
-            $this->load->view('pro/profile', $data, false);                  
+            $this->load->view('pro/profil', $data, false);                  
         //}
     }
 
