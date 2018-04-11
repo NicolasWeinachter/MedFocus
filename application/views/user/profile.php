@@ -1,4 +1,5 @@
 <?php var_dump($user_info); ?>
+<?php var_dump($user_info); ?>
 
 <!DOCTYPE html>
 <html>

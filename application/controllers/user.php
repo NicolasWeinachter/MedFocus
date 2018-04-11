@@ -11,12 +11,15 @@ class user extends CI_Controller
     public function index()
 	{
 		$this->login();
-	}
+    }
+    
+
 	
 	public function login()
 	{
 		// Chargement de la bibliothèque
         $this->load->library('form_validation');
+        $this->load->library('session');        
         
         // Profiler for debug
         $this->output->enable_profiler(TRUE);
@@ -41,7 +44,9 @@ class user extends CI_Controller
         {
             $this->load->view('user/login');
         }
-	}
+    }
+    
+
 
 	public function signup()
 	{
@@ -102,6 +107,9 @@ class user extends CI_Controller
 
         // Chargement du Modèle
         $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
 
         //if($this->session->has_userdata('email'))
         //{
