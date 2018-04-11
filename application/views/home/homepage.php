@@ -80,9 +80,8 @@
 		<table class="table">
 			<thead>
 				<tr>
-					
+					<!--coucou -->
 					<th scope="col">MedFocus</th>
-					<th scope="col">Mentions légales</th>
 					<th scope="col">CGU</th>
 					<th scope="col">Professionnel de santé ?</th>
 				</tr>
@@ -94,9 +93,6 @@
                         <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/faq"); ?>">Questions fréquentes<br></a>
                         <a class =" lien-normal text-blanc" href="<?php echo site_url("home/recrutement"); ?>">Recrutement<br></a>
                         <a class =" lien-normal text-blanc" href="<?php echo site_url("home/contact"); ?>">Contact</a>
-					</td>
-					<td>
-                        <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/legal"); ?>">La législation<br></a>
 					</td>
 					<td>
                         <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/cgu"); ?>">Conditions générales d'utilisation<br></a>

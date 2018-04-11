@@ -33,14 +33,31 @@ class user extends CI_Controller
         //	Le formulaire est valide
         if($this->form_validation->run())
         {
-            //	On lance une requête
-            $data = array();
-            $data['user_info'] = $this->UserTable->get_info_user(1);
-        
-            $this->load->view('user/profile', $data);
+            $email = $this->input->post('email');
+            $password = $this->input->post('pwd');
+
+            if($this->UserTable->user_exists($email))
+            {
+                if($this->UserTable->check_pwd($email, $password))
+                {
+                    //	On lance une requête
+                    $data = array();
+                    $data['user_info'] = $this->UserTable->get_info_user(1);
+                
+                    $this->load->view('user/profile', $data);
+                }
+                else
+                {
+                    //Pop-up Mauvais Mot de passe
+                }   
+            }
+            else
+            {
+                //Pop-up Mauvais Mot de passe
+            }
         }
         //	Le formulaire est invalide ou vide
-        else 
+        else
         {
             $this->load->view('user/login');
         }
@@ -81,17 +98,24 @@ class user extends CI_Controller
             $gender = "Male";
             $nss = "1blabla";
 
-            $this->UserTable->add_user($email, $password, $name, $surname, $gender, $birth, $phone, $nss);
+            if(!$this->UserTable->user_exists($email))
+            {
+                $this->UserTable->add_user($email, $password, $name, $surname, $gender, $birth, $phone, $nss);
 
-            $newdata = array(
-                'username'  => $surname,
-                'email'     => $email,
-                'logged_in' => TRUE
-            );
+                $newdata = array(
+                    'username'  => $surname,
+                    'email'     => $email,
+                    'logged_in' => TRUE
+                );
+                
+                $this->session->set_userdata($newdata);
             
-            $this->session->set_userdata($newdata);
-        
-            $this->profile();
+                $this->profile();
+
+            }
+            else{
+
+            }
         }
         //	Le formulaire est invalide ou vide
         else 
