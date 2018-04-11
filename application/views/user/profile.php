@@ -21,7 +21,7 @@
         <div class="navbar_user">
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/profile"); ?>"><FONT COLOR =#FFFFFF> Mes coordonnées</FONT></a></button>
-                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/avis"); ?>"><FONT COLOR =#FFFFFF> Mes avis</FONT></a></button>
+                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/avis"); ?>" role="button"><FONT COLOR =#FFFFFF> Mes avis</FONT></a></button>
                 <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/rdv"); ?>"><FONT COLOR =#FFFFFF> Mes rendez-vous</FONT></a></button>
                 <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/liste_medecin"); ?>"><FONT COLOR =#FFFFFF>Mes praticiens</FONT></a></button>
             </div>
