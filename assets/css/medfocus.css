@@ -458,7 +458,6 @@ img.logo-fin {
     display: block;
     width: 50%;
     height: 100%;
-<<<<<<< HEAD
 }
 
 .container1_search{
@@ -471,6 +470,20 @@ img.logo-fin {
 
 .background-white{
     background-color: #FFFFFF;
-=======
->>>>>>> 52f35b07b4e4324dc0a867781c03eb28e90494e5
+}
+
+.border{
+    border: darkslategrey;
+    display: block;
+    margin-top: 50px;
+    border-radius: 0.2em;
+    height: 800px;
+}
+
+.photo_profile_med{
+    height: 25%;    
+}
+
+.nom_prenom_spe_adresse{
+    margin-top: 2%
 }
