@@ -280,23 +280,29 @@ img.logo-fin {
     margin: auto;
 }
 
-.description_rdv {
+/*modif camille dans onglet rdv*/
+.description_rdv{          
     display: block;
-    height: 390px;
+    height: 350px;
     width: 600px;
     margin: right;
-}
-
-#container5_user {
     display: flex;
     flex-direction: column;
 }
 
-.historique_rdv {
+/*#container5_user{
+    display: flex;
+    flex-direction: column;
+}*/
+
+.historique_rdv{
     display: block;
-    height: 100px;
+    height: 70px;
     width: 600px;
     margin: auto;
+    padding-top: -3px;
+
+
 }
 
 .info_rdv {
@@ -460,6 +466,57 @@ img.logo-fin {
     height: 100%;
 }
 
+/*modif camille pour les onglets*/
+.onglet
+        {
+                display:inline-block;
+                margin-left:3px;
+                margin-right:3px;
+                padding:3px;
+                cursor:pointer;
+                margin: auto;
+                width: inherit;
+                border-radius: 9px;
+        }
+
+.onglet_0
+        {
+                border : solid #17a2b8;
+        }
+        
+.onglet_1
+        {
+                padding-bottom:7px;
+                background-color: #17a2b8;
+                font :#FFFFFF;
+        }
+        
+.contenu_onglet
+        {
+                border:3px solid #808080;
+                margin-top:-1px;
+                padding:5px;
+                display:none;
+                height: 450px;
+                width: 1100px;
+                margin: auto;
+        }
+        
+.row_onglets
+{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.center_onglets
+{
+    text-align: center;
+=======
+<<<<<<< HEAD
+}
+
 .container1_search{
     background-color: #17a2b8;
 }
@@ -470,6 +527,7 @@ img.logo-fin {
 
 .background-white{
     background-color: #FFFFFF;
+<<<<<<< HEAD
 }
 
 .border{
@@ -486,4 +544,9 @@ img.logo-fin {
 
 .nom_prenom_spe_adresse{
     margin-top: 2%
+=======
+=======
+>>>>>>> 52f35b07b4e4324dc0a867781c03eb28e90494e5
+>>>>>>> 31027af59f39c99d1cef3ff75352cb3cdde5561a
+>>>>>>> 942b07e8c8bb2e90ec13c52300b9a661b6c7d26e
 }

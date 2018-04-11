@@ -21,4 +21,16 @@ class DiplomasTable extends CI_Model
                         ->insert($this->table);
     }
 
+    /**
+    *	Supprime un diplome
+    *	
+    *	@param string $id_diploma L'id du diplome à supprimer
+    *	@return bool Le résultat de la requête
+    */
+    public function delete_diploma($id_diploma)
+    {
+        return $this->db->where('id_diploma', $id_diploma)
+                        ->delete($this->table);
+    }
+
 }
