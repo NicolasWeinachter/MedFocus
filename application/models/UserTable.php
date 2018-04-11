@@ -137,12 +137,12 @@ class UserTable extends CI_Model
     {
         $this->db->select('password');
         $this->db->from('users');
-        $this->db->where('email', $email);
+        $this->db->where(['email' => $email, 'password' => md5($password)]);
 
         $query = $this->db->get();
         $result = $query->result_array();
 
-        if (md5($password) == $result)
+        if ($result)
         {
             return true;
         }

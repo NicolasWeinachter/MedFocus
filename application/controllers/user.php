@@ -42,18 +42,22 @@ class user extends CI_Controller
                 {
                     //	On lance une requête
                     $data = array();
-                    $data['user_info'] = $this->UserTable->get_info_user(1);
+                    $data['user_info'] = (array)$this->UserTable->get_info_user($email);
                 
                     $this->load->view('user/profile', $data);
                 }
                 else
                 {
                     //Pop-up Mauvais Mot de passe
+                    echo ("pwd");
+                    
                 }   
             }
             else
             {
                 //Pop-up Mauvais Mot de passe
+                echo ("exists");
+                
             }
         }
         //	Le formulaire est invalide ou vide
