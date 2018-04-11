@@ -62,15 +62,15 @@
       <div id="container3_profile_med">
           <img src="notif.png" width=35px height =35px>
           <a href="notif_med.php" class="btn btn-outline-secondary">Notifications</a>
-        </div>
-        <div class="navbar_user">
+      </div>
+      <div class="navbar_user">
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="profil_med.php"> Mes coordonnées</a></button>
             <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="avis_med.php">Mes retours patients</a></button>
             <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="rdv_med.php">Mes rendez-vous</a></button>
         </div>
-        </div>
-        <br>
+      </div>
+      <br>
 
         <div id="container3_rdv">
       <div id="container4_user">

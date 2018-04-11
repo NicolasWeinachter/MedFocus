@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="bootstrap-4.1.0/dist/css/bootstrap.min.css">
-    <script src="bootstrap-4.1.0/dist/js/bootstrap.min.js"></script>
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/medfocus.css"); ?>" >
+    <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+    <title>MedFocus</title>
 
-    <title>Inscription compte pro</title>
     <script type="text/javascript">
         //<!--
                 function change_onglet(name)
@@ -20,28 +23,40 @@
                 }
         //-->
     </script>
-    <style type="text/css">
-        
-        </style>
 </head>
+
+
 <body>
+
+    <header>
+        <div id="head">
+            <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+            <div class="connexion">
+                <ul id="onglets">
+                    <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+                    <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
         <h1>Création de votre compte professionnel</h1>
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
-                    <div class="row row_onglets">
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Presentation</span>
-                        </div>
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_honoraires" onclick="javascript:change_onglet('honoraires');">Vos honoraires</span>
-                        </div>
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_lieu" onclick="javascript:change_onglet('lieu');">Votre lieu de travail</span>
-                        </div>
-                        <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_contact" onclick="javascript:change_onglet('contact');">Contact</span>
-                        </div>
+                <div class="row row_onglets">
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Presentation</span>
                     </div>
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_honoraires" onclick="javascript:change_onglet('honoraires');">Vos honoraires</span>
+                    </div>
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_lieu" onclick="javascript:change_onglet('lieu');">Votre lieu de travail</span>
+                    </div>
+                    <div class="col">
+                        <span class="onglet_0 onglet" id="onglet_contact" onclick="javascript:change_onglet('contact');">Contact</span>
+                    </div>
+                </div>
             </div>
             <div class="contenu_onglets">
                 <div class="contenu_onglet" id="contenu_onglet_presentation">
