@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/medfocus.css"); ?>" >
+    <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
     <title>MedFocus</title>
 </head>
 
@@ -28,13 +30,13 @@
     <div id="container2_user">
         <h1>Mon espace personnel</h1>
 
-       <div class="navbar_user">
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="profil_user.php"> Mes coordonnées</a></button>
-            <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="avis_user.php">Mes avis</a></button>
-            <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="rdv_user.php">Mes rendez-vous</a></button>
-            <button type="button" class="btn btn-secondary"><a class="lien-normal text-blanc" href="liste_medecin.php">Mes praticiens</a></button>
-        </div>
+        <div class="navbar_user">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/profile"); ?>"><FONT COLOR =#FFFFFF> Mes coordonnées</FONT></a></button>
+                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/avis"); ?>"><FONT COLOR =#FFFFFF> Mes avis</FONT></a></button>
+                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/rdv"); ?>"><FONT COLOR =#FFFFFF> Mes rendez-vous</FONT></a></button>
+                <button type="button" class="btn btn-secondary"><a href="<?php echo site_url("user/liste_medecin"); ?>"><FONT COLOR =#FFFFFF>Mes praticiens</FONT></a></button>
+            </div>
         </div>
 
         <br>
@@ -42,95 +44,71 @@
         <div id="container3_user">
             <br>
             <div id="container4_user">
-            <div class="note_medecin">
-            <table class="table">
-            <tr>
-            <td>Nom : <br>
-                Spécialité : <br>
-                Adresse : <br>
-            </td>
-            <td>Note : <br>
-                <br>
-                Autres infos :<br>
-            </td>  
-            <td>
-                <a href="#" class="btn btn-info btn-sm btn-200 btn-center">Prendre un rendez-vous</a>
-                <br>
-                <a href="#">En savoir plus</a>
-            </td>
-            </tr>         
-            </table>
-            
+                <div class="note_medecin">
+                <table class="table">
+                    <tr>
+                        <td>
+                            Nom : <br>
+                            Spécialité : <br>
+                            Adresse : <br>
+                        </td>
+                        <td>
+                            Note : <br>
+                            <br>
+                            Autres infos :<br>
+                        </td>  
+                        <td>
+                            <a href="#" class="btn btn-info btn-sm btn-200 btn-center">Prendre un rendez-vous</a>
+                            <br>
+                            <a href="#">En savoir plus</a>
+                        </td>
+                    </tr>         
+                </table>
             </div>
             <br>
             <div class="avis_medecin">
                 <p>AVIIS BLA BLA BLA CETAIT NUL</p>
                 <table class="table">
-            <tr>
-            <td><a href="#" class="btn btn-info btn-sm btn-100 btn-center">Modifier</a></td>
-            <td><a href="#" class="btn btn-info btn-sm btn-100 btn-center">Supprimer</a></td>  
-            </tr>   
-        </table>
+                    <tr>
+                        <td><a href="#" class="btn btn-info btn-sm btn-100 btn-center">Modifier</a></td>
+                        <td><a href="#" class="btn btn-info btn-sm btn-100 btn-center">Supprimer</a></td>  
+                    </tr>   
+                </table>
             </div>
 
         </div>
 
 
-</div>
-</div>
+    </div>
+
 
 <footer>
         <div id="containerFin">
-        <img class="logo-fin" src="Logo-03.png" width=200px>
+        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
         <table class="table">
             <thead>
                 <tr>
-                    
+                    <!--coucou -->
                     <th scope="col">MedFocus</th>
-                    <th scope="col">Trouvez votre spécialiste</th>
-                    <th scope="col"> </th>
-                    <th scope="col">Praticien ?</th>
+                    <th scope="col">CGU</th>
+                    <th scope="col">Professionnel de santé ?</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        S'inscrire<br>
-                        A propos de nous<br>
-                        Question fréquetntes<br>
-                        Besoin d'aide ?<br>
-                        Recrutement<br>
-                        Contact
+                        <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/about"); ?>">A propos de nous<br></a>
+                        <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/faq"); ?>">Questions fréquentes<br></a>
+                        <a class =" lien-normal text-blanc" href="<?php echo site_url("home/recrutement"); ?>">Recrutement<br></a>
+                        <a class =" lien-normal text-blanc" href="<?php echo site_url("home/contact"); ?>">Contact</a>
                     </td>
                     <td>
-                        Médecin généraliste<br>
-                        Chirurgien-dentistee<br>
-                        Pédiatre<br>
-                        Gynécologue<br>
-                        Ophtalmologue<br>
-                        Dermatologue<br>
-                        Ostéopathe<br>
-                        Masseur-kinésithérapeute<br>
-                        Pédicure-podologue<br>
-                        Sage-femme<br>
-                    </td>
+                        <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/cgu"); ?>">Conditions générales d'utilisation<br></a>
+                    </td> 
                     <td>
-                        ORL<br>
-                        Allergologue<br>
-                        Chirurgien urologue<br>
-                        Rhumatologue<br>
-                        Stomatologue<br>
-                        Endocrinologue<br>
-                        Chirurgien orthopédiste<br>
-                        Diététicien<br>
-                        Psychologue<br>
-                        Neurologue<br>
-                    </td>
-                    <td>
-                        Nos services<br>
-                        Nos tarifs<br>
-                        Etablissements de santé<br>
-                        Télésecrétariat
+                        <a class =" lien-normal text-blanc text-blanc" href ="<?php echo site_url("home/services"); ?>">Nos services<br></a>
+                        <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/tarifs"); ?>">Nos tarifs<br></a>
+                        <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/eds"); ?>">Etablissements de santé<br></a>
                     </td>
                 </tr>
             </tbody>
