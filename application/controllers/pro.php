@@ -153,7 +153,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/profile', $data, false);                  
         //}
     }
@@ -174,7 +174,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/avis', $data, false);                  
         //}
     }
@@ -195,7 +195,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/notif', $data, false);                  
         //}
     }
@@ -216,7 +216,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/rdv', $data, false);                  
         //}
     }
@@ -237,7 +237,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/profile', $data, false);                  
         //}
     }
@@ -258,7 +258,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/subscribe_form_honoraires', $data, false);                  
         //}
     }
@@ -279,7 +279,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/subscribe_form_lieu', $data, false);                  
         //}
     }
@@ -300,7 +300,7 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->UserTable->get_info_pro($email); 
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
             $this->load->view('pro/subscribe_form_presentation', $data, false);                  
         //}
     }

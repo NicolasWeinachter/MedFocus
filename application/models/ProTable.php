@@ -119,6 +119,21 @@ class ProTable extends CI_Model
     }
 
     /**
+    *	Retourne un professionnel
+    *	
+    *	@param string $email L'id du professionnel à retourner
+    *	@return objet Le résultat de la requête
+    */
+	public function get_info_pro($email)
+	{
+		return $this->db->select('*')
+                        ->from($this->table)
+                        ->where('email', (string) $email)
+                        ->get()
+                        ->result();
+    }
+
+    /**
      * Verifie l'existence d'un professionnel
      * 
      * @param string $email 
