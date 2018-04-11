@@ -7,7 +7,44 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url("assets/css/medfocus.css"); ?>" >
 	<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+    <link rel='stylesheet' href="<?php echo base_url("assets/calendar/fullcalendar.css"); ?>">
+    <script src="<?php echo base_url("assets/calendar/lib/jquery.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/calendar/lib/moment.min.js"); ?>"></script>
+    <script src="<?php echo base_url("assets/calendar/fullcalendar.js"); ?>"></script>
+    <script>
+        function afficher_cacher(id)
+            {
+                if(document.getElementById(id).style.display=="none")
+                {
+                    document.getElementById(id).style.display="inline";
+                    document.getElementById('bouton_'+id).innerHTML='Cacher les commentaires sur ce médecin.';
+                }
+                else
+                {
+                    document.getElementById(id).style.display="none";
+                    document.getElementById('bouton_'+id).innerHTML='Afficher les commentaires sur ce médecin.';
+                }
+                return true;
+            };
+    </script>
+    <script>$(function() {
+        $('#calendar').fullCalendar({
+            defaultView: 'agendaFourDay',
+    groupByResource: true,
+    header: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'agendaDay,agendaFourDay'
+    },
+    views: {
+      agendaFourDay: {
+        type: 'agenda',
+        duration: { days: 4 }
+      }
+    },
+  });
+    });</script>
     <title>MedFocus</title>
 </head>
 
@@ -72,17 +109,107 @@
              </table>
         </header>
         <main class="site-content col-md-12">
+
+            <div class="container_lumiere col-md-11">
+                <h2 class="title_h2 lumiere_title">
+                    Lumière sur ces <!--variable--> nom_de_la_spécialité qui rayonnent près de chez vous
+                </h2>
+                <div class="d-flex flex-row lumiere">
+                    <div class="col-md-3">
+                        <div class="d-flex flex-row">
+                            <div class="col-md-6">
+                                <!-- variable-->
+                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                            </div>
+                            <div class="col-md-6"> 
+                                <!--variable-->
+                                <p class="light"><b>Nom</b> Prénom</p>
+                                <p class="light">CP, Ville</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="d-flex flex-row">
+                            <div class="col-md-6">
+                                <!-- variable-->
+                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                            </div>
+                            <div class="col-md-6"> 
+                                <!--variable-->
+                                <p class="light"><b>Nom</b> Prénom</p>
+                                <p class="light">CP, Ville</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="d-flex flex-row">
+                            <div class="col-md-6">
+                                <!-- variable-->
+                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                            </div>
+                            <div class="col-md-6"> 
+                                <!--variable-->
+                                <p class="light"><b>Nom</b> Prénom</p>
+                                <p class="light">CP, Ville</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="d-flex flex-row">
+                            <div class="col-md-6">
+                                <!-- variable-->
+                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                            </div>
+                            <div class="col-md-6"> 
+                                <!--variable-->
+                                <p class="light"><b>Nom</b> Prénom</p>
+                                <p class="light">CP, Ville</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+
             <div class="col-md-7 border d-flex flex-row">
-                <!-- variable-->
-                <img class="col-md-3 photo_profile_med p-2" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
-                <!--variable-->
-                <div class="nom_prenom_spe_adresse p-2">
-                    <p class="light"><b>Nom</b> Prénom</p> 
-                    <p class="light">Spécialité</p>
-                    <br>
-                    <p class="light">Adresse</p>
+                <div class="col-md-5 p-2">
+                    <div class="row">
+                        <!-- variable-->
+                        <img class="col-md-8 photo_profile_med" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
+                        <!--variable-->
+                        <div class="col-md-4 nom_prenom_spe_adresse">
+                            <p class="light"><b>Nom</b> Prénom</p> 
+                            <p class="light">Spécialité</p>
+                            <br>
+                            <p class="light">Adresse</p>
+                        </div>
+                    </div>
+                    <div class="row lumiere">
+                        <!--variable-->
+                        <p class="light col-md-12">Honoraire :</p> <br>
+                        <p class="light col-md-12">Propreté :</p> <br>
+                        <p class="light col-md-12">Qualité de l'accueil :</p> <br>
+                        <p class="light col-md-12">Ponctualité (hors urgences) : </p>
+                        <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
+                                <div id="texte" class="texte col-md-12">
+                                <p class="light">Premier commentaire</p>
+                                <p class="light">Deuxième commentaire</p>
+                                <p class="light">Troisième commentaire</p>
+                                <p class="light">Quatrième commentaire</p>
+                                <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
+                                </div>
+                        <p>
+                        <script type="text/javascript">
+                            //<!--
+                            afficher_cacher('texte');
+                            //-->
+                        </script>
+                    </div>
                 </div>
                 <!--variable-->
+                <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
             </div>
         </main>
 
