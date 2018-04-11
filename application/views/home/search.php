@@ -25,8 +25,8 @@
             </div> 
             <nav class="navbar col-md-12" id="navbar_search">
   			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
-				<input class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search">
+				<input class="form-control mr-sm-2" id ="spécialité" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
+				<input class="form-control mr-sm-2" id="location" type="search" placeholder="Où ?" aria-label="Search">
 				<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value="search">Rechercher</button>
              </form>
             </nav> 
@@ -36,7 +36,7 @@
                         <p class="col-md-12">Filtrer par</p>
                      </td>
                     <td>
-                        <select class="custom-select col-md-10">
+                        <select class="custom-select col-md-10" id="dispo">
                             <option value="0">Disponibilité:</option>
                             <option value="1">Aujourd'hui</option>
                             <option value="2">Dans les 3 prochains jours</option>
@@ -45,14 +45,14 @@
                         </select>
                     </td>
                     <td>
-                        <select class="custom-select col-md-10">
+                        <select class="custom-select col-md-10" id="honoraires">
                             <option value="0">Honoraires:</option>
                             <option value="1">Pas de dépassement d'honoraires</option>
                             <option value="2">Avec dépassement d'honoraires</option>                      
                         </select>
                     </td>
                     <td>
-                        <select class="custom-select col-md-10">
+                        <select class="custom-select col-md-10" id="proximité">
                             <option value="0">Proximité:</option>
                             <option value="1">Dans un rayon d'un kilomètre</option>
                             <option value="2">Dans le quartier/arrondissement</option>
@@ -61,7 +61,7 @@
                         </select>
                     </td>
                     <td>
-                        <select class="custom-select col-md-10">
+                        <select class="custom-select col-md-10" id="lumière">
                             <option value="0">Critère de lumière:</option>
                             <option value="1">Qualité de l'accueil</option>
                             <option value="2">Temps d'attente (hors urgences)</option>                   
