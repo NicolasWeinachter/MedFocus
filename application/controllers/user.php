@@ -11,12 +11,15 @@ class user extends CI_Controller
     public function index()
 	{
 		$this->login();
-	}
+    }
+    
+
 	
 	public function login()
 	{
 		// Chargement de la bibliothèque
         $this->load->library('form_validation');
+        $this->load->library('session');        
         
         // Profiler for debug
         $this->output->enable_profiler(TRUE);
@@ -30,23 +33,43 @@ class user extends CI_Controller
         //	Le formulaire est valide
         if($this->form_validation->run())
         {
-            //	On lance une requête
-            $data = array();
-            $data['user_info'] = $this->UserTable->get_info_user(1);
-        
-            $this->load->view('user/profile', $data);
+            $email = $this->input->post('email');
+            $password = $this->input->post('pwd');
+
+            if($this->UserTable->user_exists($email))
+            {
+                if($this->UserTable->check_pwd($email, $password))
+                {
+                    //	On lance une requête
+                    $data = array();
+                    $data['user_info'] = $this->UserTable->get_info_user(1);
+                
+                    $this->load->view('user/profile', $data);
+                }
+                else
+                {
+                    //Pop-up Mauvais Mot de passe
+                }   
+            }
+            else
+            {
+                //Pop-up Mauvais Mot de passe
+            }
         }
         //	Le formulaire est invalide ou vide
-        else 
+        else
         {
             $this->load->view('user/login');
         }
-	}
+    }
+    
+
 
 	public function signup()
 	{
-        // Chargement de la bibliothèque
+        // Chargement des bibliothèques
         $this->load->library('form_validation');
+        $this->load->library('session');
 
         // Profiler for debug
         $this->output->enable_profiler(TRUE);
@@ -64,14 +87,35 @@ class user extends CI_Controller
 
         //	Le formulaire est valide
         if($this->form_validation->run())
-        {
-            //$this->UserTable->add_user("aaa@aaa.com", "inputPassword2", "inputName", "inputSurname", "inputBirth", "Male", "inputPhone", "0123");
+        {            
+            $name = $this->input->post('inputName');
+            $surname = $this->input->post('inputSurname');
+            $birth = $this->input->post('inputBirth');
+            $phone = $this->input->post('inputPhone');
+            $email = $this->input->post('inputEmail');
+            $password = $this->input->post('inputPassword2');
+
+            $gender = "Male";
+            $nss = "1blabla";
+
+            if(!$this->UserTable->user_exists($email))
+            {
+                $this->UserTable->add_user($email, $password, $name, $surname, $gender, $birth, $phone, $nss);
+
+                $newdata = array(
+                    'username'  => $surname,
+                    'email'     => $email,
+                    'logged_in' => TRUE
+                );
+                
+                $this->session->set_userdata($newdata);
             
-            //	On lance une requête
-            $data = array();
-            $data['user_info'] = $this->UserTable->get_info_user("aaa@aaa.com");
-        
-            $this->load->view('user/profile', $data);
+                $this->profile();
+
+            }
+            else{
+
+            }
         }
         //	Le formulaire est invalide ou vide
         else 
@@ -82,12 +126,20 @@ class user extends CI_Controller
     
     public function profile()
 	{
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
         // Chargement du Modèle
         $this->load->model('UserTable');
 
-        $info = $this->UserTable->get_info_user("aaa@aaa.com");
-            
-        var_dump($info);
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
 
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/profile', $data, false);                  
+        //}
 	}
 }

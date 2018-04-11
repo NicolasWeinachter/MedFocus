@@ -71,6 +71,36 @@ class home extends CI_Controller
         }
 	*/	
 		$this->load->view('home/homepage');
+    }
+    
+    public function about()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/about');
+    }
+    
+    public function contact()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/contact');
+    }
+    
+    public function faq()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/faq');
+    }
+    
+    public function recrutement()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/recrutement');
+    }
+    
+    public function cgu()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/cgu');
 	}
 
 	public function otherpage()
@@ -82,5 +112,6 @@ class home extends CI_Controller
 		
 		//	Maintenant, les variables sont disponibles dans la vue
 		$this->load->view('home/otherpage', $data, false);
-	}
+    }
+    
 }
