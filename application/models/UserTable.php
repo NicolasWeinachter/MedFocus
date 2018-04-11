@@ -34,12 +34,12 @@ class UserTable extends CI_Model
     /**
     *	Supprime un utilisateur
     *	
-    *	@param integer $id	L'id de l'utilisateur à supprimer
-    *	@return bool		Le résultat de la requête
+    *	@param string $email L'id de l'utilisateur à supprimer
+    *	@return bool Le résultat de la requête
     */
-    public function delete_user($id)
+    public function delete_user($email)
     {
-        return $this->db->where('id', (int) $id)
+        return $this->db->where('email', $email)
                         ->delete($this->table);
     }
 
@@ -127,6 +127,27 @@ class UserTable extends CI_Model
     }
 
     /**
+     * Verifie la correspondance du mot de passe pour la connexion
      * 
+     * @param string $email 
+     * @param string $password
+     * @return bool le resultat de la requête
      */
+    function check_pwd($email, $password)
+    {
+        $this->db->select('password');
+        $this->db->from('users');
+        $this->db->where(['email' => $email, 'password' => md5($password)]);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+
+        if ($result)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

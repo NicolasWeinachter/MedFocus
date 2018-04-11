@@ -49,6 +49,27 @@ body {
 	text-decoration: none !important;
 }
 
+.center{                                  /*modif camille centrer texte*/
+    text-align: center;
+}
+
+.italic{
+    font-style: italic;                   /*modif camille texte itali*/ 
+}
+
+.bouton-bleu{                               /*modif camille */
+    border-color: #17a2b8;
+    border-style: solid;
+    border-radius: 5px;
+    border-size: 3px;
+    background-color: #17a2b8;
+}
+
+.bouton-bleu:hover, .bouton-bleu:active, .bouton-bleu:visited{                      /*modif camille */
+    background-color: #17a2b8;
+}
+
+
 /*mama*/
 .bold{
 	font-weight: 600;
@@ -364,3 +385,55 @@ img.logo-fin {
     margin-left: 20px;
     text-align: justify;
 }
+
+.btn-200{                 /*modif camille créer bouton de largeur 200*/
+    width: 200px;
+}
+
+.btn-100{                 /*modif camille créer bouton de largeur 100*/
+    width: 100px;
+}
+
+.btn-center{               /*modif camille classe pour centrer auto les boutons dans les containers*/
+    margin: auto;
+}
+
+#btn-rdv{                                /*modif camille bouton modif/sup rdv*/
+    
+    display: flex;
+    justify-content: center;
+}
+
+#container3_subscribe_med{          /*modif camille cadre inscription med*/
+    display: block;
+    border-color: #808080; 
+    border-width:5px;
+    border-style: solid;
+    height: 500px;
+    width: 1100px;
+    margin: auto;
+    margin-top: 40px;
+
+}
+
+#container4_subscribe_med{           /*modif camille cadre inscription med*/
+    display: flex;
+    height: 90%;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+#container5_subscribe_med{        /*modif camille partie gauche form inscription*/
+    display:block;
+    width: 50%;
+    height: 100%;
+ }
+
+#container6_subscribe_med{         /*modif camille partie droite form inscription*/
+    display:block;
+    width: 50%;
+    height: 100%;
+}
+

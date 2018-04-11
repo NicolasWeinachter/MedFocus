@@ -42,18 +42,22 @@ class user extends CI_Controller
                 {
                     //	On lance une requête
                     $data = array();
-                    $data['user_info'] = $this->UserTable->get_info_user(1);
+                    $data['user_info'] = (array)$this->UserTable->get_info_user($email);
                 
                     $this->load->view('user/profile', $data);
                 }
                 else
                 {
                     //Pop-up Mauvais Mot de passe
+                    echo ("pwd");
+                    
                 }   
             }
             else
             {
                 //Pop-up Mauvais Mot de passe
+                echo ("exists");
+                
             }
         }
         //	Le formulaire est invalide ou vide
@@ -123,6 +127,8 @@ class user extends CI_Controller
             $this->load->view('user/signup');
         }
     }
+
+
     
     public function profile()
 	{
@@ -141,5 +147,110 @@ class user extends CI_Controller
             $data['user_info'] = $this->UserTable->get_info_user($email); 
             $this->load->view('user/profile', $data, false);                  
         //}
-	}
+    }
+    
+
+
+    public function avis()
+	{
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/avis', $data, false);                  
+        //}
+    }
+    
+
+
+    public function comments()
+	{
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/comments', $data, false);                  
+        //}
+    }
+    
+
+
+    public function historique_rdv()
+	{
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/historique_rdv', $data, false);                  
+        //}
+    }
+    
+
+
+    public function liste_medecin()
+	{
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/liste_medecin', $data, false);                  
+        //}
+    }
+
+
+
+    public function rdv()
+	{
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('UserTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['user_info'] = $this->UserTable->get_info_user($email); 
+            $this->load->view('user/rdv', $data, false);                  
+        //}
+    }
 }
