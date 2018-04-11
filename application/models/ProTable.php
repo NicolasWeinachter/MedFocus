@@ -92,7 +92,7 @@ class ProTable extends CI_Model
      */
     public function update_user($email, $pwd, $name, $surname, $bday, $gender, $job, $spe, $exp, $num_RPPS, $aga, $payment,
     $carte_vitale, $address, $postcode, $city, $practical, $num_tel, $premium)
-{  
+    {  
         $data = array (
             'password'  => $pwd,
             'name'  => $name,
@@ -116,6 +116,30 @@ class ProTable extends CI_Model
         );
         $this->db->where('email', $email);
         return $this->db->update('pros', $data); 
+    }
+
+    /**
+     * Verifie l'existence d'un professionnel
+     * 
+     * @param string $email 
+     * @return bool le resultat de la requête
+     */
+    function pro_exists($email)
+    {
+        $this->db->select('*'); 
+        $this->db->from('pros');
+        $this->db->where('email', $email);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+
+        if ($result)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }
