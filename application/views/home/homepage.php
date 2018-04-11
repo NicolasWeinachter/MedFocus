@@ -32,7 +32,7 @@
   			<form class="form-inline">
 				<input class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
 				<input class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search">
-				<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Rechercher</button>
+				<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value="search">Rechercher</button>
  			</form>
 		</nav>
 	</div>
