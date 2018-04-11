@@ -34,12 +34,12 @@ class UserTable extends CI_Model
     /**
     *	Supprime un utilisateur
     *	
-    *	@param integer $id	L'id de l'utilisateur à supprimer
-    *	@return bool		Le résultat de la requête
+    *	@param string $email L'id de l'utilisateur à supprimer
+    *	@return bool Le résultat de la requête
     */
-    public function delete_user($id)
+    public function delete_user($email)
     {
-        return $this->db->where('id', (int) $id)
+        return $this->db->where('email', $email)
                         ->delete($this->table);
     }
 
