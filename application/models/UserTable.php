@@ -129,6 +129,27 @@ class UserTable extends CI_Model
     }
 
     /**
+     * Verifie la correspondance du mot de passe pour la connexion
      * 
+     * @param string $email 
+     * @param string $password
+     * @return bool le resultat de la requête
      */
+    function check_pwd($email, $password)
+    {
+        $this->db->select('password');
+        $this->db->from('users');
+        $this->db->where('email', $email);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+
+        if (md5($password) == $result)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
