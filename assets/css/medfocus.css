@@ -43,7 +43,6 @@ body {
     margin: auto;
     flex: 1;
     height: auto;
-
 }
 
 #head {
@@ -590,6 +589,7 @@ h2 {
     background: #FFFFFF;
     color: #000000;
     border-radius: 0.2em;
+    margin-left: 4%
 }
 
 .aff_comm {
@@ -597,17 +597,11 @@ h2 {
     margin-left: 4%;
 }
 
-.aff_avis{
-    font-size: 15px;    
+.aff_avis {
+    font-size: 15px;
 }
 
-<<<<<<< HEAD
-
-
-.photo_profile_med{
-=======
 .photo_profile_med {
->>>>>>> 84222171b10ae1dcf6756082a9a228d1545c7b39
     height: 50%;
 }
 
@@ -627,17 +621,13 @@ h2 {
     padding: 0 !important;
 }
 
-.maps{
+.maps {
     display: block;
     margin-top: 50px;
     margin-bottom: 10%;
     border-radius: 0.2em;
     height: auto;
 }
-
-/*.container_med{
-    margin: 2%;
-}*/
 
 .panel {
     margin-bottom: 20px;
@@ -677,4 +667,3 @@ h2 {
     color: #f2dede;
     background-color: #a94442;
 }
-
