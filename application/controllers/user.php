@@ -179,4 +179,24 @@ class user extends CI_Controller
             $this->load->view('user/profile', $data, false);                  
         //}
     }
+
+    public function avis()
+    {
+        // Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('ProTable');
+
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+        //if($this->session->has_userdata('email'))
+        //{
+            $email = $this->session->userdata('email');
+            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
+            $this->load->view('user/avis', $data, false);                  
+        //}
+    }
+    
 }
