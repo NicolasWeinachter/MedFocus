@@ -67,19 +67,43 @@
             </div>
             <div class="contenu_onglets">
                 <div class="contenu_onglet" id="contenu_onglet_presentation">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Mon nom : <?= $user['name'] ?></li>
-                        <li class="list-group-item">Mon prénom : <?= $user['surname'] ?></li>
-                        <li class="list-group-item">Ma date de naissance : <?= $user['bday'] ?></li>
-                        <li class="list-group-item">Je suis : <?= $user['gender'] ?></li>
-                        <li class="list-group-item">Mon numéro de téléphone : 0<?= $user['num_tel'] ?></li>
-                        <li class="list-group-item">Mon adresse email : <?= $user['email'] ?></li>
-                    </ul>
-                    <br>
-                    <p><a href="#" class="btn btn-info btn-200 btn-center">Modifier mes informations</a></p>
+                  <div class="info">
+
+                        <h1 class="light border-bottom">Mes informations</h1>
+                        <div class="row">
+                          <div class="col-2"></div>
+                          <div class="col-8">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Mon nom : <?= $user['name'] ?></li>
+                                <li class="list-group-item">Mon prénom : <?= $user['surname'] ?></li>
+                                <li class="list-group-item">Ma date de naissance : <?= $user['bday'] ?></li>
+                                <li class="list-group-item">Je suis : <?= $user['gender'] ?></li>
+                                <li class="list-group-item">Mon numéro de téléphone : 0<?= $user['num_tel'] ?></li>
+                                <li class="list-group-item">Mon adresse email : <?= $user['email'] ?></li>
+                            </ul>
+                          
+                          </div>
+                          <div class="col-2"></div>
+                        </div>
+                  </div>
+                  <br>
+                        <div class="row">
+                          <div class="col-4"></div>
+                          <div class="col-4">
+                            <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_modif" onclick="javascript:change_onglet('modif');">Modifier mes informations</span>
+                          </div>
+                          <div class="col-4"></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="contenu_onglet" id="contenu_onglet_modif">
+              <h1 class="center light border-bottom">Modification de vos informations</h1>
+              </div>
+
                 </div>
-                <div class="contenu_onglet" id="contenu_onglet_avis">
-                    <h1>Vos avis</h1>
+                
+            <div class="contenu_onglet" id="contenu_onglet_avis">
+                    <h1 class="light border-bottom">Mes avis</h1>
                     
                     <?php foreach ($comments as $myComment) : ?>
                     
@@ -103,7 +127,7 @@
                     
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_rdv">
-                    <h1>Vos rendez-vous</h1>
+                    <h1 class="light border-bottom">Mes rendez-vous</h1>
                     <div id="container4_user">
                         <div class="calendar">
                           <div id='calendar'></div>
@@ -240,7 +264,7 @@
                 </div>
 
                 <div class="contenu_onglet" id="contenu_onglet_liste_med">
-                    <h1>Vos médecins</h1>
+                    <h1 class="light ">Mes médecins</h1>
                     <table class="table">
                     <tr>
                         <td>
