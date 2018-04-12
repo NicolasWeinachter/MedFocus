@@ -200,7 +200,7 @@ img.logo-fin {
     justify-content: flex-end;
 }
 
-#form {
+/*#form {
     /*formulaire connexion et inscription*/
     display: block;
     width: 500px;
@@ -208,7 +208,7 @@ img.logo-fin {
     height: 200px;
     /* Longueur du bloc form*/
     margin: auto;
-}
+}*/
 
 #container1_user {
     background-color: #FFFFFF;
