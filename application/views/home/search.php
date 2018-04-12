@@ -101,7 +101,7 @@
 
 <body>
     <div class="page d-flex">
-        <header class="container1 container1_search">
+        <header class="container1_search">
             <div id="head">
                 <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
@@ -151,9 +151,9 @@
                  </tr>
              </table>
         </header>
-        <main class="site-content col-md-12">
+        <main class="site-content col-md-11">
 
-            <div class="container_lumiere col-md-11">
+            <div class="container_lumiere col-md-12">
                 <h2 class="title_h2 lumiere_title">
                     Lumière sur ces <!--variable--> nom_de_la_spécialité qui rayonnent près de chez vous
                 </h2>

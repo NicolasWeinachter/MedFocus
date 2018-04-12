@@ -40,10 +40,10 @@ body {
 
 .site-content {
     background-color: #FFFFFF;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: auto;
     flex: 1;
     height: auto;
+
 }
 
 #head {
@@ -530,6 +530,7 @@ img.logo-fin {
 
 .container1_search {
     background-color: #17a2b8;
+    height: auto;
 }
 
 #navbar_search {
@@ -610,14 +611,12 @@ h2 {
 }
 
 .container_lumiere {
-    margin-left: 5%;
-    margin-right: 5%;
     background-color: #eff4f3;
     border-radius: 0.3em;
     margin-top: 2%;
+    padding: 0 !important;
 }
 
-<<<<<<< HEAD
 .maps{
     display: block;
     margin-top: 50px;
@@ -626,13 +625,9 @@ h2 {
     height: auto;
 }
 
-.container_med{
+/*.container_med{
     margin: 2%;
-=======
-photo_profile_med_lum {
-    width: 100%;
-    height: 100%;
-}
+}*/
 
 .panel {
     margin-bottom: 20px;
@@ -641,7 +636,6 @@ photo_profile_med_lum {
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
->>>>>>> e7f7c1345bea9c385efd51488519a44663f5ea84
 }
 
 .panel-body {
