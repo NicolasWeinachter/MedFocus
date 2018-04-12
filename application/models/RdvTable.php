@@ -7,15 +7,17 @@ class RdvTable extends CI_Model
     /**
 	 *	Ajoute un rendez-vous
 	 *
-	 *	@param string $email_user
+     *	@param string $email_user
+     *  @param string $email_pro
      *	@param string $date
      *	@param string $time
      *	@param string $cause
 	 *	@return bool Le résultat de la requête
 	 */
-	public function add_rdv($email_user, $date, $time, $cause)
+	public function add_rdv($email_user, $email_pro, $date, $time, $cause)
 	{
-		return $this->db->set('email_user', $email_user)
+        return $this->db->set('email_user', $email_user)
+                        ->set('email_pro', $email_pro)
                         ->set('date', $date)
                         ->set('time', $time)
                         ->set('cause', $cause)
@@ -34,4 +36,30 @@ class RdvTable extends CI_Model
                         ->delete($this->table);
     }
 
+    /**
+     * Verifie la possibilité d'un rendez-vous
+     * 
+     * @param string $email_pro
+     * @param string $date
+     * @param string $time
+     * @return bool Le résultat de la requête
+     */
+    public function check_no_rdv($email_pro, $date, $time)
+    {
+        $this->db->select('*');
+        $this->db->from('rendez-vous');
+        $this->db->where(['email_pro' => $email_pro, 'date' => $date, 'time' => $time]);
+
+        $query = $this->db->get();
+        $result = $query->result_array();
+
+        if ($result)
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
+
+    }
 }
