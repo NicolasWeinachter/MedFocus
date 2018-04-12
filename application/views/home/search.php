@@ -152,7 +152,6 @@
              </table>
         </header>
         <main class="site-content col-md-11">
-
             <div class="container_lumiere col-md-12">
                 <h2 class="title_h2 lumiere_title">
                     Lumière sur ces <!--variable--> nom_de_la_spécialité qui rayonnent près de chez vous
@@ -162,11 +161,11 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
-                                <p class="light"><b>Nom</b> Prénom</p>
+                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
                                 <p class="light">CP, Ville</p>
                             </div>
                         </div>
@@ -175,11 +174,11 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
-                                <p class="light"><b>Nom</b> Prénom</p>
+                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
                                 <p class="light">CP, Ville</p>
                             </div>
                         </div>
@@ -188,11 +187,11 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
-                                <p class="light"><b>Nom</b> Prénom</p>
+                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
                                 <p class="light">CP, Ville</p>
                             </div>
                         </div>
@@ -201,11 +200,11 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
-                                <p class="light"><b>Nom</b> Prénom</p>
+                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
                                 <p class="light">CP, Ville</p>
                             </div>
                         </div>
@@ -249,6 +248,7 @@
                                     //-->
                                 </script>
                             </div>
+                            <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
                         </div>
                         <!--variable-->
                         <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
@@ -257,9 +257,7 @@
                 <div class="col-md-5">
                     <div class ="col-md-12 maps" id="map_div" style="height: 500px; width: 900px"></div>
                 </div>
-
-            </div>
-            
+            </div>     
         </main>
 
         <footer>
