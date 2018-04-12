@@ -162,7 +162,9 @@ class user extends CI_Controller
         //{
             $email = $this->session->userdata('email');
             $query = $this->UserTable->get_info_user($email);
-            $data['user'] = $query['0'];
+            if($query) :
+                $data['user'] = $query['0'];
+			endif;
 
             $query = $this->ComTable->get_user_comments($email);
             //Get doctor info for each comment

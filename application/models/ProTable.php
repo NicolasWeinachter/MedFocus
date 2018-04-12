@@ -154,6 +154,7 @@ class ProTable extends CI_Model
                         ->or_like('address', (string) $where)
                         ->or_like('city', (string) $where)
                         ->or_like('postal_code', (string) $where)
+                        ->limit(50)                        
                         ->get()
                         ->result_array();
     }
@@ -169,9 +170,26 @@ class ProTable extends CI_Model
     */
     public function get_speciality_basic_search($what, $where)
 	{
-		return $this->db->select('*')
+		return $this->db->select('speciality')
                         ->from($this->table)
                         ->like('speciality', (string) $what)
+                        ->get()
+                        ->result_array();
+    }
+
+        /**
+    *	Retourne unu liste de pros pour une recherche basique
+    *	
+    *	@param string $what 
+    *	@param string $where
+    *	@return objet Le résultat de la requête
+    */
+    public function get_lumiere_speciality_search($speciality)
+	{
+		return $this->db->select('*')
+                        ->from($this->table)
+                        ->like('speciality', (string) $speciality)
+                        ->limit(4)
                         ->get()
                         ->result_array();
     }
