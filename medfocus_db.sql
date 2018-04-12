@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 11 avr. 2018 à 14:31
+-- Généré le :  jeu. 12 avr. 2018 à 09:57
 -- Version du serveur :  5.7.11-log
 -- Version de PHP :  5.6.31
 
@@ -43,11 +43,12 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 DROP TABLE IF EXISTS `availability`;
 CREATE TABLE IF NOT EXISTS `availability` (
-  `email_pro` int(255) NOT NULL,
-  `num_day` int(1) NOT NULL,
+  `id_availability` int(11) NOT NULL AUTO_INCREMENT,
+  `email_pro` varchar(255) NOT NULL,
+  `date` date NOT NULL,
   `start_hour` time NOT NULL,
   `end_hour` time NOT NULL,
-  PRIMARY KEY (`email_pro`)
+  PRIMARY KEY (`id_availability`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -93,8 +94,12 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `id_comment` int(11) NOT NULL AUTO_INCREMENT,
   `email_user` varchar(255) NOT NULL,
   `email_pro` varchar(255) NOT NULL,
-  `date` int(11) NOT NULL,
+  `date` date NOT NULL,
   `comment` text NOT NULL,
+  `reception` int(1) NOT NULL,
+  `clean_place` int(1) NOT NULL,
+  `feel_good` int(1) NOT NULL,
+  `on_time` int(1) NOT NULL,
   PRIMARY KEY (`id_comment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -130,6 +135,7 @@ CREATE TABLE IF NOT EXISTS `pros` (
   `job` varchar(45) NOT NULL,
   `speciality` varchar(45) NOT NULL,
   `experience` text NOT NULL,
+  `languages` varchar(255) NOT NULL,
   `num_RPPS` int(11) NOT NULL,
   `AGA` tinyint(1) NOT NULL,
   `payment` varchar(45) NOT NULL,

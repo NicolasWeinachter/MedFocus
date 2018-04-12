@@ -11,6 +11,10 @@ class ComTable extends CI_Model
      *	@param string $email_pro
      *	@param string $date
      *	@param string $comment
+     *  @param string $reception
+     *  @param string $clean_place
+     *  @param string $feel_good
+     *  @param string $on_time
 	 *	@return bool Le résultat de la requête
 	 */
 	public function add_comment($email_user, $email_pro, $date, $comment)
@@ -19,6 +23,10 @@ class ComTable extends CI_Model
                         ->set('email_pro', $email_pro)
                         ->set('date', $date)
                         ->set('time', $comment)
+                        ->set('reception', $reception)
+                        ->set('clean_place', $clean_place)
+                        ->set('feel_good', $feel_good)
+                        ->set('on_time', $on_time)
                         ->insert($this->table);
     }
 
