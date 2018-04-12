@@ -63,7 +63,7 @@
                         <span class="onglet_0 onglet" id="onglet_lieu" onclick="javascript:change_onglet('lieu');">Votre lieu de travail</span>
                     </div>
                     <div class="col">
-                        <span class="onglet_0 onglet" id="onglet_contact" onclick="javascript:change_onglet('contact');">Contact</span>
+                        <span class="onglet_0 onglet" id="onglet_contact" onclick="javascript:change_onglet('contact');">Finalisation</span>
                     </div>
                 </div>
             </div>
@@ -264,7 +264,7 @@
 
 
                 <div class="contenu_onglet" id="contenu_onglet_contact">
-                    <h1> Contact </h1>
+                    <h1> Finalisation </h1>
                     <div class="row">
                         <div class="col-6">
                             <h3 class="center light">Vos coordonnées</h3>
@@ -301,6 +301,11 @@
                                 <input type="password" name="inputPassword2" value="<?php echo set_value('inputPassword2'); ?>" class="form-control" id="inputPassword2" placeholder="Confirmer le mot de passe">
                                 <?php echo form_error('inputPassword2'); ?>
                             </div>
+
+                            <h3 class="center light">Importez une photo de profil</h3>
+                            <br>
+                            <input type="file" name="profilPicture" />
+
 
                             <div class="row">
                                 <div class="col"></div>
