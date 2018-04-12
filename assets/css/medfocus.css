@@ -598,7 +598,17 @@ h2 {
     margin-left: 4%;
 }
 
+.aff_avis{
+    font-size: 15px;    
+}
+
+<<<<<<< HEAD
+
+
+.photo_profile_med{
+=======
 .photo_profile_med {
+>>>>>>> 84222171b10ae1dcf6756082a9a228d1545c7b39
     height: 50%;
 }
 
@@ -664,3 +674,7 @@ h2 {
     color: #f2dede;
     background-color: #a94442;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 61b002ba4f17c62d9dcaa6b8e88a033cb6b098d5
