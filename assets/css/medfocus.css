@@ -146,6 +146,11 @@ ul {
 
 li {
     float: right;
+   
+}
+
+.bleu-clair {
+    background-color: #F0F8FF;
 }
 
 h1 {
@@ -203,12 +208,12 @@ img.logo-fin {
 
 /*#form {
     /*formulaire connexion et inscription*/
-    display: block;
+    /*display: block;
     width: 500px;
     /*largeur du bloc form */
-    height: 200px;
+    /*height: 200px;
     /* Longueur du bloc form*/
-    margin: auto;
+    /*margin: auto;
 }*/
 
 #container1_user {
@@ -278,8 +283,9 @@ img.logo-fin {
 
 #calendar {
     display: block;
-    height: 300px;
-    width: 400px;
+    height: auto;
+    width: auto;
+    border-color: #fff;
 }
 
 .calendar {
@@ -339,6 +345,7 @@ img.logo-fin {
     height: 140px;
     width: 1000px;
     margin: auto;
+    border-radius: 5px;
 }
 
 .height-inherit {
@@ -494,7 +501,7 @@ img.logo-fin {
     cursor: pointer;
     margin: auto;
     width: inherit;
-    border-radius: 9px;
+    border-radius: 6px;
 }
 
 .onglet_rdv {
@@ -535,6 +542,16 @@ img.logo-fin {
     width: 1100px;
     margin: auto;
     background-color: #F0F8FF !important;
+    border-radius: 10px;
+
+}
+
+.fond_onglet {
+    background-color: #F0F8FF !important;
+    border-radius: 10px;
+    height: 450px;
+    width: inherit;
+    margin: 10px;
 }
 
 .contenu_onglet_off {
@@ -608,6 +625,11 @@ img.logo-fin {
     margin-right: 1%;
 }
 
+calendar3{
+    display: inline;
+    height: auto !important;
+}
+
 h2 {
     font-size: 18px;
 }
@@ -632,7 +654,8 @@ h2 {
     background: #FFFFFF;
     color: #000000;
     border-radius: 0.2em;
-    margin-left: 4%
+    margin-left: 4%;
+    display: none;
 }
 
 .aff_comm {
@@ -715,6 +738,9 @@ h2 {
 .panel-danger>.panel-heading .badge {
     color: #f2dede;
     background-color: #a94442;
+}
+
+=======
 <<<<<<< HEAD
 }
 
@@ -783,6 +809,11 @@ h2 {
 
 .margin_top{
     margin-top:5%;
+<<<<<<< HEAD
+}
+=======
 =======
 >>>>>>> 9bc56bf0ae68766d871ab18c7ed6c9ca83bf45c8
 }
+>>>>>>> 2c5901aeea42879fda722e426c62b145eb033e0f
+>>>>>>> 4f9f8cb3688129ad85037a1abe1d3a906e1f29f0
