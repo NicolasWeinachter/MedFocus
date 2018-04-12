@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <div class="page">
+    <div class="page d-flex">
         <header class="container1 container1_search">
             <div id="head">
                 <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
@@ -170,9 +170,6 @@
                 </div>
             </div>
             
-            
-
-
             <div class="col-md-7 border d-flex flex-row">
                 <div class="col-md-5 p-2">
                     <div class="row">
@@ -214,39 +211,38 @@
         </main>
 
         <footer>
-		<div id="containerFin">
-		<img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
-		<table class="table">
-			<thead>
-				<tr>
+		    <div id="containerFin">
+		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
+		        <table class="table">
+			        <thead>
+				        <tr>
 					
-					<th scope="col">MedFocus</th>
-					<th scope="col">CGU</th>
-					<th scope="col">Professionnel de santé ?</th>
-				</tr>
-			</thead>
- 			<tbody>
- 				<tr>
-				    <td>
-                        <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/about"); ?>">A propos de nous<br></a>
-                        <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/faq"); ?>">Questions fréquentes<br></a>
-                        <a class =" lien-normal text-blanc" href="<?php echo site_url("home/recrutement"); ?>">Recrutement<br></a>
-                        <a class =" lien-normal text-blanc" href="<?php echo site_url("home/contact"); ?>">Contact</a>
-					</td>
-					<td>
-                        <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/cgu"); ?>">Conditions générales d'utilisation<br></a>
-      				</td> 
-      				<td>
-                        <a class =" lien-normal text-blanc text-blanc" href ="<?php echo site_url("home/services"); ?>">Nos services<br></a>
-                        <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/tarifs"); ?>">Nos tarifs<br></a>
-                        <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/eds"); ?>">Etablissements de santé<br></a>
-      				</td>
-   				</tr>
-  			</tbody>
-		</table>
-	</div>
-	</footer>
+                            <th scope="col">MedFocus</th>
+                            <th scope="col">CGU</th>
+                            <th scope="col">Professionnel de santé ?</th>
+				        </tr>
+			        </thead>
+ 			        <tbody>
+ 				        <tr>
+				            <td>
+                                <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/about"); ?>">A propos de nous<br></a>
+                                <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/faq"); ?>">Questions fréquentes<br></a>
+                                <a class =" lien-normal text-blanc" href="<?php echo site_url("home/recrutement"); ?>">Recrutement<br></a>
+                                <a class =" lien-normal text-blanc" href="<?php echo site_url("home/contact"); ?>">Contact</a>
+                            </td>
+                            <td>
+                                <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/cgu"); ?>">Conditions générales d'utilisation<br></a>
+      				        </td> 
+                            <td>
+                                <a class =" lien-normal text-blanc text-blanc" href ="<?php echo site_url("home/services"); ?>">Nos services<br></a>
+                                <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/tarifs"); ?>">Nos tarifs<br></a>
+                                <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/eds"); ?>">Etablissements de santé<br></a>
+                            </td>
+   				        </tr>
+  			        </tbody>
+                </table>
+            </div>      
+	    </footer>
     </div>
-
 </body>
 </html>
