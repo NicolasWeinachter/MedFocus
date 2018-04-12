@@ -590,6 +590,7 @@ h2 {
     background: #FFFFFF;
     color: #000000;
     border-radius: 0.2em;
+    margin-left: 4%
 }
 
 .aff_comm {
@@ -635,10 +636,6 @@ h2 {
     height: auto;
 }
 
-/*.container_med{
-    margin: 2%;
-}*/
-
 .panel {
     margin-bottom: 20px;
     background-color: #fff;
@@ -677,4 +674,7 @@ h2 {
     color: #f2dede;
     background-color: #a94442;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 61b002ba4f17c62d9dcaa6b8e88a033cb6b098d5

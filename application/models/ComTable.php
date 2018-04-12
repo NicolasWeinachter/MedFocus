@@ -58,5 +58,19 @@ class ComTable extends CI_Model
                         ->delete($this->table);
     }
 
+    /**
+     * Récupère la liste des professionnels qu'un utilisateur à consulter
+     * 
+     * @param string $email_user
+     * @return string $email_pro
+     */
+    public function get_email_pro_user($email_user)
+    {
+        return $this->db->select('email_pro')
+                        ->from($this->table)
+                        ->where('email_user', (string) $email_user)
+                        ->get()
+                        ->result_array();
+    }
 
 }
