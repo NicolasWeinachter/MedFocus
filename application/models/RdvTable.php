@@ -30,11 +30,11 @@ class RdvTable extends CI_Model
     *	@param string $email L'id de l'utilisateur
     *	@return objet Le résultat de la requête
     */
-	public function get_user_rdv($email)
+	public function get_user_rdv($email_user)
 	{
 		return $this->db->select('*')
                         ->from($this->table)
-                        ->where('email_patient', (string) $email)
+                        ->where('email_patient', (string) $email_user)
                         ->get()
                         ->result_array();
     }
@@ -75,6 +75,21 @@ class RdvTable extends CI_Model
         else {
             return true;
         }
+
+    /**
+     * Récupère la liste des professionnels qu'un utilisateur à consulter
+     * 
+     * @param string $email_user
+     * @return string $email_pro
+     */
+    public function get_email_pro_user($email_user)
+    {
+        return $this->db->select('email_pro')
+                        ->from($this->table)
+                        ->where('email_user', (string) $email_user)
+                        ->get()
+                        ->result_array();
+    }
 
     }
 }
