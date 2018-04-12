@@ -26,13 +26,17 @@ class user extends CI_Controller
 
         // Chargement du Modèle
         $this->load->model('UserTable');
+
+        $data=array();
+        $data['error'] = false;
     
-        //$this->form_validation->set_rules('email', '"E-mail"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
+        $this->form_validation->set_rules('email', '"E-mail"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
         $this->form_validation->set_rules('pwd',   '"Mot de passe"', 'trim|required|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
 
         //	Le formulaire est valide
         if($this->form_validation->run())
         {
+
             $email = $this->input->post('email');
             $password = $this->input->post('pwd');
 
@@ -59,19 +63,24 @@ class user extends CI_Controller
                 {
                     //Pop-up Mauvais Mot de passe
                     echo ("pwd");
+                    $data['error'] = true;
                 }   
             }
             else
             {
                 //Pop-up Mauvais Mot de passe
-                echo ("exists");               
+                //echo ("exists");   
+                $data['error'] = true; 
+        $this->load->view('user/login',$data);
+                                           
             }
         }
+        else{
         //	Le formulaire est invalide ou vide
-        else
-        {
-            $this->load->view('user/login');
+
+        $this->load->view('user/login',$data);
         }
+
     }
     
 
