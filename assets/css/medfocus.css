@@ -155,7 +155,7 @@ li {
 
 h1 {
     text-align: center;
-    font-size: 24;
+    font-size: 24px;
 }
 
 .title_h2 {
@@ -504,19 +504,8 @@ img.logo-fin {
     border-radius: 6px;
 }
 
-.onglet_rdv {
-    cursor: pointer;
-    border-radius: 9px;
-    width: 100%;
-}
-
 .onglet_0 {
     border: solid #17a2b8;
-}
-
-.onglet_0_rdv {
-    border: #17a2b8;
-    width:100%;
 }
 
 .onglet_1 {
@@ -524,14 +513,6 @@ img.logo-fin {
     background-color: #17a2b8;
     font: #FFFFFF;
 }
-
-.onglet_1_rdv {
-    padding-bottom: 7px;
-    background-color: #17a2b8;
-    font: #FFFFFF;
-    width:auto;
-}
-
 
 .contenu_onglet {
     /*border:3px solid #808080;*/
@@ -551,20 +532,6 @@ img.logo-fin {
     border-radius: 10px;
     height: 450px;
     width: inherit;
-    margin: 10px;
-}
-
-.contenu_onglet_off {
-    display: none;
-    margin-top: 2%;
-}
-
-.contenu_onglet_on {
-    display: block;
-    margin-top: 3%;
-    border-radius: 0.2em;
-    padding: 2%;
-
 }
 
 .row_onglets {
@@ -572,14 +539,6 @@ img.logo-fin {
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
-}
-
-.systeme_onglets{
-    padding-left: 0 !important;
-    padding-right:0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important; 
-    width:100%;
 }
 
 .center_onglets {
@@ -610,7 +569,6 @@ img.logo-fin {
 
 .photo_profile_med {
     height: 25%;
-    padding: 3%;
 }
 
 .nom_prenom_spe_adresse {
@@ -695,12 +653,6 @@ h2 {
     height: auto;
 }
 
-.maps_rdv{
-    display: block;
-    border-radius: 0.2em;
-    height: auto;
-}
-
 .panel {
     margin-bottom: 20px;
     background-color: #fff;
@@ -740,10 +692,8 @@ h2 {
     background-color: #a94442;
 }
 
-=======
 <<<<<<< HEAD
-}
-
+=======
 .container_avis, .container_info_doc{
     margin:5%; 
     padding: 2%;
@@ -809,11 +759,5 @@ h2 {
 
 .margin_top{
     margin-top:5%;
-<<<<<<< HEAD
 }
-=======
-=======
->>>>>>> 9bc56bf0ae68766d871ab18c7ed6c9ca83bf45c8
-}
->>>>>>> 2c5901aeea42879fda722e426c62b145eb033e0f
->>>>>>> 4f9f8cb3688129ad85037a1abe1d3a906e1f29f0
+>>>>>>> 0b59a6c556c0cc899857ce08de80bda7d111dff9
