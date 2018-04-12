@@ -9,8 +9,8 @@ class ServicesTable extends CI_Model
 	 *	Ajoute une prestation
 	 *
 	 *	@param string $email_pro
-     *	@param int $name
-     *	@param string $price
+     *	@param string $name
+     *	@param int $price
      *  @param int $length
 	 *	@return bool Le résultat de la requête
 	 */

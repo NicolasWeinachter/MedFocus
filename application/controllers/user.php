@@ -45,7 +45,6 @@ class user extends CI_Controller
                 if($this->UserTable->check_pwd($email, $password))
                 {
                     //	On lance une requête
-                    $query = array();
                     $query = $this->UserTable->get_info_user($email);
                     $data_user = $query['0'];
 
@@ -62,22 +61,19 @@ class user extends CI_Controller
                 else
                 {
                     //Pop-up Mauvais Mot de passe
-                    echo ("pwd");
                     $data['error'] = true;
+                    $this->load->view('user/login',$data);                    
                 }   
             }
             else
             {
                 //Pop-up Mauvais Mot de passe
-                //echo ("exists");   
                 $data['error'] = true; 
-        $this->load->view('user/login',$data);
-                                           
+                $this->load->view('user/login',$data);                          
             }
         }
         else{
         //	Le formulaire est invalide ou vide
-
         $this->load->view('user/login',$data);
         }
 
@@ -164,13 +160,16 @@ class user extends CI_Controller
             $email = $this->session->userdata('email');
             $query = $this->UserTable->get_info_user($email);
             $data['user'] = $query['0'];
+
             $query = $this->ComTable->get_user_comments($email);
             //Get doctor info for each comment
             $data['comments'] = $query;
+
             $query = $this->RdvTable->get_user_rdv($email);
             //Get doctor info for each rdv            
             $data['rdv'] = $query;
-            $query = $this->UserTable->get_info_user($email);
+
+            $query = $this->UserTable->raph($email);
             //Get doctor info for each rdv            
             $data['pro'] = $query['0'];
 

@@ -29,16 +29,28 @@
 
     <div id="container2_user">
         <h1>Connectez vous à votre espace professionnel</h1>
-        <form id="form">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Adresse Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Mot de passe</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-                <button type="submit" class="btn btn-info"><a class="lien-normal text-blanc" href="<?php echo site_url("pro/profile"); ?>"> Accéder à mon compte </a></button>
+        <form id="form" method="post" action="">
+        <div class="form-group">
+				<label for="email"> Adresse e-mail </label>
+				<input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" aria-describedby="emailHelp" placeholder="Email" />
+				<?php echo form_error('email'); ?>
+			</div>
+
+			<div class="form-group">
+				<label for="pwd"> Mot de passe </label>
+				<input type="password" name="pwd" value="<?php echo set_value('pwd'); ?>" class="form-control" placeholder="Password"/>
+				<?php echo form_error('pwd'); ?>
+			</div>
+
+            <article class="col-md-8">
+			<?php if ($error) : ?>
+				<div class="panel panel-danger">
+					<div class="panel-heading">E-mail ou mot de passe incorrect</div>
+				</div>
+			<?php endif; ?>
+            </article>
+            
+                <button type="submit" class="btn btn-info"><a class="lien-normal text-blanc"> Accéder à mon compte </a></button>
                 <p><a href="<?php echo site_url("pro/subscribe_form_presentation"); ?>">Pas encore inscrit ?</a></p>
         </form>
     </div>

@@ -22,54 +22,10 @@ class home extends CI_Controller
         // Chargement des Helpers
         $this->load->helper('url');
 
-		$session_id = $this->session->userdata('session_id');
-/*
-		// Disconnection
-        if ($this->request->getQuery('user') == 'logout') {
-			$this->session->sess_destroy();
-            /*return $this->redirect([
-                'controller' => '',
-                'action' => '',
-                '?' => ['session' => 'disconnect']
-			]);//
-			redirect();
-        }
+        $session_id = $this->session->userdata('session_id');
         
-        if ($this->request->is('post')) {
-            //Bouton Se connecter Utilisateur
-            if ($this->request->getData('form_type') == 'login_user') {
-                return $this->redirect([
-                    'controller' => 'UserController',
-                    'action' => 'user_login',
-                    '?' => ['from' => 'homepage']
-                ]);
-			}
-			//Bouton Se connecter Professionnel
-            if ($this->request->getData('form_type') == 'login_pro') {
-                return $this->redirect([
-                    'controller' => 'ProController',
-                    'action' => 'pro_login',
-                    '?' => ['from' => 'homepage']
-                ]);
-            }
-            //Bouton Créer un compte Utilisateur
-            if ($this->request->getData('form_type') == 'signup_user') {
-                return $this->redirect([
-                    'controller' => 'UserController',
-                    'action' => 'user_signup',
-                    '?' => ['from' => 'homepage']
-                ]);
-			}	
-			//Bouton Créer un compte Professionnel
-            if ($this->request->getData('form_type') == 'signup_pro') {
-                return $this->redirect([
-                    'controller' => 'ProController',
-                    'action' => 'pro_signup',
-                    '?' => ['from' => 'homepage']
-                ]);
-            }
-        }
-	*/	
+        
+	
 		$this->load->view('home/homepage');
     }
     
