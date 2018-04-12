@@ -109,7 +109,8 @@
                         <div class="description_rdv">
                             
                               <div class="historique_rdv">
-                                <button type="button" class="btn btn-info" id="bouton_historique" ><a class="lien-normal text-blanc" href="<?php echo site_url("user/historique_rdv"); ?>">Historique des rendez-vous</a></button>
+                                <button type="button" class="onglet_0 onglet btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
+
                               </div>
                               <div class="info_rdv">
                                 <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
@@ -191,6 +192,39 @@
                     </div>
                     
                 </div>
+
+                <div class="contenu_onglet" id="contenu_onglet_historique">
+
+                <br>
+                  <div id="container4_historique_rdv">
+                    <div class="info-medecin-rdv">
+                      <table class="table">
+                        <tr>
+                          <td>
+                              Nom : <br>
+                              Adresse : <br>
+                              Note : <br>
+                          </td>
+                          <td>
+                              Spécialité : <br>
+                              Téléphone : <br>
+                              <a href="#" class="text-info">Voir la fiche complète</a>
+                          </td> 
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="info-rdv">
+                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                      <div class="info-rdv2">
+                        <p class="center">Informations relatives au rendez-vous :</p>
+                      </div>
+                    </div>
+                    <div class="partage-exp">
+                      <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="contenu_onglet" id="contenu_onglet_liste_med">
                     <h1>Vos médecins</h1>
                     <table class="table">
