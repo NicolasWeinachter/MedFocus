@@ -11,6 +11,7 @@
   <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
   <link rel='stylesheet' href="<?php echo base_url("assets/calendar/fullcalendar.css"); ?>">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="<?php echo base_url("assets/calendar/lib/jquery.min.js"); ?>"></script>
   <script src="<?php echo base_url("assets/calendar/lib/moment.min.js"); ?>"></script>
   <script src="<?php echo base_url("assets/calendar/fullcalendar.js"); ?>"></script>
@@ -18,17 +19,47 @@
       $('#calendar').fullCalendar({
   defaultView: 'month'});
   });</script>
-    <title>Profil</title>
-    <script type="text/javascript">
-                function change_onglet(name)
-                {
-                        document.getElementById('onglet_'+anc_onglet).className = 'onglet_0 onglet';
-                        document.getElementById('onglet_'+name).className = 'onglet_1 onglet';
-                        document.getElementById('contenu_onglet_'+anc_onglet).style.display = 'none';
-                        document.getElementById('contenu_onglet_'+name).style.display = 'block';
-                        anc_onglet = name;
-                }
-    </script>
+  <title>Profil</title>
+  <script type="text/javascript">
+              function change_onglet(name)
+              {
+                      document.getElementById('onglet_'+anc_onglet).className = 'onglet_0 onglet';
+                      document.getElementById('onglet_'+name).className = 'onglet_1 onglet';
+                      document.getElementById('contenu_onglet_'+anc_onglet).style.display = 'none';
+                      document.getElementById('contenu_onglet_'+name).style.display = 'block';
+                      anc_onglet = name;
+              }
+  </script>
+  
+  <script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Critère');
+        data.addColumn('number', 'Satisfaction');
+        data.addRows([
+          ['Qualité accueil', 3],
+          ['Temps attente', 1],
+          ['Propreté des lieux', 3],
+          ['Temps de prise de rendez-vous', 2],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Analyse de vos avis',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+  </script>
+
+
 </head>
 
 <body>
@@ -101,6 +132,9 @@
                     </div>
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_avis">
+
+
+                  <div id="chart_div"></div>
                     
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_rdv">
