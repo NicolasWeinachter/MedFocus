@@ -54,9 +54,8 @@ class pro extends CI_Controller
                     );
                     
                     $this->session->set_userdata($newdata);
-                    echo ("pwd");
 
-                    //$this->profile();
+                    $this->profile();
                 }
                 else
                 {
@@ -92,14 +91,15 @@ class pro extends CI_Controller
         // Chargement du Modèle
         $this->load->model('ProTable');
         $this->load->model('DiplomasTable');
-
+/*
         $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputBirth', '"Date de naissance"', 'trim|required|min_length[8]|max_length[10]|encode_php_tags');
-        $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_length[10]|max_length[12]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputEmail', '"Email"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
         $this->form_validation->set_rules('inputPassword',   '"Mot de passe"', 'trim|required|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputPassword2', '"Mot de passe 2"', 'trim|required|matches[inputPassword]|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
+*/
+$this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_length[1]|max_length[12]|alpha_dash|encode_php_tags');
 
         //	Le formulaire est valide
         if($this->form_validation->run())
@@ -158,7 +158,7 @@ class pro extends CI_Controller
         //	Le formulaire est invalide ou vide
         else 
         {
-            $this->load->view('pro/signup');
+            $this->load->view('pro/login');
         }
     }
 

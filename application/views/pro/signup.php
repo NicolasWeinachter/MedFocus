@@ -224,10 +224,12 @@
                         <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputPhone">Numéro de téléphone</label>
-                                    <input type="phone" class="form-control" id="inputPhone" value="<?php echo set_value('inputPassword2'); ?>" placeholder="+33....">
+                                    <input type="phone" class="form-control" name="inputPhone" value="<?php echo set_value('inputPassword2'); ?>" placeholder="+33....">
+			                        <?php echo form_error('inputPhone'); ?>
                                 </div>
                             
-                            <button type="submit" value="Envoyer" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc">Finalisez votre inscription</a></button>
+                            <button type="submit" value="Envoyer" class="btn btn-info bouton-droite">
+                                <a class="lien-normal text-blanc">Finalisez votre inscription</a></button>
                             </form>
                         </div>   
                     </div>
