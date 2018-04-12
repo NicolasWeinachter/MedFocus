@@ -115,14 +115,14 @@
                         <div class="description_rdv">
                             
                               <div class="historique_rdv">
-                                <button type="button" class="onglet_0 onglet btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
+                                <button type="button" class="onglet_0 btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
 
                               </div>
                               <div class="info_rdv">
                                 <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
                                   <div class="carousel-inner">
 
-                                     <?php foreach ($rdv as $myRdv) : ?>
+                                    <?php foreach ($rdv as $myRdv) : ?>
                                   
                                     <div class="carousel-item active">
                                       <p class="center">Vendredi 17 novembre 2017 - 15h</p>
