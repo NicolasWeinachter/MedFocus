@@ -1,5 +1,24 @@
-<!DOCTYPE html>
-<html>
+<?php
+//(1) On inclut la classe de Google Maps pour générer ensuite la carte.
+require('assets/maps/GoogleMapAPI.class.php');
+
+//(2) On crée une nouvelle carte; Ici, notre carte sera $map.
+$map = new GoogleMapAPI('map');
+
+//(3) On ajoute la clef de Google Maps.
+$map->setAPIKey('<AIzaSyAk3vLl9Mu0C35m-ht6d6MHAXgj8lnQuCU>');
+    
+//(4) On ajoute les caractéristiques que l'on désire à notre carte.
+$map->setWidth("800px");
+$map->setHeight("500px");
+$map->setCenterCoords ('2', '48');
+$map->setZoomLevel (5);
+
+//(5) On applique la base XHTML avec les fonctions à appliquer ainsi que le onload du body.
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,6 +65,8 @@
   });
     });</script>
     <title>MedFocus</title>
+    <?php $map->printHeaderJS(); ?>
+	<?php $map->printMapJS(); ?>
 </head>
 
 <body>
@@ -119,7 +140,7 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -132,7 +153,7 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -145,7 +166,7 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -158,7 +179,7 @@
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-8 photo_profile_med_lum" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -208,6 +229,7 @@
                 <!--variable-->
                 <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
             </div>
+            <?php $map->printMap(); ?>
         </main>
 
         <footer>
