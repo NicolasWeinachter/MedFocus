@@ -62,7 +62,7 @@
                 <div class="contenu_onglet" id="contenu_onglet_presentation">
                     <div id="container4_subscribe_med">
                         <div id="container5_subscribe_med">
-                            <form id="form">
+                        <form id="form" method="post" action="">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName">Nom</label>
@@ -82,19 +82,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputRPPS">Etes-vous membre d'une AGA ? Si oui, laquelle ?</label>
-                                    <input type="text" class="form-control" id="inputRPPS" placeholder="Oui/Non, ...">
+                                    <label for="inputAga">Etes-vous membre d'une AGA ? Si oui, laquelle ?</label>
+                                    <input type="text" class="form-control" id="inputAga" placeholder="Oui/Non, ...">
                                 </div>
-                                <form method="post" action="traitement.php">
+                                <form id="form" method="post" action="">
                                 <p>
-                                    <label for="ameliorer">Indiquez les diplômes que vous avez obtenus</label><br/>
-                                    <textarea type="text" class="form-control" id="inputSpeciality"></textarea>
+                                    <label for="inputDiplomaName">Indiquez les diplômes que vous avez obtenus</label><br/>
+                                    <textarea type="text" class="form-control" id="inputDiplomaName"></textarea>
                                 </p>
                                 </form>
                             </form>
                         </div>
                         <div id="container6_subscribe_med">
-                            <form id="form">
+                        <form id="form" method="post" action="">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputSex">Je suis un /une</label>
@@ -114,12 +114,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inputRPPS">Indiquez les langues parlées</label>
-                                    <input type="text" class="form-control" id="inputRPPS" placeholder="Anglais, espagnol, ...">
+                                    <label for="inputLanguages">Indiquez les langues parlées</label>
+                                    <input type="text" class="form-control" id="inputLanguages" placeholder="Anglais, espagnol, ...">
                                 </div>
                                 <p>
-                                    <label for="ameliorer">Expériences</label><br/>
-                                    <textarea type="text" class="form-control" id="inputSpeciality" placeholder="Pompier volontaire, Croix Rouge Française, ..."></textarea>
+                                    <label for="inputExperience">Expériences</label><br/>
+                                    <textarea type="text" class="form-control" id="inputExperience" placeholder="Pompier volontaire, Croix Rouge Française, ..."></textarea>
                                 </p>
                                 <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
                             </form>
@@ -131,11 +131,11 @@
                 <h1>Vos honoraires</h1>
                     <div id="container4_subscribe_med">
                         <div id="container5_subscribe_med">
-                            <form id="form">
-                                <form method="post" action="traitement.php">
+                        <form id="form" method="post" action="">
+                        <form id="form" method="post" action="">
                                 <p>
-                                    <label for="ameliorer">Services proposés et tarifs</label><br/>
-                                    <textarea type="text" class="form-control" id="inputSpeciality" placeholder="Consultation : 30€"></textarea>
+                                    <label for="inputServiceName">Services proposés et tarifs</label><br/>
+                                    <textarea type="text" class="form-control" id="inputServiceName" placeholder="Consultation : 30€"></textarea>
                                 </p>
                                 </form>
                             </form>
@@ -144,7 +144,7 @@
                         <div id="container6_subscribe_med">
                             
                                 Moyens de paiement acceptés <br>
-                                <form action="/action_page.php" method="get">
+                                <form id="form" method="post" action="">
                                     <input type="checkbox" name="CB" > Carte bancaire <br>    
                                     <input type="checkbox" name="chèque" > Chèque <br>
                                     <input type="checkbox" name="especes" > Espèces <br>
@@ -167,31 +167,31 @@
                     <div id="container4_subscribe_med">
 
                         <div id="container5_subscribe_med">
-                            <form id="form">
+                        <form id="form" method="post" action="">
                                 <div class="form-group">
-                                    <label for="inputRPPS">Numéro de la rue</label>
-                                    <input type="text" class="form-control" id="inputRPPS" placeholder="N°....">
+                                    <label for="inputAddressNumber">Numéro de la rue</label>
+                                    <input type="text" class="form-control" id="inputAddressNumber" placeholder="N°....">
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputRPPS">Nom de la rue</label>
-                                    <input type="text" class="form-control" id="inputRPPS" placeholder="Rue ...">
+                                    <label for="inputAddressName">Nom de la rue</label>
+                                    <input type="text" class="form-control" id="inputAddressName" placeholder="Rue ...">
                                 </div>
                                 Informations pratiques : <br>
-                                <form action="/action_page.php" method="get">
+                                <form id="form" method="post" action="">
                                     <input type="checkbox" name="Parking" > Parking <br>    
                                     <input type="checkbox" name="handicapés" > Accès handicapés <br>
                                 </form>
                             </form>
                         </div>
                         <div id="container6_subscribe_med">
-                            <form id="form">
+                        <form id="form" method="post" action="">
                                 <div class="form-group">
-                                    <label for="inputRPPS">Ville</label>
-                                    <input type="text" class="form-control" id="inputRPPS" placeholder="Paris, Lyon, ...">
+                                    <label for="inputCity">Ville</label>
+                                    <input type="text" class="form-control" id="inputCity" placeholder="Paris, Lyon, ...">
                                 </div>
                                 <div class="form-group">
-                                    <label for="inputRPPS">Code postal</label>
-                                    <input type="text" class="form-control" id="inputRPPS">
+                                    <label for="inputPostcode">Code postal</label>
+                                    <input type="text" class="form-control" id="inputPostcode">
                                 </div>
                                 <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('contact');">Etape suivante</a></button>
                             </form>
@@ -202,32 +202,33 @@
                     <h1> Contact </h1>
                     <div id="container4_subscribe_med">
                         <div id="container5_subscribe_med">
-                            <form id="form">
+                        <form id="form" method="post" action="">
                                 <div class="form-group">
-                                    <label for="inputMail">Adresse email</label>
-                                    <input type="mail" class="form-control" id="inputMail" placeholder="contact@contact.com">
+                                    <label for="inputEmail">Adresse email</label>
+                                    <input type="mail" class="form-control" id="inputEmail" placeholder="contact@contact.com">
                                 </div>
                                 Horaires de votre secrétariat : <br>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="inputNumber">Ouverture</label>
-                                        <input type="text" class="form-control" id="inputNumber" placeholder="9h00">
+                                        <label for="inputOpen">Ouverture</label>
+                                        <input type="text" class="form-control" id="inputOpen" placeholder="9h00">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="inputNumber">Fermeture</label>
-                                        <input type="text" class="form-control" id="inputNumber" placeholder="16h00">
+                                        <label for="inputClose">Fermeture</label>
+                                        <input type="text" class="form-control" id="inputClose" placeholder="16h00">
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div id="container6_subscribe_med">
-                            <form id="form">
+                        <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputPhone">Numéro de téléphone</label>
-                                    <input type="phone" class="form-control" id="inputPhone" placeholder="+33....">
+                                    <input type="phone" class="form-control" id="inputPhone" value="<?php echo set_value('inputPassword2'); ?>" placeholder="+33....">
                                 </div>
+                            
+                            <button type="submit" value="Envoyer" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc">Finalisez votre inscription</a></button>
                             </form>
-                            <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" href="profil_med.php">Finalisez votre inscription</a></button>
                         </div>   
                     </div>
                 </div>
