@@ -83,8 +83,6 @@
                     
                     <?php foreach ($comments as $myComment) : ?>
                     
-                        <table class="table">
-                            <tr>
                                 <td>
                                     Nom : <?= $myComment['email_pro'] ?><br>
                                     Spécialité : <?= $myComment['email_pro'] ?><br>
@@ -100,8 +98,6 @@
                                     <br>
                                     <a href="#">En savoir plus</a>
                                 </td>
-                            </tr>         
-                        </table>
                     
                     <?php endforeach; ?>
                     

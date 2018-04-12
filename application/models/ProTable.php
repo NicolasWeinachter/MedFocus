@@ -145,7 +145,7 @@ class ProTable extends CI_Model
     */
     public function get_pros_basic_search($what, $where)
 	{
-		return $this->db->select('email')
+		return $this->db->select('*')
                         ->from($this->table)
                         ->like('job', (string) $what)
                         ->or_like('speciality', (string) $what)
@@ -154,6 +154,24 @@ class ProTable extends CI_Model
                         ->or_like('address', (string) $where)
                         ->or_like('city', (string) $where)
                         ->or_like('postal_code', (string) $where)
+                        ->get()
+                        ->result_array();
+    }
+
+
+
+    /**
+    *	Retourne unu liste de pros pour une recherche basique
+    *	
+    *	@param string $what 
+    *	@param string $where
+    *	@return objet Le résultat de la requête
+    */
+    public function get_speciality_basic_search($what, $where)
+	{
+		return $this->db->select('*')
+                        ->from($this->table)
+                        ->like('speciality', (string) $what)
                         ->get()
                         ->result_array();
     }

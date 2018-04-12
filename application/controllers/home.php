@@ -82,7 +82,10 @@ class home extends CI_Controller
             $profession = $this->input->post('spécialité');
             $location = $this->input->post('location');
 
-            //Autres critères
+			//Autres critères
+			
+			$query = $this->ProTable->get_speciality_basic_search($data['criterias']['what'], $data['criterias']['where']);
+            $data['speciality'] = $query['0'];
 
 			//Find pros
 			
