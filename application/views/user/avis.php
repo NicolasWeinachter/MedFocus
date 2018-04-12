@@ -24,4 +24,48 @@
 	        </div> 
 	    </header>
 
+	<br>
+	<br>
+
+	<h1 class="center light">Partagez votre expérience avec le Dr. ..... </h1>
+
+	<br>
+	<br>
+
+	<div class="row">
+        	<div class="col">
+        	</div>
+        	<div class="col-8 fond_bleu">
+        		<div class="row">
+        			<div class="col"></div>
+        			<div Class="col-8">
+        				<div class="row">
+        					<div class="col-6">
+        						<p class="light">Qualité de l'accueil :</p> 
+        						<p class="light">Mise en confiance :</p>
+        						<p class="light">Propreté des lieux :</p>
+        						<p class="light">Ponctualité (hors urgence) :</p>
+        					</div>
+        					<div class="col-6">
+        						CETAIT NUL 
+        						<div class="row">
+        							<div class="col"></div>
+                                        <div class="col"></div>
+                                        <div class="col"></div>
+                                        <div class="col">
+                                            <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
+                                        </div>
+                                    </div>
+                                </div>
+        					</div>
+        				</div>
+        			</div>
+        			<div class="col"></div>
+        		</div>
+        	</div>
+        	<div class="col">
+        	</div>
+    </div>
+
+
 
