@@ -51,8 +51,8 @@
 			<?php endif; ?>
             </article>
             
-                <button type="submit" class="btn btn-info"><a class="lien-normal text-blanc"> Accéder à mon compte </a></button>
-                <p><a href="<?php echo site_url("pro/signup"); ?>">Pas encore inscrit ?</a></p>
+                <button type="submit" value="Envoyer" class="btn btn-info"><a class="lien-normal text-blanc"> Accéder à mon compte </a></button>
+                <p><a href="<?php echo site_url("pro/signup"); ?>" class="text-info">Pas encore inscrit ?</a></p>
         </form>
     </div>
 

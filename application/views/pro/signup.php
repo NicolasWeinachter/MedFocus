@@ -45,7 +45,7 @@
             <!--<div class="onglets">-->
                 <div class="row row_onglets">
                     <div class="col">
-                        <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Presentation</span>
+                        <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Présentation</span>
                     </div>
                     <div class="col">
                         <span class="onglet_0 onglet" id="onglet_honoraires" onclick="javascript:change_onglet('honoraires');">Vos honoraires</span>
@@ -66,29 +66,29 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName">Nom</label>
-                                        <input type="text" class="form-control" id="inputName" placeholder="Nom">
+                                        <input type="text" class="form-control" name="inputName" placeholder="Nom">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputSurname">Prénom</label>
-                                        <input type="text" class="form-control" id="inputSurname" placeholder="Prénom">
+                                        <input type="text" class="form-control" name="inputSurname" placeholder="Prénom">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputProf">Profession</label>
-                                        <input type="text" class="form-control" id="inputProf" placeholder="Profession">
+                                        <input type="text" class="form-control" name="inputProf" placeholder="Profession">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputSpeciality">Spécialité</label>
-                                        <input type="text" class="form-control" id="inputSpeciality" placeholder="Spécialité">
+                                        <input type="text" class="form-control" name="inputSpeciality" placeholder="Spécialité">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAga">Etes-vous membre d'une AGA ? Si oui, laquelle ?</label>
-                                    <input type="text" class="form-control" id="inputAga" placeholder="Oui/Non, ...">
+                                    <input type="text" class="form-control" name="inputAga" placeholder="Oui/Non, ...">
                                 </div>
                                 <form id="form" method="post" action="">
                                 <p>
                                     <label for="inputDiplomaName">Indiquez les diplômes que vous avez obtenus</label><br/>
-                                    <textarea type="text" class="form-control" id="inputDiplomaName"></textarea>
+                                    <textarea type="text" class="form-control" name="inputDiplomaName"></textarea>
                                 </p>
                                 </form>
                             </form>
@@ -105,21 +105,21 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputBirth">Date de naissance</label>
-                                        <input type="date" class="form-control" id="inputBirth" placeholder="Birth">
+                                        <input type="date" class="form-control" name="inputBirth" placeholder="Birth">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputRPPS">Numéro RPPS</label>
-                                    <input type="text" class="form-control" id="inputRPPS" placeholder="N°....">
+                                    <input type="text" class="form-control" name="inputRPPS" placeholder="N°....">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputLanguages">Indiquez les langues parlées</label>
-                                    <input type="text" class="form-control" id="inputLanguages" placeholder="Anglais, espagnol, ...">
+                                    <input type="text" class="form-control" name="inputLanguages" placeholder="Anglais, espagnol, ...">
                                 </div>
                                 <p>
                                     <label for="inputExperience">Expériences</label><br/>
-                                    <textarea type="text" class="form-control" id="inputExperience" placeholder="Pompier volontaire, Croix Rouge Française, ..."></textarea>
+                                    <textarea type="text" class="form-control" name="inputExperience" placeholder="Pompier volontaire, Croix Rouge Française, ..."></textarea>
                                 </p>
                                 <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
                             </form>
@@ -135,7 +135,7 @@
                         <form id="form" method="post" action="">
                                 <p>
                                     <label for="inputServiceName">Services proposés et tarifs</label><br/>
-                                    <textarea type="text" class="form-control" id="inputServiceName" placeholder="Consultation : 30€"></textarea>
+                                    <textarea type="text" class="form-control" name="inputServiceName" placeholder="Consultation : 30€"></textarea>
                                 </p>
                                 </form>
                             </form>
@@ -170,11 +170,11 @@
                         <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputAddressNumber">Numéro de la rue</label>
-                                    <input type="text" class="form-control" id="inputAddressNumber" placeholder="N°....">
+                                    <input type="text" class="form-control" name="inputAddressNumber" placeholder="N°....">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddressName">Nom de la rue</label>
-                                    <input type="text" class="form-control" id="inputAddressName" placeholder="Rue ...">
+                                    <input type="text" class="form-control" name="inputAddressName" placeholder="Rue ...">
                                 </div>
                                 Informations pratiques : <br>
                                 <form id="form" method="post" action="">
@@ -187,11 +187,11 @@
                         <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputCity">Ville</label>
-                                    <input type="text" class="form-control" id="inputCity" placeholder="Paris, Lyon, ...">
+                                    <input type="text" class="form-control" name="inputCity" placeholder="Paris, Lyon, ...">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPostcode">Code postal</label>
-                                    <input type="text" class="form-control" id="inputPostcode">
+                                    <input type="text" class="form-control" name="inputPostcode">
                                 </div>
                                 <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('contact');">Etape suivante</a></button>
                             </form>
@@ -205,17 +205,17 @@
                         <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputEmail">Adresse email</label>
-                                    <input type="mail" class="form-control" id="inputEmail" placeholder="contact@contact.com">
+                                    <input type="mail" class="form-control" name="inputEmail" placeholder="contact@contact.com">
                                 </div>
                                 Horaires de votre secrétariat : <br>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputOpen">Ouverture</label>
-                                        <input type="text" class="form-control" id="inputOpen" placeholder="9h00">
+                                        <input type="text" class="form-control" name="inputOpen" placeholder="9h00">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputClose">Fermeture</label>
-                                        <input type="text" class="form-control" id="inputClose" placeholder="16h00">
+                                        <input type="text" class="form-control" name="inputClose" placeholder="16h00">
                                     </div>
                                 </div>
                             </form>
@@ -224,8 +224,18 @@
                         <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputPhone">Numéro de téléphone</label>
-                                    <input type="phone" class="form-control" name="inputPhone" value="<?php echo set_value('inputPassword2'); ?>" placeholder="+33....">
+                                    <input type="phone" class="form-control" name="inputPhone" value="<?php echo set_value('inputPhone'); ?>" placeholder="+33....">
 			                        <?php echo form_error('inputPhone'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword">Mot de passe</label>
+                                    <input type="password" name="inputPassword" value="<?php echo set_value('inputPassword'); ?>" class="form-control" id="inputPassword" placeholder="Mot de passe">
+                                    <?php echo form_error('inputPassword'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword2">Confirmation du mot de passe</label>
+                                    <input type="password" name="inputPassword2" value="<?php echo set_value('inputPassword2'); ?>" class="form-control" id="inputPassword2" placeholder="Confirmer le mot de passe">
+                                    <?php echo form_error('inputPassword2'); ?>
                                 </div>
                             
                             <button type="submit" value="Envoyer" class="btn btn-info bouton-droite">
