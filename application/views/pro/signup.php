@@ -61,40 +61,36 @@
             <div class="contenu_onglets">
                 <div class="contenu_onglet" id="contenu_onglet_presentation">
                     <div id="container4_subscribe_med">
+                    <form id="form" method="post" action="">                        
                         <div id="container5_subscribe_med">
-                        <form id="form" method="post" action="">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputName">Nom</label>
-                                        <input type="text" class="form-control" name="inputName" placeholder="Nom">
+                                        <input type="text" class="form-control" name="inputName" placeholder="Nom" value="<?php echo set_value('inputName'); ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputSurname">Prénom</label>
-                                        <input type="text" class="form-control" name="inputSurname" placeholder="Prénom">
+                                        <input type="text" class="form-control" name="inputSurname" placeholder="Prénom" value="<?php echo set_value('inputSurname'); ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputProf">Profession</label>
-                                        <input type="text" class="form-control" name="inputProf" placeholder="Profession">
+                                        <input type="text" class="form-control" name="inputProf" placeholder="Profession" value="<?php echo set_value('inputProf'); ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputSpeciality">Spécialité</label>
-                                        <input type="text" class="form-control" name="inputSpeciality" placeholder="Spécialité">
+                                        <input type="text" class="form-control" name="inputSpeciality" placeholder="Spécialité" value="<?php echo set_value('inputSpeciality'); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAga">Etes-vous membre d'une AGA ? Si oui, laquelle ?</label>
-                                    <input type="text" class="form-control" name="inputAga" placeholder="Oui/Non, ...">
+                                    <input type="text" class="form-control" name="inputAga" placeholder="Oui/Non, ..." value="<?php echo set_value('inputAga'); ?>">
                                 </div>
-                                <form id="form" method="post" action="">
                                 <p>
                                     <label for="inputDiplomaName">Indiquez les diplômes que vous avez obtenus</label><br/>
-                                    <textarea type="text" class="form-control" name="inputDiplomaName"></textarea>
+                                    <textarea type="text" class="form-control" name="inputDiplomaName" value="<?php echo set_value('inputDiplomaName'); ?>"></textarea>
                                 </p>
-                                </form>
-                            </form>
                         </div>
                         <div id="container6_subscribe_med">
-                        <form id="form" method="post" action="">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputSex">Je suis un /une</label>
@@ -105,24 +101,23 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputBirth">Date de naissance</label>
-                                        <input type="date" class="form-control" name="inputBirth" placeholder="Birth">
+                                        <input type="date" class="form-control" name="inputBirth" placeholder="Birth" value="<?php echo set_value('inputBirth'); ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputRPPS">Numéro RPPS</label>
-                                    <input type="text" class="form-control" name="inputRPPS" placeholder="N°....">
+                                    <input type="text" class="form-control" name="inputRPPS" placeholder="N°...." value="<?php echo set_value('inputRPPS'); ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="inputLanguages">Indiquez les langues parlées</label>
-                                    <input type="text" class="form-control" name="inputLanguages" placeholder="Anglais, espagnol, ...">
+                                    <input type="text" class="form-control" name="inputLanguages" placeholder="Anglais, espagnol, ..." value="<?php echo set_value('inputLanguages'); ?>">
                                 </div>
                                 <p>
                                     <label for="inputExperience">Expériences</label><br/>
-                                    <textarea type="text" class="form-control" name="inputExperience" placeholder="Pompier volontaire, Croix Rouge Française, ..."></textarea>
+                                    <textarea type="text" class="form-control" name="inputExperience" placeholder="Pompier volontaire, Croix Rouge Française, ..." value="<?php echo set_value('inputExperience'); ?>"></textarea>
                                 </p>
                                 <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -131,20 +126,15 @@
                 <h1>Vos honoraires</h1>
                     <div id="container4_subscribe_med">
                         <div id="container5_subscribe_med">
-                        <form id="form" method="post" action="">
-                        <form id="form" method="post" action="">
                                 <p>
                                     <label for="inputServiceName">Services proposés et tarifs</label><br/>
-                                    <textarea type="text" class="form-control" name="inputServiceName" placeholder="Consultation : 30€"></textarea>
+                                    <textarea type="text" class="form-control" name="inputServiceName" placeholder="Consultation : 30€" value="<?php echo set_value('inputServiceName'); ?>"></textarea>
                                 </p>
-                                </form>
-                            </form>
                         </div>
 
                         <div id="container6_subscribe_med">
                             
                                 Moyens de paiement acceptés <br>
-                                <form id="form" method="post" action="">
                                     <input type="checkbox" name="CB" > Carte bancaire <br>    
                                     <input type="checkbox" name="chèque" > Chèque <br>
                                     <input type="checkbox" name="especes" > Espèces <br>
@@ -157,7 +147,6 @@
                                         <input type="checkbox" name="mutuelle" > Carte mutuelle <br>
                                     
                                     <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('lieu');">Etape suivante</a></button>
-                                </form>
                         </div>
                     </div>
                 </div>
@@ -167,34 +156,28 @@
                     <div id="container4_subscribe_med">
 
                         <div id="container5_subscribe_med">
-                        <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputAddressNumber">Numéro de la rue</label>
-                                    <input type="text" class="form-control" name="inputAddressNumber" placeholder="N°....">
+                                    <input type="text" class="form-control" name="inputAddressNumber" placeholder="N°...." value="<?php echo set_value('inputAddressNumber'); ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputAddressName">Nom de la rue</label>
-                                    <input type="text" class="form-control" name="inputAddressName" placeholder="Rue ...">
+                                    <input type="text" class="form-control" name="inputAddressName" placeholder="Rue ..." value="<?php echo set_value('inputAddressName'); ?>">
                                 </div>
                                 Informations pratiques : <br>
-                                <form id="form" method="post" action="">
                                     <input type="checkbox" name="Parking" > Parking <br>    
                                     <input type="checkbox" name="handicapés" > Accès handicapés <br>
-                                </form>
-                            </form>
                         </div>
                         <div id="container6_subscribe_med">
-                        <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputCity">Ville</label>
-                                    <input type="text" class="form-control" name="inputCity" placeholder="Paris, Lyon, ...">
+                                    <input type="text" class="form-control" name="inputCity" placeholder="Paris, Lyon, ..." value="<?php echo set_value('inputCity'); ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPostcode">Code postal</label>
                                     <input type="text" class="form-control" name="inputPostcode">
                                 </div>
                                 <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('contact');">Etape suivante</a></button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -202,26 +185,23 @@
                     <h1> Contact </h1>
                     <div id="container4_subscribe_med">
                         <div id="container5_subscribe_med">
-                        <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputEmail">Adresse email</label>
-                                    <input type="mail" class="form-control" name="inputEmail" placeholder="contact@contact.com">
+                                    <input type="mail" class="form-control" name="inputEmail" placeholder="contact@contact.com" value="<?php echo set_value('inputEmail'); ?>">
                                 </div>
                                 Horaires de votre secrétariat : <br>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="inputOpen">Ouverture</label>
-                                        <input type="text" class="form-control" name="inputOpen" placeholder="9h00">
+                                        <input type="text" class="form-control" name="inputOpen" placeholder="9h00" value="<?php echo set_value('inputOpen'); ?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="inputClose">Fermeture</label>
-                                        <input type="text" class="form-control" name="inputClose" placeholder="16h00">
+                                        <input type="text" class="form-control" name="inputClose" placeholder="16h00" value="<?php echo set_value('inputClose'); ?>">
                                     </div>
                                 </div>
-                            </form>
                         </div>
                         <div id="container6_subscribe_med">
-                        <form id="form" method="post" action="">
                                 <div class="form-group">
                                     <label for="inputPhone">Numéro de téléphone</label>
                                     <input type="phone" class="form-control" name="inputPhone" value="<?php echo set_value('inputPhone'); ?>" placeholder="+33....">
