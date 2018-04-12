@@ -140,7 +140,7 @@ class home extends CI_Controller
 			echo ("exists");               
 		}
 
-        $this->load->view('pro/search',$results);
+        $this->load->view('home/search');
 	}
 
 
