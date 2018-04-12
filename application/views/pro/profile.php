@@ -29,9 +29,7 @@
                       document.getElementById('contenu_onglet_'+name).style.display = 'block';
                       anc_onglet = name;
               }
-  </script>
-  
-  <script type="text/javascript">
+
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
@@ -59,6 +57,23 @@
       }
   </script>
 
+  <script>
+        function afficher_cacher(id)
+            {
+                if(document.getElementById(id).style.display=="none")
+                {
+                    document.getElementById(id).style.display="inline";
+                    document.getElementById('bouton_'+id).innerHTML='Masquer détails';
+                }
+                else
+                {
+                    document.getElementById(id).style.display="none";
+                    document.getElementById('bouton_'+id).innerHTML='Voir détails';
+                }
+                return true;
+            };
+    </script>
+
 
 </head>
 
@@ -78,14 +93,26 @@
         <h1>Mon espace personnel</h1>
         <div class="row">
           <div class="col"></div>
-          <div class="col-6"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>  
           <div class="col">
-            <img src="<?php echo base_url('assets/images/website/notif.png'); ?>" width=35px height =35px>
-            <a href="<?php echo site_url('pro/notif'); ?>" class="btn btn-outline-secondary btn-200">Notifications</a>
-          </div>
+            <div class="row">
+              <div class="col">
+                <img src="<?php echo base_url('assets/images/website/notif.png'); ?>" width=35px height =35px>
+              </div>
+
+              <div class="col">
+                <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_notifications" onclick="javascript:change_onglet('notifications');">Notifications</span>
+              </div>
+            </div>
+            <!-- <button type="button" class="btn btn-secondary btn-150 btn-center" id="onglet_notifications" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('notifications');">Notifications</a></button> -->
+            </div>
+          <div class="col"></div>
+        </div>
+            
         </div>
         
-
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
                     <div class="row row_onglets">
@@ -101,165 +128,201 @@
                     </div>
             </div>
             <div class="contenu_onglets">
-                <div class="contenu_onglet" id="contenu_onglet_info">
-                    
-                        <div class="info">
-                            <h1>Mes informations</h1>
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">Nom :</li>
-                                            <li class="list-group-item">Spécialité :</li>
-                                            <li class="list-group-item">N° RPPS :</li>
-                                            <li class="list-group-item">Adresse :</li>
-                                            <li class="list-group-item">Ville :</li>
-                                        </ul>
-                                    </td>
-                                    <td>
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">Prénom :</li>
-                                            <li class="list-group-item">Je suis :</li>
-                                            <li class="list-group-item">Tél professionel :</li>
-                                            <li class="list-group-item">Email :</li> 
-                                        </ul>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <a href="#" class="btn btn-info btn-sm text-blanc lien-normal btn-center btn-200">Modifier mes informations</a>
-                        </div>
-                    </div>
+              <div class="contenu_onglet" id="contenu_onglet_notifications">
+                <br>
+                <h2 class="center italic">Vos dernières notifications</h2>
+                <br>
+                <div class="info_medecin">
                 </div>
-                <div class="contenu_onglet" id="contenu_onglet_avis">
 
+              </div>
 
-                  <div id="chart_div"></div>
-                    
-                </div>
-                <div class="contenu_onglet" id="contenu_onglet_rdv">
-                    <h1>Vos rendez-vous</h1>
-                    <div id="container4_user">
-                        <div class="calendar">
-                          <div id='calendar'></div>
-                        </div>
-                        <div class="description_rdv">
-                            
-                              <div class="historique_rdv">
-                                <button type="button" class="onglet_0 btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
+              <div class="contenu_onglet" id="contenu_onglet_info">
+                  
+                      <div class="info">
+                          <h1>Mes informations</h1>
+                          <table class="table">
+                              <tr>
+                                  <td>
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Nom :</li>
+                                          <li class="list-group-item">Spécialité :</li>
+                                          <li class="list-group-item">N° RPPS :</li>
+                                          <li class="list-group-item">Adresse :</li>
+                                          <li class="list-group-item">Ville :</li>
+                                      </ul>
+                                  </td>
+                                  <td>
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Prénom :</li>
+                                          <li class="list-group-item">Je suis :</li>
+                                          <li class="list-group-item">Tél professionel :</li>
+                                          <li class="list-group-item">Email :</li> 
+                                      </ul>
+                                  </td>
+                              </tr>
+                          </table>
+                          <br>
+                          <a href="#" class="btn btn-info btn-sm text-blanc lien-normal btn-center btn-200">Modifier mes informations</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="contenu_onglet" id="contenu_onglet_avis">
+
+                <div class="row">
+                  <div class="col-1"></div>
+                  <div class="col-4">
+                    <div id="chart_div"></div>
+                  </div>
+                  <div class="col-1"></div>
+                  <div class="col-5">
+                    <h2 class="center light">Vos avis</h2>
+
+                    <p class="light">Nom du patient :   </p>
+                    <p class="light">Avis global :      </p>
+                    <p class="bouton lien-normal aff_avis" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher plus de détails</p>
+                                <div id="texte">
+                                <p class="light">Qualité de l'accueil :</p>
+                                <p class="light">Mise en confiance :</p>
+                                <p class="light">Propreté des lieux :</p>
+                                <p class="light">Poncutalité (hors urgence) :</p>
+                                </div>
+                        <p></p>
+                        <script type="text/javascript">
+                            //<!--
+                            afficher_cacher('texte');
+                            //-->
+                        </script>
+
+                  </div>
+                  <div class="col-1"></div>
+
+              </div>
+            </div>
+
+              <div class="contenu_onglet" id="contenu_onglet_rdv">
+                  <h1>Vos rendez-vous</h1>
+                  <div id="container4_user">
+                      <div class="calendar">
+                        <div id='calendar'></div>
+                      </div>
+                      <div class="description_rdv">
+                          
+                            <div class="historique_rdv">
+                              <button type="button" class="onglet_0 btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
+                            </div>
+                            <div class="info_rdv">
+                              <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                                    <table class="table">
+                                    <tr>
+                                      <td>Nom : <br>
+                                          Téléphone : <br>
+                                      </td>
+                                    <td>Prénom : <br>
+                                      <a href="#" class="text-info">Voir la fiche complète</a>
+                                    </td> 
+                                    </tr>
+                                  </table>
+                                  <table class="table">
+                                    <tr>
+                                      <td>Informations rendez-vous : <br>
+                                    </td> 
+                                    </tr>
+                                  </table>
+                                  <table class="table">
+                                    <tr>
+                                      <td>
+                                          <a class="btn btn-info btn-100 btn-center" href="modif_rdv.php">Modifier</a>
+                                      </td> 
+                                      <td>
+                                          <a class="btn btn-info btn-100 btn-center" href="supp_rdv.php">Annuler</a>
+                                      </td>
+                                    </tr>
+                                  </table>
                               </div>
-                              <div class="info_rdv">
-                                <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
-                                  <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
-                                      <table class="table">
-                                      <tr>
-                                        <td>Nom : <br>
-                                            Téléphone : <br>
-                                        </td>
-                                      <td>Prénom : <br>
-                                        <a href="#" class="text-info">Voir la fiche complète</a>
-                                      </td> 
-                                      </tr>
-                                    </table>
+                                  <div class="carousel-item">
+                                    <p class="center">Vendredi 3 février 2018 - 11h</p>
                                     <table class="table">
-                                      <tr>
-                                        <td>Informations rendez-vous : <br>
+                                    <tr>
+                                      <td>Nom : <br>
+                                          Téléphone : <br>
+                                      </td>
+                                    <td>Prénom : <br>
+                                      <a href="#" class="text-info">Voir la fiche complète</a>
+                                    </td> 
+                                    </tr>
+                                  </table>
+                                  <table class="table">
+                                    <tr>
+                                      <td>Informations rendez-vous : <br>
+                                    </td> 
+                                    </tr>
+                                  </table>
+                                  <table class="table">
+                                    <tr>
+                                      <td>
+                                          <a class="btn btn-info btn-100 btn-center" href="modif_rdv.php">Modifier</a>
                                       </td> 
-                                      </tr>
-                                    </table>
-                                    <table class="table">
-                                      <tr>
-                                        <td>
-                                            <a class="btn btn-info btn-100 btn-center" href="modif_rdv.php">Modifier</a>
-                                        </td> 
-                                        <td>
-                                            <a class="btn btn-info btn-100 btn-center" href="supp_rdv.php">Annuler</a>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                </div>
-                                    <div class="carousel-item">
-                                      <p class="center">Vendredi 3 février 2018 - 11h</p>
-                                      <table class="table">
-                                      <tr>
-                                        <td>Nom : <br>
-                                            Téléphone : <br>
-                                        </td>
-                                      <td>Prénom : <br>
-                                        <a href="#" class="text-info">Voir la fiche complète</a>
-                                      </td> 
-                                      </tr>
-                                    </table>
-                                    <table class="table">
-                                      <tr>
-                                        <td>Informations rendez-vous : <br>
-                                      </td> 
-                                      </tr>
-                                    </table>
-                                    <table class="table">
-                                      <tr>
-                                        <td>
-                                            <a class="btn btn-info btn-100 btn-center" href="modif_rdv.php">Modifier</a>
-                                        </td> 
-                                        <td>
-                                            <a class="btn btn-info btn-100 btn-center" href="supp_rdv.php">Annuler</a>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                    </div>
+                                      <td>
+                                          <a class="btn btn-info btn-100 btn-center" href="supp_rdv.php">Annuler</a>
+                                      </td>
+                                    </tr>
+                                  </table>
                                   </div>
-
-                                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                  <span class="carousel-control-prev-icon fleche-caroussel-gauche" aria-hidden="true"></span>
-                                  <span class="sr-only">Previous</span>
-                                  </a>
-                                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                  <span class="carousel-control-next-icon fleche-caroussel-droite" aria-hidden="true"></span>
-                                  <span class="sr-only">Next</span>
-                                  </a>
                                 </div>
+
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon fleche-caroussel-gauche" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon fleche-caroussel-droite" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                                </a>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    
-                </div>
+                  </div>
+                  
+              </div>
 
-              <div class="contenu_onglet" id="contenu_onglet_historique">
+            <div class="contenu_onglet" id="contenu_onglet_historique">
 
-                <br>
-                  <div id="container4_historique_rdv">
-                    <div class="info-medecin-rdv">
-                      <table class="table">
-                        <tr>
-                          <td>
-                              Nom : <br>
-                              Adresse : <br>
-                              Note : <br>
-                          </td>
-                          <td>
-                              Spécialité : <br>
-                              Téléphone : <br>
-                              <a href="#" class="text-info">Voir la fiche complète</a>
-                          </td> 
-                        </tr>
-                      </table>
-                    </div>
-                    <div class="info-rdv">
-                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
-                      <div class="info-rdv2">
-                        <p class="center">Informations relatives au rendez-vous :</p>
-                      </div>
-                    </div>
-                    <div class="partage-exp">
-                      <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
+              <br>
+                <div id="container4_historique_rdv">
+                  <div class="info-medecin-rdv">
+                    <table class="table">
+                      <tr>
+                        <td>
+                            Nom : <br>
+                            Adresse : <br>
+                            Note : <br>
+                        </td>
+                        <td>
+                            Spécialité : <br>
+                            Téléphone : <br>
+                            <a href="#" class="text-info">Voir la fiche complète</a>
+                        </td> 
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="info-rdv">
+                    <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                    <div class="info-rdv2">
+                      <p class="center">Informations relatives au rendez-vous :</p>
                     </div>
                   </div>
+                  <div class="partage-exp">
+                    <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
+                  </div>
                 </div>
+              </div>
 
 
             </div>
