@@ -234,14 +234,13 @@
                                 <p class="light col-md-12">Propreté des lieux :</p> <br>
                                 <p class="light col-md-12">Ponctualité (hors urgences) : </p>
                                 <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
-                                        <div id="texte" class="texte col-md-12">
+                                    <div id="texte" class="texte col-md-12">
                                         <p class="light">Premier commentaire</p>
                                         <p class="light">Deuxième commentaire</p>
                                         <p class="light">Troisième commentaire</p>
                                         <p class="light">Quatrième commentaire</p>
                                         <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
-                                        </div>
-                                <p>
+                                    </div>
                                 <script type="text/javascript">
                                     //<!--
                                     afficher_cacher('texte');
