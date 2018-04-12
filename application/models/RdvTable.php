@@ -75,6 +75,7 @@ class RdvTable extends CI_Model
         else {
             return true;
         }
+    }
 
     /**
      * Récupère la liste des professionnels qu'un utilisateur à consulter
@@ -91,5 +92,4 @@ class RdvTable extends CI_Model
                         ->result_array();
     }
 
-    }
 }
