@@ -73,7 +73,7 @@ class user extends CI_Controller
         }
         else{
         //	Le formulaire est invalide ou vide
-        $this->load->view('user/login',$data);
+        $this->load->view('user/login');
         }
 
     }
@@ -91,6 +91,9 @@ class user extends CI_Controller
 
         // Chargement du Modèle
         $this->load->model('UserTable');
+
+        $data=array();
+        $data['error'] = false;
 
         $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
@@ -129,7 +132,8 @@ class user extends CI_Controller
             }
             else
             {
-                // adresse mail déjà utilisée
+                $data['error'] = true;                
+                $this->load->view('user/signup', $data);
             }
         }
         //	Le formulaire est invalide ou vide

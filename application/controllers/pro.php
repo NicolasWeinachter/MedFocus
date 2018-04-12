@@ -93,6 +93,10 @@ class pro extends CI_Controller
         $this->load->model('DiplomasTable');
         $this->load->model('AvailabilityTable');
 
+        $data=array();
+        $data['error'] = false;
+        $data['email'] = "xxx@xxx.com";                        
+
         $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
  /*       $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputBirth', '"Date de naissance"', 'trim|required|min_length[8]|max_length[10]|encode_php_tags');
@@ -164,13 +168,16 @@ class pro extends CI_Controller
             }
             else
             {
-                $this->profile();
+                $data['error'] = true;                
+                $data['email'] = $email;                
+                $this->load->view('pro/signup', $data);
             }
         }
         //	Le formulaire est invalide ou vide
         else 
         {
-            $this->load->view('pro/signup');
+            $data['error'] = false;                
+            $this->load->view('pro/signup', $data);
         }
     }
 

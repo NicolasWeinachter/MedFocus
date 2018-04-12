@@ -41,6 +41,15 @@
     </header>
 
         <h1>Création de votre compte professionnel</h1>
+
+        <article class="col-md-4" style="text-align: center; margin: auto">
+			<?php if ($error) : ?>
+				<div class="panel panel-danger">
+					<div class="panel-heading">Un compte avec l'adresse e-mail "<?php echo $email; ?>" existe déjà </div>
+				</div>
+			<?php endif; ?>
+        </article>
+
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
                 <div class="row row_onglets">
