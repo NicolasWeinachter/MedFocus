@@ -1,5 +1,3 @@
-<?php //var_dump($results); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -261,7 +259,7 @@
                         </div>
                         <!--variable-->
                         <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
-                        
+
                     </tr>         
                 </table>
                 </div>                    
