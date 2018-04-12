@@ -113,7 +113,7 @@ class user extends CI_Controller
             $email = $this->input->post('inputEmail');
             $password = $this->input->post('inputPassword2');
 
-            $gender = "Male";
+            $gender = "Homme";
             $nss = "1blabla";
 
             if(!$this->UserTable->user_exists($email))
@@ -174,7 +174,7 @@ class user extends CI_Controller
 
             //$query = $this->UserTable->raph($email);
             //Get doctor info for each rdv            
-            $data['pro'] = $query['0'];
+            $data['pro'] = $query;
 
             $this->load->view('user/profile', $data, false);                  
         //}
