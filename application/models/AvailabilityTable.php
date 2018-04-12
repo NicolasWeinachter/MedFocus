@@ -29,9 +29,9 @@ class AvailabilityTable extends CI_Model
     *	@param string $email_pro L'id de la disponibilité à supprimer
     *	@return bool Le résultat de la requête
     */
-    public function delete_availability($email_pro)
+    public function delete_availability($id_availability)
     {
-        return $this->db->where('email_pro', $email_pro)
+        return $this->db->where('id_availability', $id_availability)
                         ->delete($this->table);
     }
 
