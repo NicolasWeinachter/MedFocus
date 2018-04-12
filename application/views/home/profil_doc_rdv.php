@@ -18,12 +18,12 @@
                 if(document.getElementById(id).style.display=="none")
                 {
                     document.getElementById(id).style.display="inline";
-                    document.getElementById('bouton_'+id).innerHTML='Cacher les commentaires sur ce médecin.';
+                    document.getElementById('bouton_'+id).innerHTML='Prendre rendez-vous chez ce médecin.';
                 }
                 else
                 {
                     document.getElementById(id).style.display="none";
-                    document.getElementById('bouton_'+id).innerHTML='Afficher les commentaires sur ce médecin.';
+                    document.getElementById('bouton_'+id).innerHTML='Prendre rendez-vous chez ce médecin.';
                 }
                 return true;
             };
@@ -267,19 +267,22 @@
                         
                     </div>
                     <div class="row row4">
-                        <button type="button" class="btn btn-info" onclick="javascript:afficher_cacher('texte');">Prendre rendez-vous chez ce médecin.</button>
-                        <div id="texte" class="texte col-md-12">
-                            <p class="light">Premier commentaire</p>
-                            <p class="light">Deuxième commentaire</p>
-                            <p class="light">Troisième commentaire</p>
-                            <p class="light">Quatrième commentaire</p>
-                            <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
-                        </div>
-                        <script type="text/javascript">
-                            //<!--
-                            afficher_cacher('texte');
-                            //-->
-                        </script>
+                        <!--button type="button" class="btn btn-info" onclick="javascript:afficher_cacher('texte');">Prendre rendez-vous chez ce médecin.</button-->
+                        <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Prendre rendez-vous chez médecin.</p>
+                                    <div id="texte" class="texte col-md-12">
+                                        <select>
+                                            <option value="0">Motif de consultation</option>
+                                            <option value="1">Motif 1</option>
+                                            <option value="1">Motif 2</option>
+                                            <option value="1">Motif 3</option>
+                                        </select>
+                                        <div class="col-md-12 calendar3" id='calendar'></div>
+                                    </div>
+                                <script type="text/javascript">
+                                    //<!--
+                                    afficher_cacher('texte');
+                                    //-->
+                                </script>
                     </div>
                 </div>
             </div>

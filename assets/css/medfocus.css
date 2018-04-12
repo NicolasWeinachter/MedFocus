@@ -208,12 +208,12 @@ img.logo-fin {
 
 /*#form {
     /*formulaire connexion et inscription*/
-    display: block;
+    /*display: block;
     width: 500px;
     /*largeur du bloc form */
-    height: 200px;
+    /*height: 200px;
     /* Longueur du bloc form*/
-    margin: auto;
+    /*margin: auto;
 }*/
 
 #container1_user {
@@ -283,8 +283,9 @@ img.logo-fin {
 
 #calendar {
     display: block;
-    height: 300px;
-    width: 400px;
+    height: auto;
+    width: auto;
+    border-color: #fff;
 }
 
 .calendar {
@@ -582,6 +583,11 @@ img.logo-fin {
     margin-right: 1%;
 }
 
+calendar3{
+    display: inline;
+    height: auto !important;
+}
+
 h2 {
     font-size: 18px;
 }
@@ -606,7 +612,8 @@ h2 {
     background: #FFFFFF;
     color: #000000;
     border-radius: 0.2em;
-    margin-left: 4%
+    margin-left: 4%;
+    display: none;
 }
 
 .aff_comm {
@@ -685,3 +692,72 @@ h2 {
     background-color: #a94442;
 }
 
+<<<<<<< HEAD
+=======
+.container_avis, .container_info_doc{
+    margin:5%; 
+    padding: 2%;
+    padding-right:0.5% !important; 
+    height: auto;
+}
+
+.avis{
+    margin-bottom: 2%;
+    height: 20%;
+    background-color: #fff;
+    border-radius: 0.5em;
+    padding: 2%;
+}
+
+.user_profile{
+    height: 25%;
+}
+
+.container_chart{
+    height: 60%;
+}
+
+.container_com{
+    height: 40%;
+}
+
+.name{
+    padding-left: 13%;
+}
+
+.row1{
+    height:30%
+}
+
+.row2{
+    height:10%
+}
+
+.row3{
+    height: 50%;
+}
+
+.row4{
+    height: 10%;
+}
+
+.background{
+    background-color: #e9edec
+}
+
+.bloc_doc{
+    background-color: #fff;
+    height: auto;
+    border-radius: 0.5em;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+}
+.systeme_onglets{
+    margin-top: 5%;
+}
+
+.margin_top{
+    margin-top:5%;
+}
+>>>>>>> 0b59a6c556c0cc899857ce08de80bda7d111dff9
