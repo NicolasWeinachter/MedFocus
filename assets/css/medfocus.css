@@ -626,6 +626,17 @@ h2{
     margin-top: 2%;
 }
 
+.maps{
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 10%;
+    border-radius: 0.2em;
+    height: auto;
+}
+
+.container_med{
+    margin: 2%;
+}
 
 
 

@@ -1,24 +1,5 @@
-<?php
-//(1) On inclut la classe de Google Maps pour générer ensuite la carte.
-require('assets/maps/GoogleMapAPI.class.php');
-
-//(2) On crée une nouvelle carte; Ici, notre carte sera $map.
-$map = new GoogleMapAPI('map');
-
-//(3) On ajoute la clef de Google Maps.
-$map->setAPIKey('<AIzaSyAk3vLl9Mu0C35m-ht6d6MHAXgj8lnQuCU>');
-    
-//(4) On ajoute les caractéristiques que l'on désire à notre carte.
-$map->setWidth("800px");
-$map->setHeight("500px");
-$map->setCenterCoords ('2', '48');
-$map->setZoomLevel (5);
-
-//(5) On applique la base XHTML avec les fonctions à appliquer ainsi que le onload du body.
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,9 +45,58 @@ $map->setZoomLevel (5);
     },
   });
     });</script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+        'packages': ['map'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+        google.charts.setOnLoadCallback(drawMap);
+
+        function drawMap () {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Address');
+        data.addColumn('string', 'Location');
+
+        data.addRows([
+            ['78 bis Avenue Henri Martin, 75116, Paris, France', 'Home']
+        ]);
+
+        var options = {
+            mapType: 'styledMap',
+            zoomLevel: 12,
+            showTooltip: true,
+            showInfoWindow: true,
+            useMapTypeControl: true,
+            maps: {
+            // Your custom mapTypeId holding custom map styles.
+            styledMap: {
+                name: 'Styled Map', // This name will be displayed in the map type control.
+                styles: [
+                {featureType: 'poi.attraction',
+                stylers: [{color: '#fce8b2'}]
+                },
+                {featureType: 'road.highway',
+                stylers: [{hue: '#0277bd'}, {saturation: -50}]
+                },
+                {featureType: 'road.highway',
+                elementType: 'labels.icon',
+                stylers: [{hue: '#000'}, {saturation: 100}, {lightness: 50}]
+                },
+                {featureType: 'landscape',
+                stylers: [{hue: '#259b24'}, {saturation: 10}, {lightness: -22}]
+                }
+            ]}}
+        };
+
+        var map = new google.visualization.Map(document.getElementById('map_div'));
+
+        map.draw(data, options);
+        }
+    </script>
     <title>MedFocus</title>
-    <?php $map->printHeaderJS(); ?>
-	<?php $map->printMapJS(); ?>
 </head>
 
 <body>
@@ -118,14 +148,6 @@ $map->setZoomLevel (5);
                             <option value="4">Dans le département</option>                     
                         </select>
                     </td>
-                    <td>
-                        <select class="custom-select col-md-10" id="lumière">
-                            <option value="0">Critère de lumière:</option>
-                            <option value="1">Qualité de l'accueil</option>
-                            <option value="2">Temps d'attente (hors urgences)</option>                   
-                        </select>
-                    </td>
-
                  </tr>
              </table>
         </header>
@@ -140,7 +162,7 @@ $map->setZoomLevel (5);
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -153,7 +175,7 @@ $map->setZoomLevel (5);
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -166,7 +188,7 @@ $map->setZoomLevel (5);
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -179,7 +201,7 @@ $map->setZoomLevel (5);
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
                                 <!-- variable-->
-                                <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
+                                <img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" >
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
@@ -191,45 +213,51 @@ $map->setZoomLevel (5);
                 </div>
             </div>
             
-            <div class="col-md-7 border d-flex flex-row">
-                <div class="col-md-5 p-2">
-                    <div class="row">
-                        <!-- variable-->
-                        <img class="col-md-8 photo_profile_med" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
-                        <!--variable-->
-                        <div class="col-md-4 nom_prenom_spe_adresse">
-                            <p class="light"><b>Nom</b> Prénom</p> 
-                            <p class="light">Spécialité</p>
-                            <br>
-                            <p class="light">Adresse</p>
+            <div class="d-flex flex-row container_med">
+                <div class="col-md-7 border d-flex flex-row">
+                    <div class="col-md-5 p-2">
+                        <div class="row">
+                            <!-- variable-->
+                            <img class="col-md-8 photo_profile_med" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
+                            <!--variable-->
+                            <div class="col-md-4 nom_prenom_spe_adresse">
+                                <p class="light"><b>Nom</b> Prénom</p> 
+                                <p class="light">Spécialité</p>
+                                <br>
+                                <p class="light">Adresse</p>
+                            </div>
+                        </div>
+                        <div class="row lumiere">
+                            <!--variable-->
+                            <p class="light col-md-12">Qualité de l'accueil :</p> <br>
+                            <p class="light col-md-12">Mise en confiance :</p> <br>
+                            <p class="light col-md-12">Propreté des lieux :</p> <br>
+                            <p class="light col-md-12">Ponctualité (hors urgences) : </p>
+                            <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
+                                    <div id="texte" class="texte col-md-12">
+                                    <p class="light">Premier commentaire</p>
+                                    <p class="light">Deuxième commentaire</p>
+                                    <p class="light">Troisième commentaire</p>
+                                    <p class="light">Quatrième commentaire</p>
+                                    <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
+                                    </div>
+                            <p>
+                            <script type="text/javascript">
+                                //<!--
+                                afficher_cacher('texte');
+                                //-->
+                            </script>
                         </div>
                     </div>
-                    <div class="row lumiere">
-                        <!--variable-->
-                        <p class="light col-md-12">Honoraire :</p> <br>
-                        <p class="light col-md-12">Propreté :</p> <br>
-                        <p class="light col-md-12">Qualité de l'accueil :</p> <br>
-                        <p class="light col-md-12">Ponctualité (hors urgences) : </p>
-                        <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
-                                <div id="texte" class="texte col-md-12">
-                                <p class="light">Premier commentaire</p>
-                                <p class="light">Deuxième commentaire</p>
-                                <p class="light">Troisième commentaire</p>
-                                <p class="light">Quatrième commentaire</p>
-                                <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
-                                </div>
-                        <p>
-                        <script type="text/javascript">
-                            //<!--
-                            afficher_cacher('texte');
-                            //-->
-                        </script>
-                    </div>
+                    <!--variable-->
+                    <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
                 </div>
-                <!--variable-->
-                <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
+                <div class="col-md-5">
+                    <div class ="col-md-12 maps" id="map_div" style="height: 500px; width: 900px"></div>
+                </div>
+
             </div>
-            <?php $map->printMap(); ?>
+            
         </main>
 
         <footer>
