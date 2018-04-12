@@ -11,6 +11,7 @@
   <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.3.1.min.js"); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
   <link rel='stylesheet' href="<?php echo base_url("assets/calendar/fullcalendar.css"); ?>">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="<?php echo base_url("assets/calendar/lib/jquery.min.js"); ?>"></script>
   <script src="<?php echo base_url("assets/calendar/lib/moment.min.js"); ?>"></script>
   <script src="<?php echo base_url("assets/calendar/fullcalendar.js"); ?>"></script>
@@ -18,17 +19,47 @@
       $('#calendar').fullCalendar({
   defaultView: 'month'});
   });</script>
-    <title>Profil</title>
-    <script type="text/javascript">
-                function change_onglet(name)
-                {
-                        document.getElementById('onglet_'+anc_onglet).className = 'onglet_0 onglet';
-                        document.getElementById('onglet_'+name).className = 'onglet_1 onglet';
-                        document.getElementById('contenu_onglet_'+anc_onglet).style.display = 'none';
-                        document.getElementById('contenu_onglet_'+name).style.display = 'block';
-                        anc_onglet = name;
-                }
-    </script>
+  <title>Profil</title>
+  <script type="text/javascript">
+              function change_onglet(name)
+              {
+                      document.getElementById('onglet_'+anc_onglet).className = 'onglet_0 onglet';
+                      document.getElementById('onglet_'+name).className = 'onglet_1 onglet';
+                      document.getElementById('contenu_onglet_'+anc_onglet).style.display = 'none';
+                      document.getElementById('contenu_onglet_'+name).style.display = 'block';
+                      anc_onglet = name;
+              }
+  </script>
+  
+  <script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Critère');
+        data.addColumn('number', 'Satisfaction');
+        data.addRows([
+          ['Qualité accueil', 3],
+          ['Temps attente', 1],
+          ['Propreté des lieux', 3],
+          ['Temps de prise de rendez-vous', 2],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Analyse de vos avis',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+  </script>
+
+
 </head>
 
 <body>
@@ -101,6 +132,9 @@
                     </div>
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_avis">
+
+
+                  <div id="chart_div"></div>
                     
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_rdv">
@@ -112,7 +146,7 @@
                         <div class="description_rdv">
                             
                               <div class="historique_rdv">
-                                <button type="button" class="btn btn-info" id="bouton_historique" ><a class="lien-normal text-blanc" href="<?php echo site_url("user/historique_rdv"); ?>">Historique des rendez-vous</a></button>
+                                <button type="button" class="onglet_0 btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
                               </div>
                               <div class="info_rdv">
                                 <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
@@ -194,6 +228,39 @@
                     </div>
                     
                 </div>
+
+              <div class="contenu_onglet" id="contenu_onglet_historique">
+
+                <br>
+                  <div id="container4_historique_rdv">
+                    <div class="info-medecin-rdv">
+                      <table class="table">
+                        <tr>
+                          <td>
+                              Nom : <br>
+                              Adresse : <br>
+                              Note : <br>
+                          </td>
+                          <td>
+                              Spécialité : <br>
+                              Téléphone : <br>
+                              <a href="#" class="text-info">Voir la fiche complète</a>
+                          </td> 
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="info-rdv">
+                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                      <div class="info-rdv2">
+                        <p class="center">Informations relatives au rendez-vous :</p>
+                      </div>
+                    </div>
+                    <div class="partage-exp">
+                      <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
+                    </div>
+                  </div>
+                </div>
+
 
             </div>
         </div>

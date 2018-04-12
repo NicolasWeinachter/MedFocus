@@ -43,6 +43,9 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     flex: 1;
+    height: auto;
+
+    
 }
 
 #head {
@@ -187,6 +190,8 @@ img.logo-fin {
 
 #containerFin {
     background-color: #696969;
+    margin-bottom:0;
+
 }
 
 .btn {
@@ -228,9 +233,6 @@ img.logo-fin {
 
 #container3_user {
     display: block;
-    border-color: #808080;
-    border-width: 5px;
-    border-style: solid;
     height: 400px;
     width: 1100px;
     margin: auto;
@@ -486,6 +488,7 @@ img.logo-fin {
 
 
 /*modif camille pour les onglets*/
+<<<<<<< HEAD
 
 .onglet {
     display: inline-block;
@@ -519,6 +522,45 @@ img.logo-fin {
 }
 
 .row_onglets {
+=======
+.onglet
+        {
+                display:inline-block;
+                margin-left:3px;
+                margin-right:3px;
+                padding:3px;
+                cursor:pointer;
+                margin: auto;
+                width: inherit;
+                border-radius: 9px;
+        }
+
+.onglet_0
+        {
+                border : solid #17a2b8;
+        }
+        
+.onglet_1
+        {
+                padding-bottom:7px;
+                background-color: #17a2b8;
+                font :#FFFFFF;
+        }
+        
+.contenu_onglet
+        {
+                /*border:3px solid #808080;*/
+                margin-top:-1px;
+                padding:5px;
+                display:none;
+                height: 450px;
+                width: 1100px;
+                margin: auto;
+        }
+        
+.row_onglets
+{
+>>>>>>> 67b38a5249a4ef592023f46dc2f3de0c62e3c6f9
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
@@ -554,7 +596,11 @@ img.logo-fin {
     height: 25%;
 }
 
+<<<<<<< HEAD
 .nom_prenom_spe_adresse {
+=======
+.nom_prenom_spe_adresse{
+>>>>>>> 67b38a5249a4ef592023f46dc2f3de0c62e3c6f9
     margin-top: 2%;
     height: 30%
 }
@@ -618,6 +664,7 @@ h2 {
     margin-top: 2%;
 }
 
+<<<<<<< HEAD
 photo_profile_med_lum {
     width: 100%;
     height: 100%;
@@ -661,3 +708,10 @@ photo_profile_med_lum {
     color: #f2dede;
     background-color: #a94442;
 }
+=======
+
+
+
+
+
+>>>>>>> 67b38a5249a4ef592023f46dc2f3de0c62e3c6f9
