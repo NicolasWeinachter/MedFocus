@@ -523,6 +523,15 @@ img.logo-fin {
     margin: auto;
     background-color: #F0F8FF !important;
     border-radius: 10px;
+
+}
+
+.fond_onglet {
+    background-color: #F0F8FF !important;
+    border-radius: 10px;
+    height: 450px;
+    width: inherit;
+    margin: 10px;
 }
 
 .row_onglets {
