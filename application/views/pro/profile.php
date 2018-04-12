@@ -30,14 +30,6 @@
                       anc_onglet = name;
               }
 
-              function change_onglet_graph(name_graph)
-              {
-                      document.getElementById('onglet_graph_'+anc_onglet_graph).className = 'onglet_graph_0 onglet_graph';
-                      document.getElementById('onglet_graph_'+name_graph).className = 'onglet_graph_1 onglet_graph';
-                      document.getElementById('contenu_onglet_graph_'+anc_onglet_graph).style.display = 'none';
-                      document.getElementById('contenu_onglet_graph_'+name_graph).style.display = 'block';
-                      anc_onglet_graph = name_graph;
-              }
 
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
@@ -51,7 +43,7 @@
         data.addRows([
           ['Accueil', 3],
           ['Confiance', 1],
-          ['Lieux', 3],
+          ['Lieux', 5],
           ['Ponctualité', 2],
         ]);
 
@@ -107,6 +99,21 @@
                 {
                     document.getElementById(id).style.display="none";
                     document.getElementById('bouton_'+id).innerHTML='Voir détails';
+                }
+                return true;
+            };
+
+        function afficher_cacher_graph(id_graph)
+            {
+                if(document.getElementById(id_graph).style.display=="none")
+                {
+                    document.getElementById(id_graph).style.display="inline";
+                    document.getElementById('bouton_graph_'+id_graph).innerHTML='Masquer détails graph';
+                }
+                else
+                {
+                    document.getElementById(id_graph).style.display="none";
+                    document.getElementById('bouton_graph_'+id_graph).innerHTML='Voir détails graph';
                 }
                 return true;
             };
@@ -210,14 +217,21 @@
                   <div class="col-1"></div>
                   <div class="col-4">
                     <h2 class="center">Analyses de vos avis</h2>
-                    <div class="contenu_onglet_graph" id="contenu_onglet_graph_barre">
-                      <div id="chart_div"></div>
-                    </div>
-                    <div class="contenu_onglet_graph" id="contenu_onglet_graph_ligne">
-                      <div id="curve_chart" style="width: 900px; height: 500px"></div>
-                    </div>
-                    <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_graph_barre" onclick="javascript:change_onglet_graph('barre');">Barre</span>
-                    <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_graph_ligne" onclick="javascript:change_onglet_graph('ligne');">Ligne</span>
+
+                      <p class="bouton lien-normal aff_avis center" id="bouton_graph" onclick="javascript:afficher_cacher_graph('graph');">Cliquez pour voir l'évolution de vos avis</p>
+                                <div id="graph">
+                                <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                                </div>
+
+                                <p></p>
+                                <script type="text/javascript">
+                                    //<!--
+                                    afficher_cacher_graph('graph');
+                                    //-->
+                                </script>
+                    
+                                <div id="chart_div"></div>
+      
                   </div>
                   <div class="col-1"></div>
                   <div class="col-5">
@@ -383,11 +397,7 @@
         //-->
     </script>
 
-     <script type="text/javascript">
-        //<!--
-                var anc_onglet_graph = 'graph_barre';
-                change_onglet_graph(anc_onglet_graph);
-    </script>
+     
 
         <footer>
         <div id="containerFin">
