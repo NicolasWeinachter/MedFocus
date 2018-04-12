@@ -43,7 +43,7 @@
 		</br> 
 		<h1>Vous êtes praticien ?</h1>
 		<p>  </p>
-		<h2>Essayez la version Premium avec la prise de rendez-vous en ligne !</h2>
+		<h2 class="title_h2">Essayez la version Premium avec la prise de rendez-vous en ligne !</h2>
 
 		<table class="table">
  			<tbody>

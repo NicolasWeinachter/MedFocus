@@ -13,6 +13,20 @@
 
 <body>
 
+	<div id="container1_user">
+		<header>
+			<div id="head">
+				<div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+				<div class="connexion">
+					<ul id="onglets">
+						<li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+						<li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+	</div>
+
     <div id="container2_user">
         <h1>Connectez vous à votre espace personnel</h1>
         <form id="form" method="post" action="">
