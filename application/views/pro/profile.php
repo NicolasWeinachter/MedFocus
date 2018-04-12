@@ -30,6 +30,15 @@
                       anc_onglet = name;
               }
 
+              function change_onglet_graph(name_graph)
+              {
+                      document.getElementById('onglet_graph_'+anc_onglet_graph).className = 'onglet_graph_0 onglet_graph';
+                      document.getElementById('onglet_graph_'+name_graph).className = 'onglet_graph_1 onglet_graph';
+                      document.getElementById('contenu_onglet_graph_'+anc_onglet_graph).style.display = 'none';
+                      document.getElementById('contenu_onglet_graph_'+name_graph).style.display = 'block';
+                      anc_onglet_graph = name_graph;
+              }
+
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
@@ -47,15 +56,44 @@
         ]);
 
         // Set chart options
-        var options = {'title':'Analyse de vos avis',
-                       'width':400,
-                       'height':300};
+        var options = {'width':400,
+                       'height':300,
+                        'colors': ['#a6d7d1']
+                      };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
   </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Avis', 'Accueil', 'Confiance', 'Lieu', 'Poncutalité'],
+          ['',  5, 3, 2, 3],
+          ['',  2, 1, 4, 2],
+          ['',  4, 3, 1, 3],
+          ['',  5, 5, 3, 5],
+          
+        ]);
+
+        var options = {
+          curveType: 'function',
+          'colors': ['#a6d7d1','#17a2b8','#000000', '#696969'],
+
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 
   <script>
         function afficher_cacher(id)
@@ -172,11 +210,19 @@
                 <div class="row">
                   <div class="col-1"></div>
                   <div class="col-4">
-                    <div id="chart_div"></div>
+                    <h2 class="center">Analyses de vos avis</h2>
+                    <div class="contenu_onglet_graph" id="contenu_onglet_graph_barre">
+                      <div id="chart_div"></div>
+                    </div>
+                    <div class="contenu_onglet_graph" id="contenu_onglet_graph_ligne">
+                      <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                    </div>
+                    <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_graph_barre" onclick="javascript:change_onglet_graph('barre');">Barre</span>
+                    <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_graph_ligne" onclick="javascript:change_onglet_graph('ligne');">Ligne</span>
                   </div>
                   <div class="col-1"></div>
                   <div class="col-5">
-                    <h2 class="center light">Vos avis</h2>
+                    <h2 class="center">Vos avis</h2>
 
                     <p class="light">Nom du patient :   </p>
                     <p class="light">Avis global :      </p>
@@ -336,6 +382,12 @@
                 var anc_onglet = 'info';
                 change_onglet(anc_onglet);
         //-->
+    </script>
+
+     <script type="text/javascript">
+        //<!--
+                var anc_onglet_graph = 'graph_barre';
+                change_onglet_graph(anc_onglet_graph);
     </script>
 
         <footer>
