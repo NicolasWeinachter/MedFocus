@@ -78,6 +78,7 @@ class ProTable extends CI_Model
      *	@param string $job
      *  @param string $spe
      *  @param string $exp
+     *  @param string $lang
      *  @param int $num_RPPS
      *  @param bool $aga
      *  @param string $payment
@@ -90,8 +91,8 @@ class ProTable extends CI_Model
      *  @param bool $premium
 	 *	@return bool Le résultat de la requête
      */
-    public function update_pro($email, $pwd, $name, $surname, $bday, $gender, $job, $spe, $exp, $num_RPPS, $aga, $payment,
-    $carte_vitale, $address, $postcode, $city, $practical, $num_tel, $premium)
+    public function update_pro($email, $pwd, $name, $surname, $bday, $gender, $job, $spe, $exp, $lang, $num_RPPS, $aga, 
+    $payment, $carte_vitale, $address, $postcode, $city, $practical, $num_tel, $premium)
     {  
         $data = array (
             'password'  => $pwd,
@@ -102,6 +103,7 @@ class ProTable extends CI_Model
             'job'  => $job,
             'speciality'  => $job,
             'experience'  => $exp,
+            'languages'  => $lang,
             'num_RPPS'  => $num_RPPS,
             'AGA'  => $aga,
             'payment'  => $payment,
