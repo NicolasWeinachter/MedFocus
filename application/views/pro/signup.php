@@ -302,6 +302,10 @@
                                 <?php echo form_error('inputPassword2'); ?>
                             </div>
 
+                            <h3 class="center light">Importez une photo de profil</h3>
+                            <input type="file" name="profilPicture" />
+
+
                             <div class="row">
                                 <div class="col"></div>
                                 <div class="col"></div>
