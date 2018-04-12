@@ -33,38 +33,146 @@
 	<br>
 
 	<div class="row">
-        	<div class="col">
-        	</div>
+        	<div class="col"></div>
         	<div class="col-8 fond_bleu">
-        		<div class="row">
-        			<div class="col"></div>
-        			<div Class="col-8">
-        				<div class="row">
-        					<div class="col-6">
-        						<p class="light">Qualité de l'accueil :</p> 
-        						<p class="light">Mise en confiance :</p>
-        						<p class="light">Propreté des lieux :</p>
-        						<p class="light">Ponctualité (hors urgence) :</p>
-        					</div>
-        					<div class="col-6">
-        						CETAIT NUL 
+        						<br>
+        						<h2 class="light center">Qualité de l'accueil :
+        						<br>
+								 
+        							<div class="row">
+        								<div class="col-1">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-1">
+										</div>
+										<br>
+									</div>
+								</h2>
+								<br>
+								<br>
+        						<br> 
+        						<h2 class="light center">Mise en confiance :
+        						<br>
+								
         						<div class="row">
-        							<div class="col"></div>
-                                        <div class="col"></div>
-                                        <div class="col"></div>
-                                        <div class="col">
-                                            <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
-                                        </div>
-                                    </div>
-                                </div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col"></div>
-        		</div>
-        	</div>
-        	<div class="col">
-        	</div>
+        								<div class="col-1">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-1">
+										</div>
+										<br>
+									</div>
+								</h2>
+        						<br>
+        						<br>
+								<br>
+        						<h2 class="light center">Propreté des lieux :
+        						<br>
+								
+        							<div class="row">
+        								<div class="col-1">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-1">
+										</div>
+										<br>
+									</div>
+        						</h2>
+        						<br>
+        						<br>
+								<br>
+        						<h2 class="light center">Ponctualité (hors urgence) :
+        						<br>
+							
+
+        						<div class="row">
+        								<div class="col">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox" title="bookmark page"><br/>
+										</div>
+										<div class="col">
+										</div>
+										<br>
+									</div></h2>
+        						<br>
+        						<br>
+								<br>
+        						<h2 class="light center">N'hésitez pas à laisser un commentaire : </h2>
+        						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        						<br>
+        						
+
+								<div class="row">
+	        							<div class="col"></div>
+	                                    <div class="col"></div>
+	                                    <div class="col">
+	                                    	Avis anonyme : <input type="checkbox">
+	                                    </div>
+	                                    <div class="col">
+	                                    	
+                                        	<button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
+	                                    </div>
+	                                
+	                            </div>
+	                        </div>
+				
+        	<div class="col"></div>
+        	
     </div>
 
 
