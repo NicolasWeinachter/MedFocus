@@ -34,7 +34,7 @@ class RdvTable extends CI_Model
 	{
 		return $this->db->select('*')
                         ->from($this->table)
-                        ->where('email_patient', (string) $email_user)
+                        ->where('email_user', (string) $email_user)
                         ->get()
                         ->result_array();
     }

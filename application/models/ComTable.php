@@ -41,7 +41,7 @@ class ComTable extends CI_Model
 	{
 		return $this->db->select('*')
                         ->from($this->table)
-                        ->where('email_patient', (string) $email)
+                        ->where('email_user', (string) $email)
                         ->get()
                         ->result_array();
     }
