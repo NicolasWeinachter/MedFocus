@@ -1,3 +1,5 @@
+/<?php //var_dump($lumiere); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -154,9 +156,16 @@
         <main class="site-content col-md-11">
             <div class="container_lumiere col-md-12">
                 <h2 class="title_h2 lumiere_title">
-                    Lumière sur ces <?= $speciality['speciality'] ?>s qui rayonnent près de chez vous
+                <?php if($speciality != "") : ?>
+                    Lumière sur ces <?= $speciality ?>s qui rayonnent près de chez vous
+    			<?php else : ?>
+                    Lumière sur les praticiens qui rayonnent près de chez vous
+                <?php endif; ?>
                 </h2>
                 <div class="d-flex flex-row lumiere">
+
+                <?php foreach ($lumiere as $myLumiere) : ?>
+
                     <div class="col-md-3">
                         <div class="d-flex flex-row">
                             <div class="col-md-6">
@@ -165,50 +174,14 @@
                             </div>
                             <div class="col-md-6"> 
                                 <!--variable-->
-                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
+                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b><?php echo $myLumiere['name'] ?></b> <?php echo $myLumiere['surname'] ?></p></a>
                                 <p class="light">CP, Ville</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="d-flex flex-row">
-                            <div class="col-md-6">
-                                <!-- variable-->
-                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
-                            </div>
-                            <div class="col-md-6"> 
-                                <!--variable-->
-                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
-                                <p class="light">CP, Ville</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="d-flex flex-row">
-                            <div class="col-md-6">
-                                <!-- variable-->
-                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
-                            </div>
-                            <div class="col-md-6"> 
-                                <!--variable-->
-                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
-                                <p class="light">CP, Ville</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="d-flex flex-row">
-                            <div class="col-md-6">
-                                <!-- variable-->
-                                <a href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-10" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" ></a>
-                            </div>
-                            <div class="col-md-6"> 
-                                <!--variable-->
-                                <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b>Nom</b> Prénom</p></a>
-                                <p class="light">CP, Ville</p>
-                            </div>
-                        </div>
-                    </div>
+                    
+                <?php endforeach; ?>
+                    
                 </div>
             </div>
 

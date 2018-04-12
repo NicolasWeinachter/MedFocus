@@ -84,8 +84,16 @@ class home extends CI_Controller
 
 			//Autres critères
 			
+			//Speciality searched
 			$query = $this->ProTable->get_speciality_basic_search($data['criterias']['what'], $data['criterias']['where']);
-            $data['speciality'] = $query['0'];
+			if($query) :
+				$data['speciality'] = $query[0]['speciality'];
+			else :
+				$data['speciality'] = "";
+			endif;
+
+			//Speciality search
+			$data['lumiere'] = $this->ProTable->get_lumiere_speciality_search($data['speciality']);
 
 			//Find pros
 			
