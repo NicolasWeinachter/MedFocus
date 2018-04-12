@@ -40,10 +40,10 @@
         data.addColumn('string', 'Critère');
         data.addColumn('number', 'Satisfaction');
         data.addRows([
-          ['Qualité accueil', 3],
-          ['Temps attente', 1],
-          ['Propreté des lieux', 3],
-          ['Temps de prise de rendez-vous', 2],
+          ['Accueil', 3],
+          ['Confiance', 1],
+          ['Lieux', 3],
+          ['Ponctualité', 2],
         ]);
 
         // Set chart options
@@ -182,11 +182,15 @@
                     <p class="light">Avis global :      </p>
                     <p class="bouton lien-normal aff_avis" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher plus de détails</p>
                                 <div id="texte">
-                                <p class="light">Qualité de l'accueil :</p>
-                                <p class="light">Mise en confiance :</p>
-                                <p class="light">Propreté des lieux :</p>
-                                <p class="light">Poncutalité (hors urgence) :</p>
+                                
+                                  <div class="texte col-md-12">
+                                      <p class="light">Qualité de l'accueil :</p>
+                                      <p class="light">Mise en confiance :</p>
+                                      <p class="light">Propreté des lieux :</p>
+                                      <p class="light">Poncutalité (hors urgence) :</p>   
+                                  </div>
                                 </div>
+                                
                         <p></p>
                         <script type="text/javascript">
                             //<!--
