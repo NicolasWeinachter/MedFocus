@@ -212,63 +212,50 @@
                 </div>
             </div>
 
-            
-            <div class="d-flex flex-row container_med">
-
-                <?php foreach ($results as $myResults) : ?>
-
-                <div class="col-md-7 container_med">
-                    <div class="border d-flex flex-row">
-
-                    <table class="table">
-                    <tr> 
-                        <div class="col-md-5 p-2">
-                            <div class="row">
-                                <!-- variable-->
-                                <img class="col-md-8 photo_profile_med" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
-                                <!--variable-->
-                                <div class="col-md-4 nom_prenom_spe_adresse">
-                                    <p class="light"><b>Nom</b> Prénom</p> 
-                                    <p class="light">Spécialité</p>
-                                    <br>
-                                    <p class="light">Adresse</p>
-                                </div>
-                            </div>
-                            <div class="row lumiere">
-                                <!--variable-->
-                                <p class="light col-md-12">Qualité de l'accueil :</p> <br>
-                                <p class="light col-md-12">Mise en confiance :</p> <br>
-                                <p class="light col-md-12">Propreté des lieux :</p> <br>
-                                <p class="light col-md-12">Ponctualité (hors urgences) : </p>
-                                <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
-                                    <div id="texte" class="texte col-md-12">
-                                        <p class="light">Premier commentaire</p>
-                                        <p class="light">Deuxième commentaire</p>
-                                        <p class="light">Troisième commentaire</p>
-                                        <p class="light">Quatrième commentaire</p>
-                                        <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
+            <div class="d-flex flex-row">
+                <div class="col-md-7 d-flex flex-row flex-column">
+                    <?php foreach ($results as $myResults) : ?>
+                            <div class="border d-flex flex-row">
+                                <div class="col-md-5 p-2">
+                                    <div class="row">
+                                        <!-- variable-->
+                                        <img class="col-md-8 photo_profile_med" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>" > 
+                                        <!--variable-->
+                                        <div class="col-md-4 nom_prenom_spe_adresse">
+                                            <p class="light"><b>Nom</b> Prénom</p> 
+                                            <p class="light">Spécialité</p>
+                                            <br>
+                                            <p class="light">Adresse</p>
+                                        </div>
                                     </div>
-                                <script type="text/javascript">
-                                    //<!--
-                                    afficher_cacher('texte');
-                                    //-->
-                                </script>
-                            </div>
-                            <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
-                        
-                        </div>
-                        <!--variable-->
-                        <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
-
-                    </tr>         
-                </table>
-                </div>                    
-                </div>
-
-               
-
-                <?php endforeach; ?>
-                
+                                    <div class="row lumiere">
+                                        <!--variable-->
+                                        <p class="light col-md-12">Qualité de l'accueil :</p> <br>
+                                        <p class="light col-md-12">Mise en confiance :</p> <br>
+                                        <p class="light col-md-12">Propreté des lieux :</p> <br>
+                                        <p class="light col-md-12">Ponctualité (hors urgences) : </p>
+                                        <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
+                                            <div id="texte" class="texte col-md-12">
+                                                <p class="light">Premier commentaire</p>
+                                                <p class="light">Deuxième commentaire</p>
+                                                <p class="light">Troisième commentaire</p>
+                                                <p class="light">Quatrième commentaire</p>
+                                                <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
+                                            </div>
+                                        <script type="text/javascript">
+                                            //<!--
+                                            afficher_cacher('texte');
+                                            //-->
+                                        </script>
+                                    </div>
+                                    <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
+                                
+                                </div>
+                                <!--variable-->
+                                <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
+                            </div>                    
+                    <?php endforeach; ?>
+                </div>                
                 <div class="col-md-5">
                     <div class ="col-md-12 maps" id="map_div" style="height: 500px; width: 900px"></div>
                 </div>
