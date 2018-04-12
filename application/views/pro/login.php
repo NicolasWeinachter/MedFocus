@@ -15,45 +15,52 @@
 <body>
 	<div id="container1_user">
 
-        <header>
+        <header class="container1_search">
             <div id="head">
-                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
                     <ul id="onglets">
-                        <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-                        <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> 
         </header>
     </div>
 
-    <div id="container2_user">
-        <h1>Connectez vous à votre espace professionnel</h1>
-        <form id="form" method="post" action="">
-            <div class="form-group">
-				<label for="email"> Adresse e-mail </label>
-				<input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" aria-describedby="emailHelp" placeholder="Email" />
-				<?php echo form_error('email'); ?>
-			</div>
+        <h1 class="center">Connectez-vous à votre espace professionnel</h1>
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+                <form id="form" method="post" action="">
+                    <div class="form-group">
+        				<label for="email"> Adresse e-mail </label>
+        				<input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" aria-describedby="emailHelp" placeholder="Email" />
+        				<?php echo form_error('email'); ?>
+        			</div>
 
-			<div class="form-group">
-				<label for="pwd"> Mot de passe </label>
-				<input type="password" name="pwd" value="<?php echo set_value('pwd'); ?>" class="form-control" placeholder="Password"/>
-				<?php echo form_error('pwd'); ?>
-			</div>
+        			<div class="form-group">
+        				<label for="pwd"> Mot de passe </label>
+        				<input type="password" name="pwd" value="<?php echo set_value('pwd'); ?>" class="form-control" placeholder="Password"/>
+        				<?php echo form_error('pwd'); ?>
+        			</div>
 
-            <article class="col-md-8">
-			<?php if ($error) : ?>
-				<div class="panel panel-danger">
-					<div class="panel-heading">E-mail ou mot de passe incorrect</div>
-				</div>
-			<?php endif; ?>
-            </article>
-            
-                <button type="submit" value="Envoyer" class="btn btn-info"><a class="lien-normal text-blanc"> Accéder à mon compte </a></button>
-                <p><a href="<?php echo site_url("pro/signup"); ?>" class="text-info">Pas encore inscrit ?</a></p>
-        </form>
+                    <article class="col-md-8">
+        			<?php if ($error) : ?>
+        				<div class="panel panel-danger">
+        					<div class="panel-heading">E-mail ou mot de passe incorrect</div>
+        				</div>
+        			<?php endif; ?>
+                    </article>
+                    
+                        <button type="submit" value="Envoyer" class="btn btn-info"><a class="lien-normal text-blanc"> Accéder à mon compte </a></button>
+                        <p><a href="<?php echo site_url("pro/signup"); ?>" class="text-info">Pas encore inscrit ?</a></p>
+                </form>
+             </div>
+            <div class="col">
+            </div>
+        </div>
     </div>
 
     <footer>
