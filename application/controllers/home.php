@@ -83,6 +83,12 @@ class home extends CI_Controller
 		}
 
         $this->load->view('home/search');
+    }
+    
+    public function profil_doc_rdv()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/profil_doc_rdv');
 	}
 
 
