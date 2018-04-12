@@ -26,6 +26,9 @@ class user extends CI_Controller
 
         // Chargement du Modèle
         $this->load->model('UserTable');
+
+        $data=array();
+        $data['error'] = false;
     
         $this->form_validation->set_rules('email', '"E-mail"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
         $this->form_validation->set_rules('pwd',   '"Mot de passe"', 'trim|required|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
@@ -33,6 +36,7 @@ class user extends CI_Controller
         //	Le formulaire est valide
         if($this->form_validation->run())
         {
+
             $email = $this->input->post('email');
             $password = $this->input->post('pwd');
 
@@ -59,19 +63,24 @@ class user extends CI_Controller
                 {
                     //Pop-up Mauvais Mot de passe
                     echo ("pwd");
+                    $data['error'] = true;
                 }   
             }
             else
             {
                 //Pop-up Mauvais Mot de passe
-                echo ("exists");               
+                //echo ("exists");   
+                $data['error'] = true; 
+        $this->load->view('user/login',$data);
+                                           
             }
         }
+        else{
         //	Le formulaire est invalide ou vide
-        else
-        {
-            $this->load->view('user/login');
+
+        $this->load->view('user/login',$data);
         }
+
     }
     
 
@@ -144,6 +153,8 @@ class user extends CI_Controller
 
         // Chargement du Modèle
         $this->load->model('UserTable');
+        $this->load->model('ComTable');
+        $this->load->model('RdvTable');
 
         // Profiler for debug
         $this->output->enable_profiler(TRUE);
@@ -152,9 +163,18 @@ class user extends CI_Controller
         //{
             $email = $this->session->userdata('email');
             $query = $this->UserTable->get_info_user($email);
-            $data_user = $query['0'];
+            $data['user'] = $query['0'];
+            $query = $this->ComTable->get_user_comments($email);
+            //Get doctor info for each comment
+            $data['comments'] = $query;
+            $query = $this->RdvTable->get_user_rdv($email);
+            //Get doctor info for each rdv            
+            $data['rdv'] = $query;
+            $query = $this->UserTable->get_info_user($email);
+            //Get doctor info for each rdv            
+            $data['pro'] = $query['0'];
 
-            $this->load->view('user/profile', $data_user, false);                  
+            $this->load->view('user/profile', $data, false);                  
         //}
     }
     

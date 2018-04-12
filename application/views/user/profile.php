@@ -68,37 +68,43 @@
             <div class="contenu_onglets">
                 <div class="contenu_onglet" id="contenu_onglet_presentation">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Mon nom : </li>
-                        <li class="list-group-item">Mon prénom :</li>
-                        <li class="list-group-item">Ma date de naissance :</li>
-                        <li class="list-group-item">Je suis :</li>
-                        <li class="list-group-item">Mon numéro de téléphone : </li>
-                        <li class="list-group-item">Mon adresse email :</li>
+                        <li class="list-group-item">Mon nom : <?= $user['name'] ?></li>
+                        <li class="list-group-item">Mon prénom : <?= $user['surname'] ?></li>
+                        <li class="list-group-item">Ma date de naissance : <?= $user['bday'] ?></li>
+                        <li class="list-group-item">Je suis : <?= $user['gender'] ?></li>
+                        <li class="list-group-item">Mon numéro de téléphone : <?= $user['num_tel'] ?></li>
+                        <li class="list-group-item">Mon adresse email : <?= $user['email'] ?></li>
                     </ul>
                     <br>
                     <p><a href="#" class="btn btn-info btn-200 btn-center">Modifier mes informations</a></p>
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_avis">
                     <h1>Vos avis</h1>
-                    <table class="table">
-                    <tr>
-                        <td>
-                            Nom : <br>
-                            Spécialité : <br>
-                            Adresse : <br>
-                        </td>
-                        <td>
-                            Note : <br>
-                            <br>
-                            Autres infos :<br>
-                        </td>  
-                        <td>
-                            <a href="#" class="btn btn-info btn-sm btn-200 btn-center">Prendre un rendez-vous</a>
-                            <br>
-                            <a href="#">En savoir plus</a>
-                        </td>
-                    </tr>         
-                </table>
+                    
+                    <?php foreach ($comments as $myComment) : ?>
+                    
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    Nom : <?= $myComment['email_pro'] ?><br>
+                                    Spécialité : <?= $myComment['job'] ?><br>
+                                    Adresse : <?= $myComment['address'] ?><br>
+                                </td>
+                                <td>
+                                    Note : <?= $myComment['num_RPPS'] ?><br>
+                                    <br>
+                                    Autres infos : <br>
+                                </td>  
+                                <td>
+                                    <a href="#" class="btn btn-info btn-sm btn-200 btn-center">Prendre un rendez-vous</a>
+                                    <br>
+                                    <a href="#">En savoir plus</a>
+                                </td>
+                            </tr>         
+                        </table>
+                    
+                    <?php endforeach; ?>
+                    
                 </div>
                 <div class="contenu_onglet" id="contenu_onglet_rdv">
                     <h1>Vos rendez-vous</h1>
@@ -109,16 +115,20 @@
                         <div class="description_rdv">
                             
                               <div class="historique_rdv">
-                                <button type="button" class="btn btn-info" id="bouton_historique" ><a class="lien-normal text-blanc" href="<?php echo site_url("user/historique_rdv"); ?>">Historique des rendez-vous</a></button>
+                                <button type="button" class="onglet_0 btn btn-info btn-150 btn-center" id="onglet_historique" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('historique');">Historique des rendez-vous</a></button>
+
                               </div>
                               <div class="info_rdv">
                                 <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
                                   <div class="carousel-inner">
+
+                                    <?php foreach ($rdv as $myRdv) : ?>
+                                  
                                     <div class="carousel-item active">
                                       <p class="center">Vendredi 17 novembre 2017 - 15h</p>
                                       <table class="table">
                                       <tr>
-                                        <td>Nom : <br>
+                                        <td>Nom : <?= $myRdv['email_pro'] ?><br>
                                             Téléphone : <br>
                                         </td>
                                       <td>Prénom : <br>
@@ -143,11 +153,17 @@
                                       </tr>
                                     </table>
                                 </div>
+
+                                    <?php endforeach; ?>
+                                
+
+                                     <?php foreach ($rdv as $myRdv) : ?>
+
                                     <div class="carousel-item">
                                       <p class="center">Vendredi 3 février 2018 - 11h</p>
                                       <table class="table">
                                       <tr>
-                                        <td>Nom : <br>
+                                        <td>Nom : <?= $myRdv['email_pro'] ?><br>
                                             Téléphone : <br>
                                         </td>
                                       <td>Prénom : <br>
@@ -174,6 +190,9 @@
                                     </div>
                                   </div>
 
+                                    <?php endforeach; ?>
+                                  
+
                                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                                   <span class="carousel-control-prev-icon fleche-caroussel-gauche" aria-hidden="true"></span>
                                   <span class="sr-only">Previous</span>
@@ -191,6 +210,39 @@
                     </div>
                     
                 </div>
+
+                <div class="contenu_onglet" id="contenu_onglet_historique">
+
+                <br>
+                  <div id="container4_historique_rdv">
+                    <div class="info-medecin-rdv">
+                      <table class="table">
+                        <tr>
+                          <td>
+                              Nom : <br>
+                              Adresse : <br>
+                              Note : <br>
+                          </td>
+                          <td>
+                              Spécialité : <br>
+                              Téléphone : <br>
+                              <a href="#" class="text-info">Voir la fiche complète</a>
+                          </td> 
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="info-rdv">
+                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                      <div class="info-rdv2">
+                        <p class="center">Informations relatives au rendez-vous :</p>
+                      </div>
+                    </div>
+                    <div class="partage-exp">
+                      <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="contenu_onglet" id="contenu_onglet_liste_med">
                     <h1>Vos médecins</h1>
                     <table class="table">

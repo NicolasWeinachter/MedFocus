@@ -110,7 +110,7 @@ class home extends CI_Controller
         $this->load->library('session');        
         
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         // Chargement du Modèle
 		$this->load->model('ProTable');
@@ -121,26 +121,12 @@ class home extends CI_Controller
             $profession = $this->input->post('spécialité');
             $location = $this->input->post('location');
 
-			if($this->UserTable->check_pwd($email, $password))
-			{
-				//	On lance une requête
-				$results = array();
-				$results = $this->UserTable->get_pro_user($email);                
-				
-			}
-			else
-			{
-				//Pop-up Mauvais Mot de passe
-				echo ("pwd");
-			}   
-		}
-		else
-		{
-			//Pop-up Mauvais Mot de passe
-			echo ("exists");               
+            //Autres critères
+
+            //Find pros
 		}
 
-        $this->load->view('pro/search',$results);
+        $this->load->view('home/search');
 	}
 
 

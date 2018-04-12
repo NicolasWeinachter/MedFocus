@@ -823,7 +823,8 @@ NOTE: use percentage font sizes or else old IE chokes
 
 /* title text */
 .fc-toolbar h2 {
-  margin: 0; }
+  margin: 0;
+ }
 
 /* button layering (for border precedence) */
 .fc-toolbar button {
