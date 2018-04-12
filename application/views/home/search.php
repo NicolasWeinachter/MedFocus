@@ -219,12 +219,11 @@
 
                 <?php foreach ($results as $myResults) : ?>
 
-                             
-            
                 <div class="col-md-7 container_med">
                     <div class="border d-flex flex-row">
+
                     <table class="table">
-                <tr> 
+                    <tr> 
                         <div class="col-md-5 p-2">
                             <div class="row">
                                 <!-- variable-->
@@ -258,10 +257,12 @@
                                 </script>
                             </div>
                             <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
+                        
                         </div>
                         <!--variable-->
                         <div class="col-md-6.5 calendar2 p-2" id='calendar'></div>
-                        </tr>         
+                        
+                    </tr>         
                 </table>
                 </div>                    
                 </div>
