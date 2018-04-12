@@ -44,8 +44,6 @@ body {
     margin-right: 20px;
     flex: 1;
     height: auto;
-
-    
 }
 
 #head {
@@ -56,10 +54,9 @@ body {
 
 .text-blanc {
     color: white !important;
-    
 }
 
-.lien-normal{
+.lien-normal {
     color: #17a2b8;
 }
 
@@ -191,8 +188,7 @@ img.logo-fin {
 
 #containerFin {
     background-color: #696969;
-    margin-bottom:0;
-
+    margin-bottom: 0;
 }
 
 .btn {
@@ -238,7 +234,6 @@ img.logo-fin {
     width: 1100px;
     margin: auto;
 }
-
 
 #info {
     /*liste des infos*/
@@ -294,8 +289,10 @@ img.logo-fin {
     margin: auto;
 }
 
+
 /*modif camille dans onglet rdv*/
-.description_rdv{          
+
+.description_rdv {
     display: block;
     height: 350px;
     width: 600px;
@@ -304,19 +301,18 @@ img.logo-fin {
     flex-direction: column;
 }
 
+
 /*#container5_user{
     display: flex;
     flex-direction: column;
 }*/
 
-.historique_rdv{
+.historique_rdv {
     display: block;
     height: 70px;
     width: 600px;
     margin: auto;
     padding-top: -3px;
-
-
 }
 
 .info_rdv {
@@ -487,68 +483,64 @@ img.logo-fin {
     height: 100px;
 }
 
-/*modif camille pour les onglets*/
-.onglet
-        {
-                display:inline-block;
-                margin-left:3px;
-                margin-right:3px;
-                padding:3px;
-                cursor:pointer;
-                margin: auto;
-                width: inherit;
-                border-radius: 9px;
-        }
 
-.onglet_0
-        {
-                border : solid #17a2b8;
-        }
-        
-.onglet_1
-        {
-                padding-bottom:7px;
-                background-color: #17a2b8;
-                font :#FFFFFF;
-        }
-        
-.contenu_onglet
-        {
-                /*border:3px solid #808080;*/
-                margin-top:-1px;
-                padding:5px;
-                display:none;
-                height: 450px;
-                width: 1100px;
-                margin: auto;
-        }
-        
-.row_onglets
-{
+/*modif camille pour les onglets*/
+
+.onglet {
+    display: inline-block;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 3px;
+    cursor: pointer;
+    margin: auto;
+    width: inherit;
+    border-radius: 9px;
+}
+
+.onglet_0 {
+    border: solid #17a2b8;
+}
+
+.onglet_1 {
+    padding-bottom: 7px;
+    background-color: #17a2b8;
+    font: #FFFFFF;
+}
+
+.contenu_onglet {
+    /*border:3px solid #808080;*/
+    margin-top: -1px;
+    padding: 5px;
+    display: none;
+    height: 450px;
+    width: 1100px;
+    margin: auto;
+}
+
+.row_onglets {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
-.center_onglets
-{
+.center_onglets {
     text-align: center;
 }
 
-.container1_search{
+.container1_search {
     background-color: #17a2b8;
 }
 
-#navbar_search{
+#navbar_search {
     background-color: #a6d7d1;
 }
 
-.background-white{
+.background-white {
     background-color: #FFFFFF;
 }
 
-.border{
+.border {
     border: darkslategrey;
     display: block;
     margin-top: 50px;
@@ -557,68 +549,67 @@ img.logo-fin {
     height: auto;
 }
 
-.photo_profile_med{
-    height: 25%;    
+.photo_profile_med {
+    height: 25%;
 }
 
-.nom_prenom_spe_adresse{
+.nom_prenom_spe_adresse {
     margin-top: 2%;
     height: 30%
 }
 
-.calendar2{
+.calendar2 {
     display: block;
-    margin-left:10%;
+    margin-left: 10%;
     margin-top: 2%;
     margin-right: 1%;
 }
 
-h2{
+h2 {
     font-size: 18px;
 }
 
-.lumiere{
+.lumiere {
     margin-top: 30px;
 }
-.bouton
-{
+
+.bouton {
     color: #17a2b8;
-    font-size:24px;
-    cursor:pointer;
-}
-.bouton:hover
-{
-    text-decoration:underline;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.texte
-{
+.bouton:hover {
+    text-decoration: underline;
+}
+
+.texte {
     padding-top: 5%;
-    border:1px solid #86928e;
+    border: 1px solid #86928e;
     background: #FFFFFF;
-    color:#000000;
+    color: #000000;
     border-radius: 0.2em;
 }
 
-.aff_comm{
-    font-size: 15px;    
+.aff_comm {
+    font-size: 15px;
     margin-left: 4%;
 }
 
-.photo_profile_med{
+.photo_profile_med {
     height: 50%;
 }
 
-.lumiere_title{
+.lumiere_title {
     margin-top: 5%;
     font-size: 30px;
 }
 
-.lumiere{
+.lumiere {
     margin-top: 5%;
 }
 
-.container_lumiere{
+.container_lumiere {
     margin-left: 5%;
     margin-right: 5%;
     background-color: #eff4f3;
@@ -626,6 +617,7 @@ h2{
     margin-top: 2%;
 }
 
+<<<<<<< HEAD
 .maps{
     display: block;
     margin-top: 50px;
@@ -636,9 +628,48 @@ h2{
 
 .container_med{
     margin: 2%;
+=======
+photo_profile_med_lum {
+    width: 100%;
+    height: 100%;
 }
 
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+>>>>>>> e7f7c1345bea9c385efd51488519a44663f5ea84
+}
 
+.panel-body {
+    padding: 15px;
+}
 
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
 
+.panel-danger {
+    border-color: #ebccd1;
+}
 
+.panel-danger>.panel-heading {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.panel-danger>.panel-heading+.panel-collapse>.panel-body {
+    border-top-color: #ebccd1;
+}
+
+.panel-danger>.panel-heading .badge {
+    color: #f2dede;
+    background-color: #a94442;
+}
