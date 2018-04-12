@@ -39,7 +39,7 @@
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Critère');
-        data.addColumn('number', 'Satisfaction');
+        data.addColumn('number', 'Note');
         data.addRows([
           ['Accueil', 3],
           ['Confiance', 1],
@@ -66,7 +66,7 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Avis', 'Accueil', 'Confiance', 'Lieu', 'Poncutalité'],
+          ['Avis', 'Accueil', 'Confiance', 'Lieu', 'Ponctualité'],
           ['',  5, 3, 2, 3],
           ['',  2, 1, 4, 2],
           ['',  4, 3, 1, 3],
@@ -74,7 +74,8 @@
           
         ]);
 
-        var options = {
+        var options = {'width':400,
+                       'height':300,
           curveType: 'function',
           'colors': ['#a6d7d1','#17a2b8','#000000', '#696969'],
 
@@ -140,6 +141,7 @@
           <div class="col"></div>
           <div class="col"></div>
           <div class="col"></div>
+          <div class="col"></div>
           <div class="col"></div>  
           <div class="col">
             <div class="row">
@@ -150,9 +152,9 @@
               <div class="col">
                 <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_notifications" onclick="javascript:change_onglet('notifications');">Notifications</span>
               </div>
+              
             </div>
             </div>
-          <div class="col"></div>
         </div>
             
         </div>
@@ -170,48 +172,63 @@
                             <span class="onglet_0 onglet" id="onglet_rdv" onclick="javascript:change_onglet('rdv');">Mes rendez-vous</span>
                         </div>
                     </div>
+          </div>
+          <div class="contenu_onglets">
+            <div class="contenu_onglet" id="contenu_onglet_notifications">
+              <br>
+              <h2 class="center light border-bottom">Vos dernières notifications</h2>
+              <br>
+              <div class="info_medecin">
+              </div>
+
             </div>
-            <div class="contenu_onglets">
-              <div class="contenu_onglet" id="contenu_onglet_notifications">
-                <br>
-                <h2 class="center italic">Vos dernières notifications</h2>
-                <br>
-                <div class="info_medecin">
-                </div>
 
-              </div>
-
-              <div class="contenu_onglet" id="contenu_onglet_info">
-                  
-                      <div class="info">
-                          <h1>Mes informations</h1>
-                          <table class="table">
-                              <tr>
-                                  <td>
-                                      <ul class="list-group list-group-flush">
-                                          <li class="list-group-item">Nom :</li>
-                                          <li class="list-group-item">Spécialité :</li>
-                                          <li class="list-group-item">N° RPPS :</li>
-                                          <li class="list-group-item">Adresse :</li>
-                                          <li class="list-group-item">Ville :</li>
-                                      </ul>
-                                  </td>
-                                  <td>
-                                      <ul class="list-group list-group-flush">
-                                          <li class="list-group-item">Prénom :</li>
-                                          <li class="list-group-item">Je suis :</li>
-                                          <li class="list-group-item">Tél professionel :</li>
-                                          <li class="list-group-item">Email :</li> 
-                                      </ul>
-                                  </td>
-                              </tr>
-                          </table>
+            <div class="contenu_onglet" id="contenu_onglet_info">
+                
+                    <div class="info">
+                        <h1 class="light border-bottom">Mes informations</h1>
+                        
+                        <div class="row">
+                          <div class="col-2"></div>
+                          <div class="col-4">
+                                  <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">Nom :</li>
+                                      <li class="list-group-item">Spécialité :</li>
+                                      <li class="list-group-item">N° RPPS :</li>
+                                      <li class="list-group-item">Adresse :</li>
+                                      <li class="list-group-item">Ville :</li>
+                                  </ul>
+                          </div>
+                          <div class="col-4">
+                                  <ul class="list-group list-group-flush">
+                                      <li class="list-group-item">Prénom :</li>
+                                      <li class="list-group-item">Je suis :</li>
+                                      <li class="list-group-item">Tél professionel :</li>
+                                      <li class="list-group-item">Email :</li> 
+                                  </ul>
+                          </div>
+                          <div class="col-2"></div>
                           <br>
-                          <a href="#" class="btn btn-info btn-sm text-blanc lien-normal btn-center btn-200">Modifier mes informations</a>
-                      </div>
-                  </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                          <div class="col-4"></div>
+                          <div class="col-4">
+                            <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_modif" onclick="javascript:change_onglet('modif');">Modifier mes informations</span>
+                          </div>
+                          <div class="col-4"></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="contenu_onglet" id="contenu_onglet_modif">
+              <h1 class="center light border-bottom">Modification de vos informations</h1>
               </div>
+
+            </div>
+
+
               <div class="contenu_onglet" id="contenu_onglet_avis">
+                <h1 class="light border-bottom">Mes avis</h1>
 
                 <div class="row">
                   <div class="col-1"></div>
@@ -230,7 +247,7 @@
                                     //-->
                                 </script>
                     
-                                <div id="chart_div"></div>
+                                <div id="chart_div" style="width: 1000px; height: 500px"></div>
       
                   </div>
                   <div class="col-1"></div>
@@ -264,7 +281,7 @@
             </div>
 
               <div class="contenu_onglet" id="contenu_onglet_rdv">
-                  <h1>Vos rendez-vous</h1>
+                  <h1 class="light border-bottom">Mes rendez-vous</h1>
                   <div id="container4_user">
                       <div class="calendar">
                         <div id='calendar'></div>
