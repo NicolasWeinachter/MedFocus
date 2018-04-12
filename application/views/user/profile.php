@@ -271,14 +271,14 @@
                             Nom : <br>
                             Spécialité : <br>
                             Adresse : <br>
-                            <a href="#">Voir la fiche complète</a>
+                            <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" >Voir la fiche complète</a>
                         </td>
                         <td>
                             Note : <br>
                             <br>
                         </td>  
                         <td>
-                            <a href="#" class="btn btn-info btn-sm btn-center btn-200">Prendre un rendez-vous</a>
+                            <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" class="btn btn-info btn-sm btn-center btn-200">Prendre un rendez-vous</a>
                             <br>
                             <a href="#" class="btn btn-info btn-sm btn-center btn-200">Partager mon expérience</a>
                         </td>
