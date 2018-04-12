@@ -161,6 +161,7 @@
         
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
+<<<<<<< HEAD
                     <div class="row row_onglets">
                         <div class="col">
                             <span class="onglet_0 onglet" id="onglet_info" onclick="javascript:change_onglet('info');">Mes informations</span>
@@ -208,6 +209,56 @@
                                   </ul>
                           </div>
                           <div class="col-2"></div>
+=======
+            <div class="row">
+                <div class="col">
+                    <span class="onglet_0 onglet" id="onglet_info" onclick="javascript:change_onglet('info');">Mes informations</span>
+                </div>
+                <div class="col">
+                    <span class="onglet_0 onglet" id="onglet_avis" onclick="javascript:change_onglet('avis');">Mes avis</span>
+                </div>
+                <div class="col">
+                    <span class="onglet_0 onglet" id="onglet_rdv" onclick="javascript:change_onglet('rdv');">Mes rendez-vous</span>
+                </div>
+            </div>
+        </div>
+        <div class="contenu_onglets">
+            <div class="contenu_onglet" id="contenu_onglet_notifications">
+                <br>
+                <h2 class="center italic">Vos dernières notifications</h2>
+                <br>
+                <div class="info_medecin">
+
+                </div>
+
+            </div>
+
+            <div class="contenu_onglet" id="contenu_onglet_info">
+                  
+                      <div class="info">
+                          <h1>Mes informations</h1>
+                          <table class="table">
+                              <tr>
+                                  <td>
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Nom :</li>
+                                          <li class="list-group-item">Spécialité :</li>
+                                          <li class="list-group-item">N° RPPS :</li>
+                                          <li class="list-group-item">Adresse :</li>
+                                          <li class="list-group-item">Ville :</li>
+                                      </ul>
+                                  </td>
+                                  <td>
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Prénom :</li>
+                                          <li class="list-group-item">Je suis :</li>
+                                          <li class="list-group-item">Tél professionel :</li>
+                                          <li class="list-group-item">Email :</li> 
+                                      </ul>
+                                  </td>
+                              </tr>
+                          </table>
+>>>>>>> 2c5901aeea42879fda722e426c62b145eb033e0f
                           <br>
                         </div>
                         <br>

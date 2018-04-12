@@ -72,7 +72,7 @@
                         <li class="list-group-item">Mon prénom : <?= $user['surname'] ?></li>
                         <li class="list-group-item">Ma date de naissance : <?= $user['bday'] ?></li>
                         <li class="list-group-item">Je suis : <?= $user['gender'] ?></li>
-                        <li class="list-group-item">Mon numéro de téléphone : <?= $user['num_tel'] ?></li>
+                        <li class="list-group-item">Mon numéro de téléphone : 0<?= $user['num_tel'] ?></li>
                         <li class="list-group-item">Mon adresse email : <?= $user['email'] ?></li>
                     </ul>
                     <br>
@@ -83,8 +83,6 @@
                     
                     <?php foreach ($comments as $myComment) : ?>
                     
-                        <table class="table">
-                            <tr>
                                 <td>
                                     Nom : <?= $myComment['email_pro'] ?><br>
                                     Spécialité : <?= $myComment['email_pro'] ?><br>
@@ -100,8 +98,6 @@
                                     <br>
                                     <a href="#">En savoir plus</a>
                                 </td>
-                            </tr>         
-                        </table>
                     
                     <?php endforeach; ?>
                     

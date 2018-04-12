@@ -96,10 +96,20 @@
         map.draw(data, options);
         }
     </script>
+    <script type="text/javascript">
+        function change_onglet(name)
+        {
+            document.getElementById('onglet_'+anc_onglet).className = 'onglet_0_rdv onglet_rdv light';
+            document.getElementById('onglet_'+name).className = 'onglet_1_rdv onglet_rdv light';
+            document.getElementById('contenu_onglet_'+anc_onglet).className = 'contenu_onglet_off';
+            document.getElementById('contenu_onglet_'+name).className = 'contenu_onglet_on';
+            anc_onglet = name;
+        }
+    </script>
     <title>MedFocus</title>
 </head>
 
-<body>
+<body class="background">
     <div class="page d-flex">
         <header class="container1_search">
             <div id="head">
@@ -112,9 +122,168 @@
                 </div>
             </div> 
         </header>
-        <main class="site-content col-md-11">
+        <main class="site-content col-md-11 d-flex flex-row background">
+            <div class="col-md-6">
+                <div class="container_avis">
+                    <div class="avis d-flex flex-row">
+                        <div class="col-md-4 d-flex flex-column"> 
+                            <div class="row">
+                                <!--variable-->
+                                <img class="col-md-6 user_profile" src="<?php echo base_url('/assets/images/website/user_profile_female.png'); ?>">
+                            </div>
+                            <div class="row name">
+                                <!--variable-->
+                                <p>Nom<b class="light"> Prénom</b></p>
+                            </div>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <div class="row container_chart">
+                                <div>
+                                    <!--variable-->
+                                    Avis sous forme de chart
+                                </div>
+                            </div>
+                            <div class="row container_comm">
+                                <div>
+                                    <!--variable-->
+                                    <p class="light">Commentaire du patient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avis d-flex flex-row">
+                        <div class="col-md-4 d-flex flex-column"> 
+                            <div class="row">
+                                <!--variable-->
+                                <img class="col-md-6 user_profile" src="<?php echo base_url('/assets/images/website/user_profile_male.png'); ?>">
+                            </div>
+                            <div class="row name">
+                                <!--variable-->
+                                <p>Nom<b class="light"> Prénom</b></p>
+                            </div>
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <div class="row container_chart">
+                                <div>
+                                    <!--variable-->
+                                    Avis sous forme de chart
+                                </div>
+                            </div>
+                            <div class="row container_comm">
+                                <div>
+                                    <!--variable-->
+                                    <p class="light">Commentaire du patient</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 bloc_doc">
+                <div class="container_info_doc d-flex flex-column">
+                    <div class="row row1 d-flex flex-row">
+                        <div class="col-md-4">
+                            <!--variable-->
+                            <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>">
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <!--variable-->
+                            <p class="light">Dr. NOM Prénom</p>
+                            <p class="light">Spécialité</p>
+                        </div>
+                    </div>
+                    <div class="row row2">
+                        <div class="systeme_onglets center_onglets ">
+                            <!--<div class="onglets">-->
+                            <div class="row col-md-12">
+                                <div class="col-md-3">
+                                    <div class="onglet_0_rdv onglet_rdv light" id="onglet_infos" onclick="javascript:change_onglet('infos');">Infos</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="onglet_0_rdv onglet_rdv light" id="onglet_tarif" onclick="javascript:change_onglet('tarif');">Tarifs </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="onglet_0_rdv onglet_rdv light" id="onglet_lieu" onclick="javascript:change_onglet('lieu');">Lieu</div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="onglet_0_rdv onglet_rdv light" id="onglet_contact" onclick="javascript:change_onglet('contact');">Contact</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row3">
+                        <div class="col-md-12">
+                            <div class="contenu_onglet_off" id="contenu_onglet_infos">
+                                <div class="d-flex flex-column">
+                                    <p class="light">Diplôme(s) : </p>
+                                    <p class="light">Photos : </p>
+                                </div>
+                            </div>
+                            <div class="contenu_onglet_off" id="contenu_onglet_tarif">
+                                <div class="d-flex flex-row">
+                                    <div class="col-md-6">
+                                        <h5 class="light">Tarifs et Remboursements</h4>
+                                        <div class="d-flex flex-column">
+                                            <p class="light">Conventionné</p>
+                                            <p class="light">Carte vitale</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="light">Moyens de paiement</h4>
+                                        <div class="d-flex flex-column">
+                                            <p class="light">Carte Bleue</p>
+                                            <p class="light">Chèques</p>
+                                            <p class="light">Espèces</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenu_onglet_off" id="contenu_onglet_lieu">
+                                <div class="d-flex flex-row">
+                                        <div class="col-md-6">
+                                            <h5 class="light">Informations</h4>
+                                            <div class="d-flex flex-column">
+                                                <p class="light">Adresse : </p>
+                                                <p class="light">Moyen(s) de transport : </p>
+                                                <p class="light">Parkings : </p>
+                                                <p class="light">Pratiques : Accès handicapé</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class ="col-md-12 maps_rdv" id="map_div"></div>                                        
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="contenu_onglet_off" id="contenu_onglet_contact">
+                                <p class="light">Tel : +33 1 76 54 09 54</p>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            //<!--
+                                var anc_onglet = 'infos';
+                                change_onglet(anc_onglet);
+                            //-->
+                        </script>
+                        
+                    </div>
+                    <div class="row row4">
+                        <button type="button" class="btn btn-info" onclick="javascript:afficher_cacher('texte');">Prendre rendez-vous chez ce médecin.</button>
+                        <div id="texte" class="texte col-md-12">
+                            <p class="light">Premier commentaire</p>
+                            <p class="light">Deuxième commentaire</p>
+                            <p class="light">Troisième commentaire</p>
+                            <p class="light">Quatrième commentaire</p>
+                            <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
+                        </div>
+                        <script type="text/javascript">
+                            //<!--
+                            afficher_cacher('texte');
+                            //-->
+                        </script>
+                    </div>
+                </div>
+            </div>
         </main>
-
         <footer>
 		    <div id="containerFin">
 		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>

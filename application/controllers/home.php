@@ -51,7 +51,7 @@ class home extends CI_Controller
 			$data['results'] = $this->ProTable->get_pros_basic_search($data['criterias']['what'], $data['criterias']['where']);
 			
 			//$this->search();
-			$this->load->view('home/search', $data);
+			$this->search($data);
 			
         }
 		else
@@ -63,7 +63,7 @@ class home extends CI_Controller
     
     
 
-    public function search()
+    public function search($data)
 	{
 		// Chargement de la bibliothèque
         $this->load->library('form_validation');
@@ -76,16 +76,16 @@ class home extends CI_Controller
 		$this->output->enable_profiler(TRUE);
 		        
 
-		$data=array();
-		$data['results']=array();
-
 		//	Le formulaire est valide
         if($this->form_validation->run())
         {
             $profession = $this->input->post('spécialité');
             $location = $this->input->post('location');
 
-            //Autres critères
+			//Autres critères
+			
+			$query = $this->ProTable->get_speciality_basic_search($data['criterias']['what'], $data['criterias']['where']);
+            $data['speciality'] = $query['0'];
 
 			//Find pros
 			
