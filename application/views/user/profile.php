@@ -87,11 +87,11 @@
                             <tr>
                                 <td>
                                     Nom : <?= $myComment['email_pro'] ?><br>
-                                    Spécialité : <?= $myComment['job'] ?><br>
-                                    Adresse : <?= $myComment['address'] ?><br>
+                                    Spécialité : <?= $myComment['email_pro'] ?><br>
+                                    Adresse : <?= $myComment['email_pro'] ?><br>
                                 </td>
                                 <td>
-                                    Note : <?= $myComment['num_RPPS'] ?><br>
+                                    Note : <?= $myComment['email_pro'] ?><br>
                                     <br>
                                     Autres infos : <br>
                                 </td>  

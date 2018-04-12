@@ -31,7 +31,7 @@
     <div id="container2_user">
         <h1>Connectez vous à votre espace professionnel</h1>
         <form id="form" method="post" action="">
-        <div class="form-group">
+            <div class="form-group">
 				<label for="email"> Adresse e-mail </label>
 				<input type="email" name="email" value="<?php echo set_value('email'); ?>" class="form-control" aria-describedby="emailHelp" placeholder="Email" />
 				<?php echo form_error('email'); ?>

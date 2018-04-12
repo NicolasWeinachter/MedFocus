@@ -20,16 +20,100 @@ class home extends CI_Controller
 	public function homepage()
 	{
         // Chargement des Helpers
-        $this->load->helper('url');
+		$this->load->helper('url');
+		
+		// Chargement de la bibliothèque
+        $this->load->library('form_validation');
+        $this->load->library('session');        
+        
+        // Profiler for debug
+        $this->output->enable_profiler(TRUE);
 
-        $session_id = $this->session->userdata('session_id');
-        
-        
-	
-		$this->load->view('home/homepage');
+        // Chargement du Modèle
+        $this->load->model('ProTable');
+
+		$session_id = $this->session->userdata('session_id');
+
+        $data=array();
+		$data['error'] = false;
+		$data['criterias']=array();
+		$data['results']=array();
+    
+        $this->form_validation->set_rules('what', '""', 'trim|required|max_length[52]|encode_php_tags');
+        $this->form_validation->set_rules('where', '""', 'trim|max_length[52]|encode_php_tags');
+
+        //	Le formulaire est valide
+        if($this->form_validation->run())
+        {
+			$data['criterias']['what'] = $this->input->post('what');
+			$data['criterias']['where'] = $this->input->post('where');
+
+			$data['results'] = $this->ProTable->get_pros_basic_search($data['criterias']['what'], $data['criterias']['where']);
+			
+			//$this->search();
+			$this->load->view('home/search', $data);
+			
+        }
+		else
+		{
+			//	Le formulaire est invalide ou vide
+			$this->load->view('home/homepage',$data);
+        }
     }
     
-    public function about()
+    
+
+    public function search()
+	{
+		// Chargement de la bibliothèque
+        $this->load->library('form_validation');
+		$this->load->library('session');  
+		
+		// Chargement du Modèle
+		$this->load->model('ProTable');
+        
+        // Profiler for debug
+		$this->output->enable_profiler(TRUE);
+		        
+
+		$data=array();
+		$data['results']=array();
+
+		//	Le formulaire est valide
+        if($this->form_validation->run())
+        {
+            $profession = $this->input->post('spécialité');
+            $location = $this->input->post('location');
+
+            //Autres critères
+
+			//Find pros
+			
+			//	Le formulaire est invalide ou vide
+			$this->load->view('home/search', $data);
+		}
+		else
+		{
+			//	Le formulaire est invalide ou vide
+			$this->load->view('home/search', $data);
+        }
+
+	}
+	
+
+
+
+    
+    public function profil_doc_rdv()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/profil_doc_rdv');
+	}
+
+
+///Footer Pages
+
+	public function about()
 	{
 		//	Maintenant, les variables sont disponibles dans la vue
 		$this->load->view('home/about');
@@ -57,38 +141,6 @@ class home extends CI_Controller
 	{
 		//	Maintenant, les variables sont disponibles dans la vue
 		$this->load->view('home/cgu');
-	}
-
-    public function search()
-	{
-		// Chargement de la bibliothèque
-        $this->load->library('form_validation');
-        $this->load->library('session');        
-        
-        // Profiler for debug
-        $this->output->enable_profiler(FALSE);
-
-        // Chargement du Modèle
-		$this->load->model('ProTable');
-		
-		//	Le formulaire est valide
-        if($this->form_validation->run())
-        {
-            $profession = $this->input->post('spécialité');
-            $location = $this->input->post('location');
-
-            //Autres critères
-
-            //Find pros
-		}
-
-        $this->load->view('home/search');
-    }
-    
-    public function profil_doc_rdv()
-	{
-		//	Maintenant, les variables sont disponibles dans la vue
-		$this->load->view('home/profil_doc_rdv');
 	}
 
 

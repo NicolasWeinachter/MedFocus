@@ -73,7 +73,7 @@ class user extends CI_Controller
         }
         else{
         //	Le formulaire est invalide ou vide
-        $this->load->view('user/login');
+        $this->load->view('user/login',$data);
         }
 
     }
@@ -172,7 +172,7 @@ class user extends CI_Controller
             //Get doctor info for each rdv            
             $data['rdv'] = $query;
 
-            $query = $this->UserTable->raph($email);
+            //$query = $this->UserTable->raph($email);
             //Get doctor info for each rdv            
             $data['pro'] = $query['0'];
 
