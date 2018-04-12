@@ -1,3 +1,5 @@
+<?php var_dump($results); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +31,9 @@
         <h1>Que recherchez vous ?</h1>
         </br> 
         <nav class="navbar">
-  			<form class="form-inline">
-				<input class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
-				<input class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search">
+  			<form class="form-inline" id="form" method="post" action="">
+				<input name="what" class="form-control mr-sm-2" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search" value="<?php echo set_value('what'); ?>">
+				<input name="where" class="form-control mr-sm-2" type="search" placeholder="Où ?" aria-label="Search"  value="<?php echo set_value('where'); ?>">
 				<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value="search">Rechercher</button>
  			</form>
 		</nav>
