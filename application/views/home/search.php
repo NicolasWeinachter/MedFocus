@@ -1,3 +1,5 @@
+<?php var_dump($results); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,9 +114,9 @@
                 </div>
             </div> 
             <nav class="navbar col-md-12" id="navbar_search">
-  			<form class="form-inline">
-				<input class="form-control mr-sm-2" id ="spécialité" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search">
-				<input class="form-control mr-sm-2" id="location" type="search" placeholder="Où ?" aria-label="Search">
+  			<form class="form-inline" id="form" method="post" action="">
+				<input class="form-control mr-sm-2" name ="spécialité" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search" value = "<?php echo $criterias['what'] ?>">
+				<input class="form-control mr-sm-2" name="location" type="search" placeholder="Où ?" aria-label="Search" value = "<?php echo $criterias['where'] ?>" >
 				<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value="search">Rechercher</button>
              </form>
             </nav> 

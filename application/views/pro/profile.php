@@ -30,6 +30,7 @@
                       anc_onglet = name;
               }
 
+
   google.charts.load('current', {'packages':['corechart']});
   google.charts.setOnLoadCallback(drawChart);
 
@@ -42,20 +43,49 @@
         data.addRows([
           ['Accueil', 3],
           ['Confiance', 1],
-          ['Lieux', 3],
+          ['Lieux', 5],
           ['Ponctualité', 2],
         ]);
 
         // Set chart options
-        var options = {'title':'Analyse de vos avis',
-                       'width':400,
-                       'height':300};
+        var options = {'width':400,
+                       'height':300,
+                        'colors': ['#a6d7d1']
+                      };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
   </script>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Avis', 'Accueil', 'Confiance', 'Lieu', 'Poncutalité'],
+          ['',  5, 3, 2, 3],
+          ['',  2, 1, 4, 2],
+          ['',  4, 3, 1, 3],
+          ['',  5, 5, 3, 5],
+          
+        ]);
+
+        var options = {
+          curveType: 'function',
+          'colors': ['#a6d7d1','#17a2b8','#000000', '#696969'],
+
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
 
   <script>
         function afficher_cacher(id)
@@ -72,22 +102,37 @@
                 }
                 return true;
             };
+
+        function afficher_cacher_graph(id_graph)
+            {
+                if(document.getElementById(id_graph).style.display=="none")
+                {
+                    document.getElementById(id_graph).style.display="inline";
+                    document.getElementById('bouton_graph_'+id_graph).innerHTML='Masquer détails graph';
+                }
+                else
+                {
+                    document.getElementById(id_graph).style.display="none";
+                    document.getElementById('bouton_graph_'+id_graph).innerHTML='Voir détails graph';
+                }
+                return true;
+            };
     </script>
 
 
 </head>
 
 <body>
-  <header>
-        <div id="head">
-            <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
-            <div class="connexion">
-                <ul id="onglets">
-                    <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-                    <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
-                </ul>
-            </div>
-        </div>
+  <header class="container1_search">
+            <div id="head">
+                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
+                <div class="connexion">
+                    <ul id="onglets">
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                    </ul>
+                </div>
+            </div> 
     </header>
 
         <h1>Mon espace personnel</h1>
@@ -106,7 +151,6 @@
                 <span class="onglet-notif btn btn-secondary btn-150 btn-center" id="onglet_notifications" onclick="javascript:change_onglet('notifications');">Notifications</span>
               </div>
             </div>
-            <!-- <button type="button" class="btn btn-secondary btn-150 btn-center" id="onglet_notifications" ><a class="lien-normal text-blanc" onclick="javascript:change_onglet('notifications');">Notifications</a></button> -->
             </div>
           <div class="col"></div>
         </div>
@@ -173,11 +217,26 @@
                 <div class="row">
                   <div class="col-1"></div>
                   <div class="col-4">
-                    <div id="chart_div"></div>
+                    <h2 class="center">Analyses de vos avis</h2>
+
+                      <p class="bouton lien-normal aff_avis center" id="bouton_graph" onclick="javascript:afficher_cacher_graph('graph');">Cliquez pour voir l'évolution de vos avis</p>
+                                <div id="graph">
+                                <div id="curve_chart" style="width: 900px; height: 500px"></div>
+                                </div>
+
+                                <p></p>
+                                <script type="text/javascript">
+                                    //<!--
+                                    afficher_cacher_graph('graph');
+                                    //-->
+                                </script>
+                    
+                                <div id="chart_div"></div>
+      
                   </div>
                   <div class="col-1"></div>
                   <div class="col-5">
-                    <h2 class="center light">Vos avis</h2>
+                    <h2 class="center">Vos avis</h2>
 
                     <p class="light">Nom du patient :   </p>
                     <p class="light">Avis global :      </p>
@@ -338,6 +397,8 @@
                 change_onglet(anc_onglet);
         //-->
     </script>
+
+     
 
         <footer>
         <div id="containerFin">

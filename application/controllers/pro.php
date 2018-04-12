@@ -91,19 +91,26 @@ class pro extends CI_Controller
         // Chargement du Modèle
         $this->load->model('ProTable');
         $this->load->model('DiplomasTable');
-/*
+        $this->load->model('AvailabilityTable');
+
+        $data=array();
+        $data['error'] = false;
+        $data['email'] = "xxx@xxx.com";                        
+
         $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
-        $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
+ /*       $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputBirth', '"Date de naissance"', 'trim|required|min_length[8]|max_length[10]|encode_php_tags');
         $this->form_validation->set_rules('inputEmail', '"Email"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
         $this->form_validation->set_rules('inputPassword',   '"Mot de passe"', 'trim|required|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputPassword2', '"Mot de passe 2"', 'trim|required|matches[inputPassword]|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
-*/
-$this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_length[1]|max_length[12]|alpha_dash|encode_php_tags');
+        $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_length[1]|max_length[12]|alpha_dash|encode_php_tags');
 
+
+        */
         //	Le formulaire est valide
         if($this->form_validation->run())
-        {           
+        {        
+            //Onglet 1               
             $name = $this->input->post('inputName');
             $surname = $this->input->post('inputSurname');
             $job = $this->input->post('inputProf');
@@ -117,6 +124,7 @@ $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_
             $lang = $this->input->post('inputLanguages');
             $exp = $this->input->post('inputExperience');
 
+            //Onglet 2           
             $service_name = $this->input->post('inputServiceName');// A coder
             $service_price = $this->input->post('inputServicePrice');// A coder
             $service_price = 70;
@@ -125,20 +133,27 @@ $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_
             $payment = "Chèque"; // A coder
             $carte_vitale = true; // A coder
 
+            //Onglet 3          
             $address = $this->input->post('inputAddressNumber') +
                  " " + $this->input->post('inputAddressName');
             $city = $this->input->post('inputCity');
             $postcode = $this->input->post('inputPostcode');
             $practical= "Parking"; // A coder
 
+            //Onglet 4
             $email = $this->input->post('inputEmail');
-            $num_tel = $this->input->post('inputPhone');
             $availability_start_hour = $this->input->post('inputOpen');
             $availability_end_hour = $this->input->post('inputClose');
+            $num_tel = $this->input->post('inputPhone');
+            $pwd = $this->input->post('inputPassword2');
+
+            //Others
+            $premium = 1;
 
             if(!$this->ProTable->pro_exists($email))
             {
-                $this->ProTable->add_pro($email, $password, $name, $surname, $gender, $birth, $phone, $nss);
+                $this->ProTable->add_pro($email, $pwd, $name, $surname, $bday, $gender, $job, $spe, $exp, $num_RPPS, $aga, $payment,
+                $carte_vitale, $address, $postcode, $city, $practical, $num_tel, $premium);
 
                 $newdata = array(
                     'username'  => $surname,
@@ -151,14 +166,18 @@ $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_
             
                 $this->profile();
             }
-            else{
-                $this->profile();
+            else
+            {
+                $data['error'] = true;                
+                $data['email'] = $email;                
+                $this->load->view('pro/signup', $data);
             }
         }
         //	Le formulaire est invalide ou vide
         else 
         {
-            $this->load->view('pro/login');
+            $data['error'] = false;                
+            $this->load->view('pro/signup', $data);
         }
     }
 

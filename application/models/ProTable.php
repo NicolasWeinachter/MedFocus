@@ -101,7 +101,7 @@ class ProTable extends CI_Model
             'gender'  => $gender,
             'bday'  => $bday,
             'job'  => $job,
-            'speciality'  => $job,
+            'speciality'  => $spe,
             'experience'  => $exp,
             'languages'  => $lang,
             'num_RPPS'  => $num_RPPS,
@@ -132,8 +132,33 @@ class ProTable extends CI_Model
                         ->from($this->table)
                         ->where('email', (string) $email)
                         ->get()
-                        ->result();
+                        ->result_array();
     }
+
+
+/**
+    *	Retourne unu liste de pros pour une recherche basique
+    *	
+    *	@param string $what 
+    *	@param string $where
+    *	@return objet Le résultat de la requête
+    */
+    public function get_pros_basic_search($what, $where)
+	{
+		return $this->db->select('email')
+                        ->from($this->table)
+                        ->like('job', (string) $what)
+                        ->or_like('speciality', (string) $what)
+                        ->or_like('name', (string) $what)
+                        ->or_like('surname', (string) $what)
+                        ->or_like('address', (string) $where)
+                        ->or_like('city', (string) $where)
+                        ->or_like('postal_code', (string) $where)
+                        ->get()
+                        ->result_array();
+    }
+
+
 
     /**
      * Verifie l'existence d'un professionnel

@@ -92,6 +92,9 @@ class user extends CI_Controller
         // Chargement du Modèle
         $this->load->model('UserTable');
 
+        $data=array();
+        $data['error'] = false;
+
         $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputBirth', '"Date de naissance"', 'trim|required|min_length[8]|max_length[10]|encode_php_tags');
@@ -110,7 +113,7 @@ class user extends CI_Controller
             $email = $this->input->post('inputEmail');
             $password = $this->input->post('inputPassword2');
 
-            $gender = "Male";
+            $gender = "Homme";
             $nss = "1blabla";
 
             if(!$this->UserTable->user_exists($email))
@@ -129,7 +132,8 @@ class user extends CI_Controller
             }
             else
             {
-                // adresse mail déjà utilisée
+                $data['error'] = true;                
+                $this->load->view('user/signup', $data);
             }
         }
         //	Le formulaire est invalide ou vide
@@ -168,9 +172,9 @@ class user extends CI_Controller
             //Get doctor info for each rdv            
             $data['rdv'] = $query;
 
-            $query = $this->UserTable->raph($email);
+            //$query = $this->UserTable->raph($email);
             //Get doctor info for each rdv            
-            $data['pro'] = $query['0'];
+            $data['pro'] = $query;
 
             $this->load->view('user/profile', $data, false);                  
         //}

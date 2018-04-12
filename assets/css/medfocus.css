@@ -1,3 +1,4 @@
+
 #container1 {
     background-color: #FFFFFF;
     background-image: url('../images/website/Sans titre.png');
@@ -43,7 +44,6 @@ body {
     margin: auto;
     flex: 1;
     height: auto;
-
 }
 
 #head {
@@ -201,7 +201,7 @@ img.logo-fin {
     justify-content: flex-end;
 }
 
-#form {
+/*#form {
     /*formulaire connexion et inscription*/
     display: block;
     width: 500px;
@@ -209,7 +209,7 @@ img.logo-fin {
     height: 200px;
     /* Longueur du bloc form*/
     margin: auto;
-}
+}*/
 
 #container1_user {
     background-color: #FFFFFF;
@@ -534,6 +534,7 @@ img.logo-fin {
     height: 450px;
     width: 1100px;
     margin: auto;
+    background-color: #F0F8FF !important;
 }
 
 .contenu_onglet_off {
@@ -639,8 +640,8 @@ h2 {
     margin-left: 4%;
 }
 
-.aff_avis{
-    font-size: 15px;    
+.aff_avis {
+    font-size: 15px;
 }
 
 .photo_profile_med {
@@ -663,7 +664,7 @@ h2 {
     padding: 0 !important;
 }
 
-.maps{
+.maps {
     display: block;
     margin-top: 50px;
     margin-bottom: 10%;
@@ -714,6 +715,7 @@ h2 {
 .panel-danger>.panel-heading .badge {
     color: #f2dede;
     background-color: #a94442;
+<<<<<<< HEAD
 }
 
 .container_avis, .container_info_doc{
@@ -781,4 +783,6 @@ h2 {
 
 .margin_top{
     margin-top:5%;
+=======
+>>>>>>> 9bc56bf0ae68766d871ab18c7ed6c9ca83bf45c8
 }

@@ -72,7 +72,7 @@
                         <li class="list-group-item">Mon prénom : <?= $user['surname'] ?></li>
                         <li class="list-group-item">Ma date de naissance : <?= $user['bday'] ?></li>
                         <li class="list-group-item">Je suis : <?= $user['gender'] ?></li>
-                        <li class="list-group-item">Mon numéro de téléphone : <?= $user['num_tel'] ?></li>
+                        <li class="list-group-item">Mon numéro de téléphone : 0<?= $user['num_tel'] ?></li>
                         <li class="list-group-item">Mon adresse email : <?= $user['email'] ?></li>
                     </ul>
                     <br>
@@ -87,11 +87,11 @@
                             <tr>
                                 <td>
                                     Nom : <?= $myComment['email_pro'] ?><br>
-                                    Spécialité : <?= $myComment['job'] ?><br>
-                                    Adresse : <?= $myComment['address'] ?><br>
+                                    Spécialité : <?= $myComment['email_pro'] ?><br>
+                                    Adresse : <?= $myComment['email_pro'] ?><br>
                                 </td>
                                 <td>
-                                    Note : <?= $myComment['num_RPPS'] ?><br>
+                                    Note : <?= $myComment['email_pro'] ?><br>
                                     <br>
                                     Autres infos : <br>
                                 </td>  
