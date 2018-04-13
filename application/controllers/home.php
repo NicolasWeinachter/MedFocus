@@ -27,7 +27,7 @@ class home extends CI_Controller
         $this->load->library('session');        
         
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         // Chargement du Modèle
         $this->load->model('ProTable');
@@ -73,7 +73,7 @@ class home extends CI_Controller
 		$this->load->model('ProTable');
         
         // Profiler for debug
-		$this->output->enable_profiler(TRUE);
+		$this->output->enable_profiler(FALSE);
 		        
 
 		//	Le formulaire est valide
@@ -94,8 +94,6 @@ class home extends CI_Controller
 
 			//Speciality search
 			$data['lumiere'] = $this->ProTable->get_lumiere_speciality_search($data['speciality']);
-
-			//Find pros
 			
 			//	Le formulaire est invalide ou vide
 			$this->load->view('home/search', $data);
@@ -124,7 +122,7 @@ class home extends CI_Controller
 		$this->load->model('UserTable');
 		
 		// Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
 
 		//if($this->session->has_userdata('search'))

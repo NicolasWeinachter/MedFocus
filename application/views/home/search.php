@@ -171,7 +171,7 @@
                                 <div class="col-md-6"> 
                                     <!--variable-->
                                     <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b><?php echo $myLumiere['name'] ?></b> <?php echo $myLumiere['surname'] ?></p></a>
-                                    <p class="light">CP, Ville</p>
+                                    <p class="light"><?php echo $myLumiere['postal_code'] ?>, <?php echo $myLumiere['city'] ?></p>
                                 </div>
                             </div>
                         </div>                        
@@ -192,18 +192,18 @@
                                                     <img class="col-md-10" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" >
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p class="light"><b>Nom</b> Prénom</p> 
-                                                    <p class="light">Spécialité</p>
+                                                    <p class="light"><b><?php echo $myResults['name'] ?></b> Prénom</p> 
+                                                    <p class="light"><?php echo $myResults['surname'] ?></p>
                                                     <br>
-                                                    <p class="light">Adresse</p>
+                                                    <p class="light"><?php echo $myResults['address'] ?></p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row row12">
-                                            <p class="light col-md-12">Qualité de l'accueil :</p> <br>
-                                            <p class="light col-md-12">Mise en confiance :</p> <br>
-                                            <p class="light col-md-12">Propreté des lieux :</p> <br>
-                                            <p class="light col-md-12">Ponctualité (hors urgences) : </p>
+                                            <p class="light col-md-12">Qualité de l'accueil : 3</p> <br>
+                                            <p class="light col-md-12">Mise en confiance : 4</p> <br>
+                                            <p class="light col-md-12">Propreté des lieux : 4</p> <br>
+                                            <p class="light col-md-12">Ponctualité (hors urgences) : 5</p>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
