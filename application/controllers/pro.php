@@ -240,9 +240,6 @@ class pro extends CI_Controller
                 $data['userRdv'][$i] = array_merge($data['rdv'][$i], $data['user_rdv'][$i]);
             }
 
-            
-
-
             $this->load->view('pro/profile', $data, false);                              
         //}
     }

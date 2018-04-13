@@ -184,7 +184,7 @@ class user extends CI_Controller
             }
 
             //Get all rdv
-            $query = $this->RdvTable->get_pro_rdv($email);
+            $query = $this->RdvTable->get_user_rdv($email);
             $data['rdv'] = $query;
             //Get pro info for each rdv            
             $data['pro_rdv'] = array();
