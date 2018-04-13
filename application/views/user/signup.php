@@ -61,11 +61,13 @@
                                                                 <input type="text" name="inputSurname" value="<?php echo set_value('inputSurname'); ?>" class="form-control" id="inputSurname" placeholder="Prénom">
                                                     			<?php echo form_error('inputSurname'); ?>
 
-                                                                <label for="inputSex">Je suis </label>
+                                                                <label for="inputSex">Je suis </label><br>
                                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                                    <button type="button" class="btn btn-light">un Homme</button>
-                                                                    <button type="button" class="btn btn-light">une Femme</button>
-                                                                </div>
+                                                                  <button type="button" class="btn btn-secondary">Un homme</button>
+                                                                  <button type="button" class="btn btn-secondary">Une femme</button>
+                                                                </div>  
+
+                                                                <br>
                                                     
                                                                 <label for="inputEmail">Adresse email</label>
                                                                 <input type="email" name="inputEmail" value="<?php echo set_value('inputEmail'); ?>" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email">

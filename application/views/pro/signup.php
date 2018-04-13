@@ -121,11 +121,13 @@
                                     <div class="col-6">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="inputSex">Je suis un /une</label>
+                                                <label for="inputSex">Je suis </label><br>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <button type="button" class="btn btn-light">Homme</button>
-                                                    <button type="button" class="btn btn-light">Femme</button>
-                                                </div>
+                                                  <button type="button" class="btn btn-secondary">Un homme</button>
+                                                  <button type="button" class="btn btn-secondary">Une femme</button>
+                                                </div>  
+
+                                                <br>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputBirth">Date de naissance</label>
