@@ -22,7 +22,7 @@ class user extends CI_Controller
         $this->load->library('session');        
         
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         // Chargement du Modèle
         $this->load->model('UserTable');
@@ -87,7 +87,7 @@ class user extends CI_Controller
         $this->load->library('session');
 
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         // Chargement du Modèle
         $this->load->model('UserTable');
@@ -157,7 +157,7 @@ class user extends CI_Controller
         $this->load->model('ProTable');
 
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         //if($this->session->has_userdata('email'))
         //{
@@ -212,7 +212,7 @@ class user extends CI_Controller
         $this->load->model('ProTable');
 
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         //if($this->session->has_userdata('email'))
         //{

@@ -22,7 +22,7 @@ class pro extends CI_Controller
         $this->load->library('session');        
         
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         // Chargement du Modèle
         $this->load->model('ProTable');
@@ -86,7 +86,7 @@ class pro extends CI_Controller
         $this->load->library('session');
 
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         // Chargement du Modèle
         $this->load->model('ProTable');
@@ -198,7 +198,7 @@ class pro extends CI_Controller
         $this->load->model('UserTable');
 
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         //if($this->session->has_userdata('email'))
         //{
@@ -255,7 +255,7 @@ class pro extends CI_Controller
         $this->load->model('ProTable');
 
         // Profiler for debug
-        $this->output->enable_profiler(TRUE);
+        $this->output->enable_profiler(FALSE);
 
         //if($this->session->has_userdata('email'))
         //{
