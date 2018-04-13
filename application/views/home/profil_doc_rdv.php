@@ -29,7 +29,7 @@
             };
     </script>
     <script>$(function() {
-        $('#calendar').fullCalendar({
+        $('.calendar').fullCalendar({
             defaultView: 'agendaFourDay',
     groupByResource: true,
     header: {
@@ -276,7 +276,9 @@
                                             <option value="1">Motif 2</option>
                                             <option value="1">Motif 3</option>
                                         </select>
-                                        <div class="col-md-12 calendar3" id='calendar'></div>
+                                        <div class="col-md-12">
+                                            <div class="calendar"></div>
+                                        </div>
                                     </div>
                                 <script type="text/javascript">
                                     //<!--

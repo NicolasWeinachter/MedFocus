@@ -212,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="row row2_search">
-                                <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
+                                <a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>"><button type="button" class="btn btn-info" >Accédez à tous les détails et prendre rendez-vous.</button></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
