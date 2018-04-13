@@ -76,6 +76,10 @@
                                                                 <label for="inputPassword2">Confirmation du mot de passe</label>
                                                                 <input type="password" name="inputPassword2" value="<?php echo set_value('inputPassword2'); ?>" class="form-control" id="inputPassword2" placeholder="Confirmer le mot de passe">
                                                     			<?php echo form_error('inputPassword2'); ?>
+
+                                                                Importez une photo de profil
+                                                                <br>
+                                                                <input type="file" name="profilPicture" />
                                                                 
                                                         </div>
 
