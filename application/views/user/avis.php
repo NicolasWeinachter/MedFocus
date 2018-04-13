@@ -166,7 +166,7 @@
 	                                    			<h3>Anonyme : <input type="checkbox"></h3>
 	                                    		</div>
 	                                    		<div class="col-6">
-	                                    			<button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="#">Soumettre mon avis </a></button>
+	                                    			<button type="button" class="btn btn-info btn-lg"><a class="lien-normal text-blanc" onclick="#">Soumettre mon avis </a></button>
 	                                    		</div>
 	                                    	</div>
 
