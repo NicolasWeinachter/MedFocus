@@ -1,5 +1,3 @@
-/<?php //var_dump($lumiere); ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,12 +18,12 @@
                 if(document.getElementById(id).style.display=="none")
                 {
                     document.getElementById(id).style.display="inline";
-                    document.getElementById('bouton_'+id).innerHTML='Cacher les commentaires sur ce médecin.';
+                    document.getElementById('bouton_'+id).innerHTML='Prendre rendez-vous chez ce médecin.';
                 }
                 else
                 {
                     document.getElementById(id).style.display="none";
-                    document.getElementById('bouton_'+id).innerHTML='Afficher les commentaires sur ce médecin.';
+                    document.getElementById('bouton_'+id).innerHTML='Prendre rendez-vous chez ce médecin.';
                 }
                 return true;
             };
@@ -98,12 +96,22 @@
         map.draw(data, options);
         }
     </script>
+    <script type="text/javascript">
+        function change_onglet(name)
+        {
+            document.getElementById('onglet_'+anc_onglet).className = 'onglet_0_rdv onglet_rdv light';
+            document.getElementById('onglet_'+name).className = 'onglet_1_rdv onglet_rdv light';
+            document.getElementById('contenu_onglet_'+anc_onglet).className = 'contenu_onglet_off';
+            document.getElementById('contenu_onglet_'+name).className = 'contenu_onglet_on';
+            anc_onglet = name;
+        }
+    </script>
     <title>MedFocus</title>
 </head>
 
-<body>
-    <div class="page d-flex flex-column">
-        <header class="container1_search p-2">
+<body class="background">
+    <div class="page d-flex">
+        <header class="container1_search">
             <div id="head">
                 <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
@@ -112,13 +120,13 @@
                         <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
                     </ul>
                 </div>
-            </div> 
+            </div>
             <nav class="navbar col-md-12" id="navbar_search">
   			<form class="form-inline" id="form" method="post" action="">
 				<input class="form-control mr-sm-2" name ="spécialité" type="search" placeholder="Spécialité, praticien, établissement..." aria-label="Search" value = "<?php echo $criterias['what'] ?>">
 				<input class="form-control mr-sm-2" name="location" type="search" placeholder="Où ?" aria-label="Search" value = "<?php echo $criterias['where'] ?>" >
 				<button class="btn btn-outline-info my-2 my-sm-0" type="submit" value="search">Rechercher</button>
-             </form>
+            </form>
             </nav> 
             <table class="col-md-12 background-white">
                  <tr>
@@ -150,83 +158,13 @@
                             <option value="4">Dans le département</option>                     
                         </select>
                     </td>
-                 </tr>
-             </table>
+                </tr>
+            </table> 
         </header>
-        <main class="col-md-11 site-content d-flex flex-column p-2">
-            <div class="container_lumiere">
-                <h2 class="title_h2 lumiere_title">
-                    <?php if($speciality != "") : ?>
-                        Lumière sur ces <?= $speciality ?>s qui rayonnent près de chez vous
-                    <?php else : ?>
-                        Lumière sur les praticiens qui rayonnent près de chez vous
-                    <?php endif; ?>
-                </h2>
-                <div class="d-flex flex-row lumiere">
-                    <?php foreach ($lumiere as $myLumiere) : ?>
-                        <div class="col-md-3">
-                            <div class="d-flex flex-row">
-                                <!-- variable-->
-                                <a class= "col-md-6" href="<?php echo site_url("home/profil_doc_rdv"); ?>"><img class="col-md-12" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" ></a>
-                                <div class="col-md-6"> 
-                                    <!--variable-->
-                                    <a class="lien-normal " href="<?php echo site_url("home/profil_doc_rdv"); ?>"><p class="light"><b><?php echo $myLumiere['name'] ?></b> <?php echo $myLumiere['surname'] ?></p></a>
-                                    <p class="light">CP, Ville</p>
-                                </div>
-                            </div>
-                        </div>                        
-                    <?php endforeach; ?>    
-                </div>
-            </div>
-            <div class="d-flex flex-row">
-                <!--affichage des medecins-->
-                <div class="d-flex flex-column col-md-7">
-                    <?php foreach ($results as $myResults) : ?>    
-                        <div class="d-flex flex-column border">
-                            <div class=" d-flex flex-row">
-                                <div class="col-md-5">
-                                    <div class="row row20">
-                                        <!-- variable-->
-                                        <img class="col-md-8" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" > 
-                                        <!--variable-->
-                                        <div class="col-md-4 nom_prenom_spe_adresse">
-                                            <p class="light"><b>Nom</b> Prénom</p> 
-                                            <p class="light">Spécialité</p>
-                                            <br>
-                                            <p class="light">Adresse</p>
-                                        </div>
-                                    </div>
-                                    <div class="row lumiere">
-                                    <!--variable-->
-                                        <p class="light col-md-12">Qualité de l'accueil :</p> <br>
-                                        <p class="light col-md-12">Mise en confiance :</p> <br>
-                                        <p class="light col-md-12">Propreté des lieux :</p> <br>
-                                        <p class="light col-md-12">Ponctualité (hors urgences) : </p>
-                                        <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
-                                        <div id="texte" class="texte col-md-12">
-                                            <p class="light">Premier commentaire</p>
-                                            <p class="light">Deuxième commentaire</p>
-                                            <p class="light">Troisième commentaire</p>
-                                            <p class="light">Quatrième commentaire</p>
-                                            <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
-                                        </div>
-                                    </div>                                    
-                                </div>
-                                <!--variable-->
-                                <div class="col-md-6 calendar2" id='calendar'></div>
-                            </div>
-                            <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>                    
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <!--affichage de la map-->
-                <div class="col-md-5">
-                    <div class ="col-md-12 maps" id="map_div" style="height: 500px; width: 900px"></div>
-                </div>
-            </div>
+        <main class="site-content col-md-11 d-flex flex-row background">
+            
         </main>
-    </div>
-    <footer class="col-md-12 p-2">
+        <footer>
 		    <div id="containerFin">
 		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		        <table class="table">
@@ -259,5 +197,6 @@
                 </table>
             </div>      
 	    </footer>
+    </div>
 </body>
 </html>

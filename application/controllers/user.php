@@ -154,6 +154,7 @@ class user extends CI_Controller
         $this->load->model('UserTable');
         $this->load->model('ComTable');
         $this->load->model('RdvTable');
+        $this->load->model('ProTable');
 
         // Profiler for debug
         $this->output->enable_profiler(TRUE);
@@ -176,7 +177,7 @@ class user extends CI_Controller
 
             //$query = $this->UserTable->raph($email);
             //Get doctor info for each rdv            
-            $data['pro'] = $query;
+            $data['pro_comments'] = $query;
 
             $this->load->view('user/profile', $data, false);                  
         //}

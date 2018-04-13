@@ -1,3 +1,5 @@
+<?php var_dump($comments) ?>
+
 <!DOCTYPE html>
 <html>
 <head>
