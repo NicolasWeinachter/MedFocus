@@ -159,15 +159,17 @@
         						
 
 								<div class="row">
-	        							<div class="col"></div>
-	                                    <div class="col"></div>
-	                                    <div class="col">
-	                                    	
-	                                    </div>
-	                                    <div class="col">
-	                                    	
-                                        	<button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
-	                                    </div>
+	        							<div class="col-6">
+	        							</div>
+	        								<div class="row">
+	        									<div class="col-6">
+	                                    			<h3>Anonyme : <input type="checkbox"></h3>
+	                                    		</div>
+	                                    		<div class="col-6">
+	                                    			<button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="#">Soumettre mon avis </a></button>
+	                                    		</div>
+	                                    	</div>
+
 	                                
 	                            </div>
 	                        </div>
