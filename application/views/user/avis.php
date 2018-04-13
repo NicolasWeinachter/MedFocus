@@ -33,38 +33,160 @@
 	<br>
 
 	<div class="row">
-        	<div class="col">
-        	</div>
+        	<div class="col"></div>
         	<div class="col-8 fond_bleu">
-        		<div class="row">
-        			<div class="col"></div>
-        			<div Class="col-8">
-        				<div class="row">
-        					<div class="col-6">
-        						<p class="light">Qualité de l'accueil :</p> 
-        						<p class="light">Mise en confiance :</p>
-        						<p class="light">Propreté des lieux :</p>
-        						<p class="light">Ponctualité (hors urgence) :</p>
-        					</div>
-        					<div class="col-6">
-        						CETAIT NUL 
+        						<br>
+        						<h3 class="light center">Qualité de l'accueil :
+        						<br>
+								 
+        							<div class="row">
+        								<div class="col-1">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-1">
+										</div>
+										<br>
+									</div>
+								</h3>
+								<br>
+								<br>
+        						<br> 
+        						<h3 class="light center">Mise en confiance :
+        						<br>
+								
         						<div class="row">
-        							<div class="col"></div>
-                                        <div class="col"></div>
-                                        <div class="col"></div>
-                                        <div class="col">
-                                            <button type="button" class="btn btn-info bouton-droite"><a class="lien-normal text-blanc" onclick="javascript:change_onglet('honoraires');">Etape suivante</a></button>
-                                        </div>
-                                    </div>
-                                </div>
-        					</div>
-        				</div>
-        			</div>
-        			<div class="col"></div>
-        		</div>
-        	</div>
-        	<div class="col">
-        	</div>
+        								<div class="col-1">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-1">
+										</div>
+										<br>
+									</div>
+								</h3>
+        						<br>
+        						<br>
+								<br>
+        						<h3 class="light center">Propreté des lieux :
+        						<br>
+								
+        							<div class="row">
+        								<div class="col-1">
+										</div>
+	        							<div class="col-2">
+	        								<input class="star" type="checkbox"><br/>
+	        							</div>
+	        							<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-2">
+											<input class="star" type="checkbox"><br/>
+										</div>
+										<div class="col-1">
+										</div>
+										<br>
+									</div>
+        						</h3>
+        						<br>
+        						<br>
+								<br>
+        						<h3 class="light center">Ponctualité (hors urgence) :
+        						<br>
+							
+
+	        						<div class="row">
+	        								<div class="col">
+											</div>
+		        							<div class="col-2">
+		        								<input class="star" type="checkbox"><br/>
+		        							</div>
+		        							<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col">
+											</div>
+											<br>
+									</div>
+								</h3>
+        						<br>
+        						<br>
+								<br>
+        						<h3 class="light center">N'hésitez pas à laisser un commentaire : 
+        							<div class="row">
+        								<div class="col">
+											</div>
+										<div class="col-10">
+											<br>
+											<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+											</div>
+										<div class="col">
+											</div>
+
+
+        						</h3>
+
+								<div class="row">
+	        							<div class="col-6">
+	        							</div>
+	        								<div class="row">
+	        									<div class="col-6">
+	        										<br>
+	                                    			<h3>Anonyme : <input type="checkbox"></h3>
+	                                    		</div>
+	                                    		<div class="col-6">
+	                                    			<br>
+	                                    			<button type="button" class="btn btn-info btn-lg"><a class="lien-normal text-blanc" onclick="#">Soumettre mon avis </a></button>
+	                                    		</div>
+	                                    	</div>
+
+	                                
+	                            </div>
+	                        </div>
+				
+        	<div class="col"></div>
+        	
     </div>
 
 

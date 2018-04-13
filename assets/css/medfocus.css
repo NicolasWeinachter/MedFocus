@@ -164,6 +164,12 @@ h1 {
     font-size: 18;
 }
 
+.critere {
+    text-align: center !important;
+    font-size: 20 !important;
+
+}
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -758,4 +764,18 @@ h2 {
 .margin_top{
     margin-top:5%;
 }
->>>>>>> 73cccc35ac91839c052d722517710f403c44005b
+
+.star{
+    visibility:hidden!important;
+    font-size:30px!important;
+    cursor:pointer!important;
+}
+.star:before {
+   content: "\2606"!important;
+   position: absolute!important;
+   visibility:visible!important;
+}
+.star:checked:before {
+   content: "\2605"!important;
+   position: absolute!important;
+}
