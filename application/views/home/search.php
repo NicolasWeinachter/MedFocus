@@ -17,21 +17,21 @@
     <script>
         function afficher_cacher(id)
             {
-                if(document.getElementById(id).style.display=="none")
+                if(document.getElementByClassName(id).style.display=="none")
                 {
-                    document.getElementById(id).style.display="inline";
-                    document.getElementById('bouton_'+id).innerHTML='Cacher les commentaires sur ce médecin.';
+                    document.getElementByClassName(id).style.display="inline";
+                    document.getElementByClassName('bouton_'+id).innerHTML='Cacher les commentaires sur ce médecin.';
                 }
                 else
                 {
-                    document.getElementById(id).style.display="none";
-                    document.getElementById('bouton_'+id).innerHTML='Afficher les commentaires sur ce médecin.';
+                    document.getElementByClassName(id).style.display="none";
+                    document.getElementByClassName('bouton_'+id).innerHTML='Afficher les commentaires sur ce médecin.';
                 }
                 return true;
             };
     </script>
     <script>$(function() {
-        $('#calendar').fullCalendar({
+        $('.calendar').fullCalendar({
             defaultView: 'agendaFourDay',
     groupByResource: true,
     header: {
@@ -179,45 +179,44 @@
                 </div>
             </div>
             <div class="d-flex flex-row">
-                <!--affichage des medecins-->
-                <div class="d-flex flex-column col-md-7">
-                    <?php foreach ($results as $myResults) : ?>    
-                        <div class="d-flex flex-column border">
-                            <div class=" d-flex flex-row">
-                                <div class="col-md-5">
-                                    <div class="row row20">
-                                        <!-- variable-->
-                                        <img class="col-md-8" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" > 
-                                        <!--variable-->
-                                        <div class="col-md-4 nom_prenom_spe_adresse">
-                                            <p class="light"><b>Nom</b> Prénom</p> 
-                                            <p class="light">Spécialité</p>
-                                            <br>
-                                            <p class="light">Adresse</p>
+                <div class="d-flex flex-column">
+                    <!--affichage du 1er medecin-->
+                    <?php foreach ($results as $myResults) : ?>
+                        <div class="d-flex flex-column col-md-10 border">
+                            <div class="row row1_search">
+                                <div class="d-flex flex-row">
+                                    <div class="col-md-5 container_row1_col1 d-flex flex-column">
+                                        <div class="row row11">
+                                            <div class="d-flex flex-row">
+                                                <div class="col-md-6">
+                                                    <img class="col-md-10" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" >
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p class="light"><b>Nom</b> Prénom</p> 
+                                                    <p class="light">Spécialité</p>
+                                                    <br>
+                                                    <p class="light">Adresse</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row row12">
+                                            <p class="light col-md-12">Qualité de l'accueil :</p> <br>
+                                            <p class="light col-md-12">Mise en confiance :</p> <br>
+                                            <p class="light col-md-12">Propreté des lieux :</p> <br>
+                                            <p class="light col-md-12">Ponctualité (hors urgences) : </p>
                                         </div>
                                     </div>
-                                    <div class="row lumiere">
-                                    <!--variable-->
-                                        <p class="light col-md-12">Qualité de l'accueil :</p> <br>
-                                        <p class="light col-md-12">Mise en confiance :</p> <br>
-                                        <p class="light col-md-12">Propreté des lieux :</p> <br>
-                                        <p class="light col-md-12">Ponctualité (hors urgences) : </p>
-                                        <p class="bouton lien-normal aff_comm" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher les commentaires sur ce médecin.</p>
-                                        <div id="texte" class="texte col-md-12">
-                                            <p class="light">Premier commentaire</p>
-                                            <p class="light">Deuxième commentaire</p>
-                                            <p class="light">Troisième commentaire</p>
-                                            <p class="light">Quatrième commentaire</p>
-                                            <p class="light"><a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Plus d'infos</a></p>
-                                        </div>
-                                    </div>                                    
+                                    <div class="col-md-7">
+                                        <div class="calendar"></div>
+                                    </div>
                                 </div>
-                                <!--variable-->
-                                <div class="col-md-6 calendar2" id='calendar'></div>
                             </div>
-                            <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>                    
+                            <div class="row row2_search">
+                                <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
+                            </div>
                         </div>
                     <?php endforeach; ?>
+                    <!--affichage du 2eme medecin-->
                 </div>
                 <!--affichage de la map-->
                 <div class="col-md-5">
@@ -225,22 +224,21 @@
                 </div>
             </div>
         </main>
-    </div>
-    <footer class="col-md-12 p-2">
+        <footer>
 		    <div id="containerFin">
 		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		        <table class="table">
-			        <thead>
-				        <tr>
-					
+                    <thead>
+                        <tr>
+                            <!--coucou -->
                             <th scope="col">MedFocus</th>
                             <th scope="col">CGU</th>
                             <th scope="col">Professionnel de santé ?</th>
-				        </tr>
-			        </thead>
- 			        <tbody>
- 				        <tr>
-				            <td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
                                 <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/about"); ?>">A propos de nous<br></a>
                                 <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/faq"); ?>">Questions fréquentes<br></a>
                                 <a class =" lien-normal text-blanc" href="<?php echo site_url("home/recrutement"); ?>">Recrutement<br></a>
@@ -248,16 +246,18 @@
                             </td>
                             <td>
                                 <a class =" lien-normal text-blanc" href = "<?php echo site_url("home/cgu"); ?>">Conditions générales d'utilisation<br></a>
-      				        </td> 
+                            </td> 
                             <td>
                                 <a class =" lien-normal text-blanc text-blanc" href ="<?php echo site_url("home/services"); ?>">Nos services<br></a>
                                 <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/tarifs"); ?>">Nos tarifs<br></a>
                                 <a class =" lien-normal text-blanc" href ="<?php echo site_url("home/eds"); ?>">Etablissements de santé<br></a>
                             </td>
-   				        </tr>
-  			        </tbody>
+                        </tr>
+                    </tbody>
                 </table>
-            </div>      
+	        </div>
 	    </footer>
+    </div>
+    
 </body>
 </html>
