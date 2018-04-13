@@ -212,7 +212,7 @@
                                 </div>
                             </div>
                             <div class="row row2_search">
-                                <button type="button" class="btn btn-info" href="<?php echo site_url("home/profil_doc_rdv"); ?>">Accédez à tous les détails et prendre rendez-vous.</button>
+                                <a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>"><button type="button" class="btn btn-info" >Accédez à tous les détails et prendre rendez-vous.</button></a>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -225,7 +225,7 @@
             </div>
         </main>
         <footer>
-		    <div id="containerFin">
+		    <div class="containerFin">
 		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		        <table class="table">
                     <thead>
