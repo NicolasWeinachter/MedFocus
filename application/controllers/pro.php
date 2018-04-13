@@ -47,8 +47,8 @@ class pro extends CI_Controller
                     $data_user = $query['0'];
 
                     $newdata = array(
-                        'username'  => $surname,
-                        'email'     => $email,
+                        'username'  => $data_user['surname'],
+                        'email'     => $data_user['email'],
                         'type'      => "pro",
                         'logged_in' => TRUE
                     );
@@ -98,7 +98,7 @@ class pro extends CI_Controller
         $data['email'] = "xxx@xxx.com";                        
 
         $this->form_validation->set_rules('inputName', '"Nom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
- /*       $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
+        $this->form_validation->set_rules('inputSurname',   '"Prénom"', 'trim|required|min_length[2]|max_length[45]|alpha_dash|encode_php_tags');
         $this->form_validation->set_rules('inputBirth', '"Date de naissance"', 'trim|required|min_length[8]|max_length[10]|encode_php_tags');
         $this->form_validation->set_rules('inputEmail', '"Email"', 'trim|required|min_length[7]|max_length[52]|encode_php_tags');
         $this->form_validation->set_rules('inputPassword',   '"Mot de passe"', 'trim|required|min_length[8]|max_length[52]|alpha_dash|encode_php_tags');
@@ -106,7 +106,10 @@ class pro extends CI_Controller
         $this->form_validation->set_rules('inputPhone',   '"Phone"', 'trim|required|min_length[1]|max_length[12]|alpha_dash|encode_php_tags');
 
 
-        */
+        //Add other rules
+
+
+
         //	Le formulaire est valide
         if($this->form_validation->run())
         {        
@@ -189,7 +192,10 @@ class pro extends CI_Controller
         $this->load->library('session');
 
         // Chargement du Modèle
+        $this->load->model('ComTable');
         $this->load->model('ProTable');
+        $this->load->model('RdvTable');
+        $this->load->model('UserTable');
 
         // Profiler for debug
         $this->output->enable_profiler(TRUE);
@@ -197,8 +203,38 @@ class pro extends CI_Controller
         //if($this->session->has_userdata('email'))
         //{
             $email = $this->session->userdata('email');
-            $data['pro_info'] = $this->ProTable->get_info_pro($email); 
-            $this->load->view('pro/profile', $data, false);                  
+            $query = $this->ProTable->get_info_pro($email); 
+            if($query) :
+                $data['pro'] = $query['0'];
+			endif;
+            
+            //Get all comments
+            $query = $this->ComTable->get_pro_comments($email);
+            $data['comments'] = $query;
+            //Get user info for each comment            
+            $data['user_comments'] = array();
+            foreach ($data['comments'] as $myComments) :
+                $query = $this->UserTable->get_info_user($myComments['email_user']); 
+                $data['user_comments'] = $query;
+            endforeach;
+
+            //Get all rdv
+            $query = $this->RdvTable->get_pro_rdv($email);
+            $data['rdv'] = $query;
+            //Get user info for each rdv            
+            $data['user_rdv'] = array();
+            foreach ($data['rdv'] as $myRdv) :
+                $query = $this->UserTable->get_info_user($myComments['email_user']); 
+                $data['user_rdv'] = $query;
+            endforeach;
+
+            $nbrComments = count($data['comments']);
+            for($i=0;$i<$nbrComments;$i++) {
+                $data['userComments'][$i] = array_merge($data['comments'][$i], $data['user_comments'][$i]);
+            }
+
+
+            $this->load->view('pro/profile', $data, false);                              
         //}
     }
 

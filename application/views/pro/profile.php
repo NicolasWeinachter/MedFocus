@@ -1,3 +1,5 @@
+<?php //var_dump($userComments) ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,19 +195,19 @@
                           <div class="col-2"></div>
                           <div class="col-4">
                                   <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">Nom :</li>
-                                      <li class="list-group-item">Spécialité :</li>
-                                      <li class="list-group-item">N° RPPS :</li>
-                                      <li class="list-group-item">Adresse :</li>
-                                      <li class="list-group-item">Ville :</li>
+                                      <li class="list-group-item">Nom : <?= $pro['name'] ?></li>
+                                      <li class="list-group-item">Spécialité : <?= $pro['speciality'] ?></li>
+                                      <li class="list-group-item">N° RPPS : <?= $pro['num_RPPS'] ?></li>
+                                      <li class="list-group-item">Adresse : <?= $pro['address'] ?></li>
+                                      <li class="list-group-item">Ville : <?= $pro['city'] ?></li>
                                   </ul>
                           </div>
                           <div class="col-4">
                                   <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">Prénom :</li>
-                                      <li class="list-group-item">Je suis :</li>
-                                      <li class="list-group-item">Tél professionel :</li>
-                                      <li class="list-group-item">Email :</li> 
+                                      <li class="list-group-item">Prénom : <?= $pro['surname'] ?></li>
+                                      <li class="list-group-item">Je suis : <?= $pro['gender'] ?></li>
+                                      <li class="list-group-item">Téléphone : 0<?= $pro['num_tel'] ?></li>
+                                      <li class="list-group-item">Email : <?= $pro['email'] ?></li> 
                                   </ul>
                           </div>
                           <div class="col-2"></div>
@@ -257,16 +259,26 @@
                   <div class="col-5">
                     <h2 class="center">Vos avis</h2>
 
-                    <p class="light">Nom du patient :   </p>
-                    <p class="light">Avis global :      </p>
+                    <?php foreach ($userComments as $myUserComment) : ?>
+
+                    <p class="light">Nom du patient : <?php echo $myUserComment['surname'] ?></p>
+                    <p class="light">Avis global :  <?php echo (($myUserComment['reception'] + 
+                                                                $myUserComment['clean_place'] + 
+                                                                $myUserComment['feel_good'] + 
+                                                                $myUserComment['on_time'])/4)?> / 5</p>
+                    
+                    <?php if($myUserComment['comment'] != "") : ?>                    
+                      <p class="light">Commentaire : <?php echo $myUserComment['comment'] ?></p>
+                    <?php endif; ?>
+                                                                
                     <p class="bouton lien-normal aff_avis" id="bouton_texte" onclick="javascript:afficher_cacher('texte');">Afficher plus de détails</p>
                                 <div id="texte">
                                 
                                   <div class="texte col-md-12">
-                                      <p class="light">Qualité de l'accueil :</p>
-                                      <p class="light">Mise en confiance :</p>
-                                      <p class="light">Propreté des lieux :</p>
-                                      <p class="light">Poncutalité (hors urgence) :</p>   
+                                      <p class="light">Qualité de l'accueil : <?php echo $myUserComment['reception'] ?> / 5</p>
+                                      <p class="light">Mise en confiance : <?php echo $myUserComment['clean_place'] ?> / 5</p>
+                                      <p class="light">Propreté des lieux : <?php echo $myUserComment['feel_good'] ?> / 5</p>
+                                      <p class="light">Poncutalité (hors urgence) : <?php echo $myUserComment['on_time'] ?> / 5</p>   
                                   </div>
                                 </div>
                                 
@@ -276,6 +288,8 @@
                             afficher_cacher('texte');
                             //-->
                         </script>
+
+                    <?php endforeach; ?>
 
                   </div>
                   <div class="col-1"></div>
