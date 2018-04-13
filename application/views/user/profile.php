@@ -39,7 +39,7 @@
                 <div class="connexion">
                     <ul id="onglets">
                         <li><a class="btn btn-outline-light" href="#" role="button">Deconnexion</a></li>
-                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/profil"); ?>" role="button">Mon compte</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/profile"); ?>" role="button">Mon compte</a></li>
                     </ul>
                 </div>
             </div> 
@@ -74,7 +74,7 @@
                               <div class="col"></div>
                               <div class="col">
                                 <!--Si Fille-->
-                                <img src="<?php echo base_url('/assets/images/avatar/user_profile_female.png'); ?>" width=200px>
+                                <img src="<?php echo base_url('/assets/images/avatar/user_profile_male.png'); ?>" width=200px>
                                 <!--Si Garçon
                                   avatar/user_profile_mal.png
                                 -->
@@ -166,15 +166,9 @@
                                         <td>Nom : <?= $proRdv[0]['name'] ?><br>
                                             Téléphone : 0<?= $proRdv[0]['num_tel'] ?><br>
                                         </td>
-<<<<<<< HEAD
                                       <td>Prénom : <?= $proRdv[0]['surname'] ?><br>
                                         <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" class="text-info">Voir la fiche complète</a>
                                       </td> 
-=======
-                                        <td>Prénom : <br>
-                                        <a href="#" class="text-info">Voir la fiche complète</a>
-                                        </td> 
->>>>>>> ba4570f5a5eb163b979c65de077153e0f568801d
                                       </tr>
                                       </table>
                                       <table class="table">

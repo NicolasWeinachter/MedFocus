@@ -12,7 +12,7 @@
     <title>MedFocus</title>
 </head>
 
-<?php if ($connected) : ?>
+<?php if (!$connected) : ?>
 
     <header class="container1_search">
         <div id="container1_user">
@@ -37,8 +37,9 @@
                 <div class="connexion">
                     <ul id="onglets">
                         <li><a class="btn btn-outline-light" href="<?php echo site_url("user/profile"); ?>" role="button"><?php $name ?></a>
-                            <a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/avatar/<?php $name ?>.png'); ?>" width=200px></a>                        
+                            <a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/avatar/user_profile_male.png'); ?>" width=200px></a>                        
                         </li>
+                        <li><a class="btn btn-outline-light" href="#" role="button">Déconnexion</a></li>
                     </ul>
                 </div>
             </div>
