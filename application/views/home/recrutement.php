@@ -26,25 +26,38 @@
         </header>
         <main class="site-content">
             <h1 class="h1"><p class="light">Rejoignez le  <b>mouvement</b></p> </h1>
-            </br> 
-                <div id="container_main1" >
-                    <h3 class="light">Qui sommes-nous ?</h3>
-                    <p class="light">
-                        Nous sommes un groupe de 5 étudiants de <b>l'ECE Paris</b> qui développons cette nouvelle manière de prendre ses rendez-vous médicaux. 
-                        En effet, nous nous sommes déjà tous retrouvés à rechercher un médecin dans une nouvelle ville sans savoir vers qui se tourner.
-                        Il nous tenait à coeur de créer une <b>plateforme communautaire</b> où chacun peut partager son expérience médicale.
-                        Afin de faciliter les démarches, il nous a parru naturel de proposer le service de prise de rendez-vous en ligne via l'agenda connecté.
-                    </p>
+            </br>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-10">
+                        <div id="container_main1" >
+                            <h3 class="light">Qui sommes-nous ?</h3>
+                            <p class="light">
+                                Nous sommes un groupe de 5 étudiants de <b>l'ECE Paris</b> qui développons cette nouvelle manière de prendre ses rendez-vous médicaux. 
+                                En effet, nous nous sommes déjà tous retrouvés à rechercher un médecin dans une nouvelle ville sans savoir vers qui se tourner.
+                                Il nous tenait à coeur de créer une <b>plateforme communautaire</b> où chacun peut partager son expérience médicale.
+                                Afin de faciliter les démarches, il nous a parru naturel de proposer le service de prise de rendez-vous en ligne via l'agenda connecté.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col"></div>
                 </div>
                 <br>
                 <br>
                 <br>
-                <div id="container_main2" >
-                    <h3 class="light">Nos offres d'emploi</h3>
-                    <p class="light">
-                        En plein développement, nous recherchons un spécialiste de la législation dans l'e-santé qui pourrait nous aider dans toutes ces démarches.
-                    </p>
-                    <p>Vous êtes intéressé ? N'hésitez pas à nous <a class="lien-normal" href="mailto:contact@medfocus.fr">contacter</a>.</p>
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-10">
+                        <div id="container_main2" >
+                            <h3 class="light">Nos offres d'emploi</h3>
+                            <p class="light">
+                                En plein développement, nous recherchons un spécialiste de la législation dans l'e-santé qui pourrait nous aider dans toutes ces démarches.
+                            </p>
+                            <p>Vous êtes intéressé ? N'hésitez pas à nous <a class="lien-normal" href="mailto:contact@medfocus.fr">contacter</a>.</p>
+                        </div>
+                    </div>
+                    <div class="col"></div>
                 </div>
                 <br>
                 <br>
