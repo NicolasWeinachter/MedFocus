@@ -151,6 +151,12 @@ class home extends CI_Controller
 		$this->load->view('home/cgu');
 	}
 
+	public function services()
+	{
+		//	Maintenant, les variables sont disponibles dans la vue
+		$this->load->view('home/services');
+    }
+
 	public function search_bis()
 	{
 		//	Maintenant, les variables sont disponibles dans la vue
