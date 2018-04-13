@@ -36,7 +36,7 @@
         	<div class="col"></div>
         	<div class="col-8 fond_bleu">
         						<br>
-        						<h2 class="light center">Qualité de l'accueil :
+        						<h3 class="light center">Qualité de l'accueil :
         						<br>
 								 
         							<div class="row">
@@ -61,11 +61,11 @@
 										</div>
 										<br>
 									</div>
-								</h2>
+								</h3>
 								<br>
 								<br>
         						<br> 
-        						<h2 class="light center">Mise en confiance :
+        						<h3 class="light center">Mise en confiance :
         						<br>
 								
         						<div class="row">
@@ -90,11 +90,11 @@
 										</div>
 										<br>
 									</div>
-								</h2>
+								</h3>
         						<br>
         						<br>
 								<br>
-        						<h2 class="light center">Propreté des lieux :
+        						<h3 class="light center">Propreté des lieux :
         						<br>
 								
         							<div class="row">
@@ -119,11 +119,11 @@
 										</div>
 										<br>
 									</div>
-        						</h2>
+        						</h3>
         						<br>
         						<br>
 								<br>
-        						<h2 class="light center">Ponctualité (hors urgence) :
+        						<h3 class="light center">Ponctualité (hors urgence) :
         						<br>
 							
 
@@ -148,11 +148,12 @@
 										<div class="col">
 										</div>
 										<br>
-									</div></h2>
+									</div>
+								</h3>
         						<br>
         						<br>
 								<br>
-        						<h2 class="light center">N'hésitez pas à laisser un commentaire : </h2>
+        						<h3 class="light center">N'hésitez pas à laisser un commentaire : </h3>
         						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         						<br>
         						
@@ -161,7 +162,7 @@
 	        							<div class="col"></div>
 	                                    <div class="col"></div>
 	                                    <div class="col">
-	                                    	Avis anonyme : <input type="checkbox">
+	                                    	
 	                                    </div>
 	                                    <div class="col">
 	                                    	

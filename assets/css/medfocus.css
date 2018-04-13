@@ -164,6 +164,12 @@ h1 {
     font-size: 18;
 }
 
+.critere {
+    text-align: center !important;
+    font-size: 20 !important;
+
+}
+
 .navbar {
     display: flex;
     justify-content: center;
