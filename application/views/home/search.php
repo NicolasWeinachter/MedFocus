@@ -192,8 +192,8 @@
                                                     <img class="col-md-10" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" >
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p class="light"><b><?php echo $myResults['name'] ?></b> Prénom</p> 
-                                                    <p class="light"><?php echo $myResults['surname'] ?></p>
+                                                    <p class="light"><b><?php echo $myResults['name'] ?></b> <?php echo $myResults['surname'] ?></p> 
+                                                    <p class="light"><?php echo $myResults['speciality'] ?></p>
                                                     <br>
                                                     <p class="light"><?php echo $myResults['address'] ?></p>
                                                 </div>
