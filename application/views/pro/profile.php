@@ -131,8 +131,8 @@
                 <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
                     <ul id="onglets">
-                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-                        <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                        <li><a class="btn btn-outline-light" href="#" role="button">Deconnexion</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/profil"); ?>" role="button">Mon compte</a></li>
                     </ul>
                 </div>
             </div> 
