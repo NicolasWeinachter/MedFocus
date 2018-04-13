@@ -40,6 +40,21 @@ class RdvTable extends CI_Model
     }
 
     /**
+    *	Retourne tous les rdv d'un utilisateur
+    *	
+    *	@param string $email L'id de l'utilisateur
+    *	@return objet Le résultat de la requête
+    */
+	public function get_pro_rdv($email_pro)
+	{
+		return $this->db->select('*')
+                        ->from($this->table)
+                        ->where('email_pro', (string) $email_pro)
+                        ->get()
+                        ->result_array();
+    }
+
+    /**
     *	Supprime un rendez-vous
     *	
     *	@param string $id_rdv L'id du rendez-vous à supprimer

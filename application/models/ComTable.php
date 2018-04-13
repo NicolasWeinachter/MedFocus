@@ -37,11 +37,26 @@ class ComTable extends CI_Model
     *	@param string $email L'id de l'utilisateur
     *	@return objet Le résultat de la requête
     */
-	public function get_user_comments($email)
+	public function get_user_comments($email_user)
 	{
 		return $this->db->select('*')
                         ->from($this->table)
-                        ->where('email_user', (string) $email)
+                        ->where('email_user', (string) $email_user)
+                        ->get()
+                        ->result_array();
+    }
+
+    /**
+    *	Retourne tous les avis d'un utilisateur
+    *	
+    *	@param string $email L'id de l'utilisateur
+    *	@return objet Le résultat de la requête
+    */
+	public function get_pro_comments($email_pro)
+	{
+		return $this->db->select('*')
+                        ->from($this->table)
+                        ->where('email_pro', (string) $email_pro)
                         ->get()
                         ->result_array();
     }
