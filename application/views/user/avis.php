@@ -43,19 +43,19 @@
         								<div class="col-1">
 										</div>
 	        							<div class="col-2">
-	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        								<input class="star" type="checkbox"><br/>
 	        							</div>
 	        							<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-1">
 										</div>
@@ -72,19 +72,19 @@
         								<div class="col-1">
 										</div>
 	        							<div class="col-2">
-	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        								<input class="star" type="checkbox"><br/>
 	        							</div>
 	        							<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-1">
 										</div>
@@ -101,19 +101,19 @@
         								<div class="col-1">
 										</div>
 	        							<div class="col-2">
-	        								<input class="star" type="checkbox" title="bookmark page"><br/>
+	        								<input class="star" type="checkbox"><br/>
 	        							</div>
 	        							<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
+											<input class="star" type="checkbox"><br/>
 										</div>
 										<div class="col-1">
 										</div>
@@ -127,45 +127,56 @@
         						<br>
 							
 
-        						<div class="row">
-        								<div class="col">
-										</div>
-	        							<div class="col-2">
-	        								<input class="star" type="checkbox" title="bookmark page"><br/>
-	        							</div>
-	        							<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
-										</div>
-										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
-										</div>
-										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
-										</div>
-										<div class="col-2">
-											<input class="star" type="checkbox" title="bookmark page"><br/>
-										</div>
-										<div class="col">
-										</div>
-										<br>
+	        						<div class="row">
+	        								<div class="col">
+											</div>
+		        							<div class="col-2">
+		        								<input class="star" type="checkbox"><br/>
+		        							</div>
+		        							<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col-2">
+												<input class="star" type="checkbox"><br/>
+											</div>
+											<div class="col">
+											</div>
+											<br>
 									</div>
 								</h3>
         						<br>
         						<br>
 								<br>
-        						<h3 class="light center">N'hésitez pas à laisser un commentaire : </h3>
-        						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        						<br>
-        						
+        						<h3 class="light center">N'hésitez pas à laisser un commentaire : 
+        							<div class="row">
+        								<div class="col">
+											</div>
+										<div class="col-10">
+											<br>
+											<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+											</div>
+										<div class="col">
+											</div>
+
+
+        						</h3>
 
 								<div class="row">
 	        							<div class="col-6">
 	        							</div>
 	        								<div class="row">
 	        									<div class="col-6">
+	        										<br>
 	                                    			<h3>Anonyme : <input type="checkbox"></h3>
 	                                    		</div>
 	                                    		<div class="col-6">
+	                                    			<br>
 	                                    			<button type="button" class="btn btn-info btn-lg"><a class="lien-normal text-blanc" onclick="#">Soumettre mon avis </a></button>
 	                                    		</div>
 	                                    	</div>
