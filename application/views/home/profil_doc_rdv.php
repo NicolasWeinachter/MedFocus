@@ -109,11 +109,9 @@
     <title>MedFocus</title>
 </head>
 
-<body class="background">
-    <div class="page d-flex">
-        <header class="container1_search">
+<header class="container1_search">
             <div id="head">
-                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/avatar/Logo-03.png'); ?>" width=200px></a></div>
+                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
                     <ul id="onglets">
                         <li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
@@ -122,6 +120,8 @@
                 </div>
             </div> 
         </header>
+
+<body class="background">
         <main class="site-content col-md-11 d-flex flex-row background">
             <div class="col-md-6">
                 <div class="container_avis">
@@ -287,9 +287,11 @@
                 </div>
             </div>
         </main>
-        <footer>
+    </div>
+
+    <footer>
 		    <div id="containerFin">
-		        <img class="logo-fin" src="<?php echo base_url('/assets/images/avatar/Logo-03.png'); ?>" width=200px>
+		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		        <table class="table">
 			        <thead>
 				        <tr>
@@ -320,6 +322,6 @@
                 </table>
             </div>      
 	    </footer>
-    </div>
 </body>
+
 </html>

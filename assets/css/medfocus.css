@@ -517,14 +517,32 @@ img.logo-fin {
     border-radius: 6px;
 }
 
+.onglet_rdv {
+    cursor: pointer;
+    border-radius: 9px;
+    width: 100%;
+}
+
 .onglet_0 {
     border: solid #17a2b8;
+}
+
+.onglet_0_rdv {
+    width:100%;
 }
 
 .onglet_1 {
     padding-bottom: 7px;
     background-color: #17a2b8;
     font: #FFFFFF;
+}
+
+.onglet_1_rdv {
+    padding-bottom: 7px;
+    background-color: #17a2b8;
+    border-radius: 0.2em;
+    font: #FFFFFF;
+    width:auto;
 }
 
 .contenu_onglet {
@@ -538,6 +556,28 @@ img.logo-fin {
     background-color: #F0F8FF !important;
     border-radius: 10px;
 
+}
+
+.contenu_onglet_off {
+    display: none;
+    margin-top: 2%;
+    border-radius: 0.2em;
+}
+
+.contenu_onglet_on {
+    display: block;
+    margin-top: 3%;
+    border-radius: 0.2em;
+    padding: 2%;
+
+}
+
+.systeme_onglets{
+    padding-left: 0 !important;
+    padding-right:0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important; 
+    width:100%;
 }
 
 .fond_onglet {
