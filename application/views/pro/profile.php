@@ -192,29 +192,49 @@
                         <h1 class="light border-bottom">Mes informations</h1>
                         
                         <div class="row">
-                          <div class="col-2"></div>
-                          <div class="col-4">
-                                  <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">Nom : <?= $pro['name'] ?></li>
-                                      <li class="list-group-item">Spécialité : <?= $pro['speciality'] ?></li>
-                                      <li class="list-group-item">N° RPPS : <?= $pro['num_RPPS'] ?></li>
-                                      <li class="list-group-item">Adresse : <?= $pro['address'] ?></li>
-                                      <li class="list-group-item">Ville : <?= $pro['city'] ?></li>
-                                  </ul>
+                          <div class="col-3">
+                            <div class="row">
+                              <div class="col">
+                              </div>
+                              <div class="col">
+                                
+                                <img src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" width=200px>
+                                
+
+                              </div>
+                              <div class="col">
+                              </div>
+                            </div>  
                           </div>
-                          <div class="col-4">
-                                  <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">Prénom : <?= $pro['surname'] ?></li>
-                                      <li class="list-group-item">Je suis : <?= $pro['gender'] ?></li>
-                                      <li class="list-group-item">Téléphone : 0<?= $pro['num_tel'] ?></li>
-                                      <li class="list-group-item">Email : <?= $pro['email'] ?></li> 
-                                  </ul>
+                          
+                          <div class="col-8">
+                            <div class="row">
+                              <div class="col-6">
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Nom : <?= $pro['name'] ?></li>
+                                          <li class="list-group-item">Spécialité : <?= $pro['speciality'] ?></li>
+                                          <li class="list-group-item">N° RPPS : <?= $pro['num_RPPS'] ?></li>
+                                          <li class="list-group-item">Adresse : <?= $pro['address'] ?></li>
+                                          <li class="list-group-item">Ville : <?= $pro['city'] ?></li>
+                                      </ul>
+                              </div>
+
+                              <div class="col-6">
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Prénom : <?= $pro['surname'] ?></li>
+                                          <li class="list-group-item">Je suis : <?= $pro['gender'] ?></li>
+                                          <li class="list-group-item">Téléphone : 0<?= $pro['num_tel'] ?></li>
+                                          <li class="list-group-item">Email : <?= $pro['email'] ?></li> 
+                                      </ul>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-2"></div>
+                          <div class="col"></div>
+                        </div>
 
             
                         <br>
-                        </div>
+                      
                         <br>
                         <div class="row">
                           <div class="col-4"></div>
