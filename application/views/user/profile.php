@@ -71,7 +71,23 @@
 
                         <h1 class="light border-bottom">Mes informations</h1>
                         <div class="row">
-                          <div class="col-2"></div>
+                          <div class="col-3">
+                            <div class="row">
+                              <div class="col"></div>
+                              <div class="col">
+                                <!--Si Fille-->
+                                <img src="<?php echo base_url('/assets/images/avatar/user_profile_female.png'); ?>" width=200px>
+                                <!--Si Garçon
+                                  avatar/user_profile_mal.png
+                                -->
+
+                              </div>
+                              <div class="col"></div>
+                        
+                          
+                            </div>  
+                          </div>
+
                           <div class="col-8">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Mon nom : <?= $user['name'] ?></li>
@@ -83,7 +99,7 @@
                             </ul>
                           
                           </div>
-                          <div class="col-2"></div>
+                          <div class="col"></div>
                         </div>
                   </div>
                   <br>
@@ -139,7 +155,7 @@
 
                               </div>
                               <div class="info_rdv">
-                                <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
+                                <div id="carouselExampleControl" class="height-inherit carousel slide" data-ride="carousel">
                                   <div class="carousel-inner">
 
                                     <?php foreach ($rdv as $myRdv) : ?>
@@ -151,18 +167,18 @@
                                         <td>Nom : <?= $myRdv['email_pro'] ?><br>
                                             Téléphone : <br>
                                         </td>
-                                      <td>Prénom : <br>
+                                        <td>Prénom : <br>
                                         <a href="#" class="text-info">Voir la fiche complète</a>
-                                      </td> 
+                                        </td> 
                                       </tr>
-                                    </table>
-                                    <table class="table">
+                                      </table>
+                                      <table class="table">
                                       <tr>
                                         <td>Informations rendez-vous : <br>
                                       </td> 
                                       </tr>
-                                    </table>
-                                    <table class="table">
+                                      </table>
+                                      <table class="table">
                                       <tr>
                                         <td>
                                             <a class="btn btn-info btn-100 btn-center" href="modif_rdv.php">Modifier</a>
@@ -171,8 +187,8 @@
                                             <a class="btn btn-info btn-100 btn-center" href="supp_rdv.php">Annuler</a>
                                         </td>
                                       </tr>
-                                    </table>
-                                </div>
+                                      </table>
+                                    </div>
 
                                     <?php endforeach; ?>
                                 
@@ -213,11 +229,11 @@
                                     <?php endforeach; ?>
                                   
 
-                                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                  <a class="carousel-control-prev" href="#carouselExampleControl" role="button" data-slide="prev">
                                   <span class="carousel-control-prev-icon fleche-caroussel-gauche" aria-hidden="true"></span>
                                   <span class="sr-only">Previous</span>
                                   </a>
-                                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                  <a class="carousel-control-next" href="#carouselExampleControl" role="button" data-slide="next">
                                   <span class="carousel-control-next-icon fleche-caroussel-droite" aria-hidden="true"></span>
                                   <span class="sr-only">Next</span>
                                   </a>
