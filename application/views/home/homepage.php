@@ -71,8 +71,13 @@
 		</table>
 		<br>
 		<br>
-		<a class="btn btn-secondary btn-lg" href="<?php echo site_url("pro/signup"); ?>" role="button">En savoir plus</a>
-		
+		<div class="row">
+			<div class="col-5"></div>
+			<div class="col-2">
+				<a class="btn btn-secondary btn-lg" href="<?php echo site_url("pro/signup"); ?>" role="button">En savoir plus</a>
+			</div>
+			<div class="col-5"></div>
+		</div>
 	</div>
 
 	<footer>
