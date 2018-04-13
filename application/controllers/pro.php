@@ -218,6 +218,12 @@ class pro extends CI_Controller
                 $data['user_comments'] = $query;
             endforeach;
 
+            //Merge arrays
+            $nbrComments = count($data['comments']);
+            for($i=0;$i<$nbrComments;$i++) {
+                $data['userComments'][$i] = array_merge($data['comments'][$i], $data['user_comments'][$i]);
+            }
+
             //Get all rdv
             $query = $this->RdvTable->get_pro_rdv($email);
             $data['rdv'] = $query;
@@ -228,10 +234,13 @@ class pro extends CI_Controller
                 $data['user_rdv'] = $query;
             endforeach;
 
-            $nbrComments = count($data['comments']);
-            for($i=0;$i<$nbrComments;$i++) {
-                $data['userComments'][$i] = array_merge($data['comments'][$i], $data['user_comments'][$i]);
+            //Merge arrays
+            $nbrRdv = count($data['rdv']);
+            for($i=0;$i<$nbrRdv;$i++) {
+                $data['userRdv'][$i] = array_merge($data['rdv'][$i], $data['user_rdv'][$i]);
             }
+
+            
 
 
             $this->load->view('pro/profile', $data, false);                              
