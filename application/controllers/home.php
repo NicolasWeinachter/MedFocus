@@ -114,9 +114,46 @@ class home extends CI_Controller
     
     public function profil_doc_rdv()
 	{
+		// Chargement des bibliothèques
+        $this->load->library('session');
+
+        // Chargement du Modèle
+        $this->load->model('ComTable');
+        $this->load->model('ProTable');
+        $this->load->model('RdvTable');
+		$this->load->model('UserTable');
+		
+		// Profiler for debug
+        $this->output->enable_profiler(TRUE);
+
+
+		//if($this->session->has_userdata('search'))
+        //{
+            $search = $this->session->userdata('search');
+            $query = $this->ProTable->get_info_pro($search); 
+            if($query) :
+                $data['pro'] = $query['0'];
+			endif;
+
+			
+
+
+        //}
+			
+
+
+
 		//	Maintenant, les variables sont disponibles dans la vue
 		$this->load->view('home/profil_doc_rdv');
 	}
+
+
+
+
+
+
+
+
 
 
 ///Footer Pages

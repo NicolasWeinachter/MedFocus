@@ -113,7 +113,7 @@
     <div class="page d-flex">
         <header class="container1_search">
             <div id="head">
-                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
+                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/avatar/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
                     <ul id="onglets">
                         <li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
@@ -129,7 +129,7 @@
                         <div class="col-md-4 d-flex flex-column"> 
                             <div class="row">
                                 <!--variable-->
-                                <img class="col-md-6 user_profile" src="<?php echo base_url('/assets/images/website/user_profile_female.png'); ?>">
+                                <img class="col-md-6 user_profile" src="<?php echo base_url('/assets/images/avatar/user_profile_female.png'); ?>">
                             </div>
                             <div class="row name">
                                 <!--variable-->
@@ -155,7 +155,7 @@
                         <div class="col-md-4 d-flex flex-column"> 
                             <div class="row">
                                 <!--variable-->
-                                <img class="col-md-6 user_profile" src="<?php echo base_url('/assets/images/website/user_profile_male.png'); ?>">
+                                <img class="col-md-6 user_profile" src="<?php echo base_url('/assets/images/avatar/user_profile_male.png'); ?>">
                             </div>
                             <div class="row name">
                                 <!--variable-->
@@ -184,7 +184,7 @@
                     <div class="row row1 d-flex flex-row">
                         <div class="col-md-4">
                             <!--variable-->
-                            <img class="col-md-12" src="<?php echo base_url('/assets/images/website/photo_profile_med_default.png'); ?>">
+                            <img class="col-md-12" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>">
                         </div>
                         <div class="col-md-8 d-flex flex-column">
                             <!--variable-->
@@ -289,7 +289,7 @@
         </main>
         <footer>
 		    <div id="containerFin">
-		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
+		        <img class="logo-fin" src="<?php echo base_url('/assets/images/avatar/Logo-03.png'); ?>" width=200px>
 		        <table class="table">
 			        <thead>
 				        <tr>
