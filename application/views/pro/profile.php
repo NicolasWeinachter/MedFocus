@@ -131,8 +131,8 @@
                 <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
                     <ul id="onglets">
-                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-                        <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                        <li><a class="btn btn-outline-light" href="#" role="button">Deconnexion</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("pro/profil"); ?>" role="button">Mon compte</a></li>
                     </ul>
                 </div>
             </div> 
@@ -192,29 +192,49 @@
                         <h1 class="light border-bottom">Mes informations</h1>
                         
                         <div class="row">
-                          <div class="col-2"></div>
-                          <div class="col-4">
-                                  <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">Nom : <?= $pro['name'] ?></li>
-                                      <li class="list-group-item">Spécialité : <?= $pro['speciality'] ?></li>
-                                      <li class="list-group-item">N° RPPS : <?= $pro['num_RPPS'] ?></li>
-                                      <li class="list-group-item">Adresse : <?= $pro['address'] ?></li>
-                                      <li class="list-group-item">Ville : <?= $pro['city'] ?></li>
-                                  </ul>
+                          <div class="col-3">
+                            <div class="row">
+                              <div class="col">
+                              </div>
+                              <div class="col">
+                                
+                                <img src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" width=200px>
+                                
+
+                              </div>
+                              <div class="col">
+                              </div>
+                            </div>  
                           </div>
-                          <div class="col-4">
-                                  <ul class="list-group list-group-flush">
-                                      <li class="list-group-item">Prénom : <?= $pro['surname'] ?></li>
-                                      <li class="list-group-item">Je suis : <?= $pro['gender'] ?></li>
-                                      <li class="list-group-item">Téléphone : 0<?= $pro['num_tel'] ?></li>
-                                      <li class="list-group-item">Email : <?= $pro['email'] ?></li> 
-                                  </ul>
+                          
+                          <div class="col-8">
+                            <div class="row">
+                              <div class="col-6">
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Nom : <?= $pro['name'] ?></li>
+                                          <li class="list-group-item">Spécialité : <?= $pro['speciality'] ?></li>
+                                          <li class="list-group-item">N° RPPS : <?= $pro['num_RPPS'] ?></li>
+                                          <li class="list-group-item">Adresse : <?= $pro['address'] ?></li>
+                                          <li class="list-group-item">Ville : <?= $pro['city'] ?></li>
+                                      </ul>
+                              </div>
+
+                              <div class="col-6">
+                                      <ul class="list-group list-group-flush">
+                                          <li class="list-group-item">Prénom : <?= $pro['surname'] ?></li>
+                                          <li class="list-group-item">Je suis : <?= $pro['gender'] ?></li>
+                                          <li class="list-group-item">Téléphone : 0<?= $pro['num_tel'] ?></li>
+                                          <li class="list-group-item">Email : <?= $pro['email'] ?></li> 
+                                      </ul>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col-2"></div>
+                          <div class="col"></div>
+                        </div>
 
             
                         <br>
-                        </div>
+                      
                         <br>
                         <div class="row">
                           <div class="col-4"></div>
@@ -262,7 +282,7 @@
                     <?php foreach ($userComments as $myUserComment) : ?>
 
                     <p class="light">Nom du patient : <?php echo $myUserComment['surname'] ?></p>
-                    <p class="light">Avis global :  <?php echo (($myUserComment['reception'] + 
+                    <p class="light">Avis global : <?php echo (($myUserComment['reception'] + 
                                                                 $myUserComment['clean_place'] + 
                                                                 $myUserComment['feel_good'] + 
                                                                 $myUserComment['on_time'])/4)?> / 5</p>
@@ -311,21 +331,21 @@
                             <div class="info_rdv">
                               <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
                                 <div class="carousel-inner">
+
                                   <div class="carousel-item active">
-                                    <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                                    <p class="center"> <?php echo $userRdv[0]['date'] ?> -  <?php echo $userRdv[0]['time'] ?></p>
                                     <table class="table">
                                     <tr>
-                                      <td>Nom : <br>
-                                          Téléphone : <br>
+                                      <td>Nom :  <?php echo $userRdv[0]['name'] ?><br>
+                                          Téléphone : 0<?php echo $userRdv[0]['num_tel'] ?><br>
                                       </td>
-                                    <td>Prénom : <br>
-                                      <a href="#" class="text-info">Voir la fiche complète</a>
+                                    <td>Prénom :  <?php echo $userRdv[0]['surname'] ?><br>
                                     </td> 
                                     </tr>
                                   </table>
                                   <table class="table">
                                     <tr>
-                                      <td>Informations rendez-vous : <br>
+                                      <td>Informations rendez-vous :  <?php echo $userRdv[0]['cause'] ?><br>
                                     </td> 
                                     </tr>
                                   </table>
@@ -340,21 +360,27 @@
                                     </tr>
                                   </table>
                               </div>
+
+                                  <?php foreach ($userRdv as $myUserRdv) : 
+                                  
+                                  if($myUserRdv['date'] > date("Y-m-d")) :
+                                  ?>
+
                                   <div class="carousel-item">
-                                    <p class="center">Vendredi 3 février 2018 - 11h</p>
+                                    <p class="center" <?php echo $myUserRdv['date'] ?> -  <?php echo $myUserRdv['time'] ?></p>
                                     <table class="table">
                                     <tr>
-                                      <td>Nom : <br>
-                                          Téléphone : <br>
+                                      <td>Nom : <?php echo $myUserRdv['name'] ?><br>
+                                          Téléphone : 0<?php echo $myUserRdv['num_tel'] ?><br>
                                       </td>
-                                    <td>Prénom : <br>
+                                    <td>Prénom :  <?php echo $myUserRdv['surname'] ?><br>
                                       <a href="#" class="text-info">Voir la fiche complète</a>
                                     </td> 
                                     </tr>
                                   </table>
                                   <table class="table">
                                     <tr>
-                                      <td>Informations rendez-vous : <br>
+                                      <td>Informations rendez-vous : <?php echo $myUserRdv['cause'] ?> <br>
                                     </td> 
                                     </tr>
                                   </table>
@@ -369,6 +395,11 @@
                                     </tr>
                                   </table>
                                   </div>
+
+                                  <?php endif; ?>
+
+                                  <?php endforeach; ?>
+                                  
                                 </div>
 
                                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -392,33 +423,43 @@
             <div class="contenu_onglet" id="contenu_onglet_historique">
 
               <br>
+              <?php foreach ($userRdv as $myUserRdv) : 
+                                  
+              if($myUserRdv['date'] > date("Y-m-d")) :
+              ?>
                 <div id="container4_historique_rdv">
+
                   <div class="info-medecin-rdv">
+
                     <table class="table">
                       <tr>
                         <td>
-                            Nom : <br>
-                            Adresse : <br>
-                            Note : <br>
+                            Nom : <?php echo $myUserRdv['name'] ?><br>
                         </td>
                         <td>
-                            Spécialité : <br>
-                            Téléphone : <br>
-                            <a href="#" class="text-info">Voir la fiche complète</a>
+                            Téléphone : 0<?php echo $myUserRdv['num_tel'] ?><br>
                         </td> 
                       </tr>
                     </table>
+
                   </div>
+
+                  
                   <div class="info-rdv">
-                    <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                    <p class="center"><?php echo $myUserRdv['date'] ?> - <?php echo $myUserRdv['time'] ?></p>
                     <div class="info-rdv2">
-                      <p class="center">Informations relatives au rendez-vous :</p>
+                      <p class="center">Informations relatives au rendez-vous : <?php echo $myUserRdv['cause'] ?></p>
                     </div>
                   </div>
                   <div class="partage-exp">
-                    <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
+                    <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Valider <br> le rendez-vous</a></button>
                   </div>
                 </div>
+
+                <?php endif; ?>
+
+                <?php endforeach; ?>
+
               </div>
 
 

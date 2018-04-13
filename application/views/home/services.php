@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    <div class="page">
-        <header class="container1_search">
+	<div id="container1_apropos">
+	 	<header class="container1_search">
             <div id="head">
                 <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
@@ -24,37 +24,57 @@
                 </div>
             </div> 
         </header>
-        <main class="site-content">
-            <h1 class="h1"><p class="light">Contactez-nous</p> </h1>
-            </br> 
-                <div id="container_main1" >
-                        <table id="contact">
-                            <tr>
-                                <td>
-                                    <img src="<?php echo base_url('/assets/images/website/mail.png'); ?>" width =50px>
-                                </td>
-                                <td>
-                                    Mail : <a class="lien-normal" href="mailto: contact@medfocus.fr">contact@medfocus.fr</a>
-                                </td>
-                            </tr>
-                            <br>
-                            <br>
-                            <tr>
-                                <td>
-                                    <img src="<?php echo base_url('/assets/images/website/phone.png'); ?>" width =40px >
-                                </td>
-                                <td>
-                                    Téléphone : +33 6 31 94 93 56
-                                </td>
-                            </tr>
-                        </table>
-                </div>
-                <br>
-                <br>
-                
-        </main>
+        <h1 class="h1"><p class="bold">Le compte Premium :</p> <p class = "light"> Une nouvelle manière de gérer vos patients </p> </h1>
+        </br> 
+	</div>
+    
+    <div class=row>
+        <div class="col"></div>
+        <div class="col-10">
+            <div id="container2">
+        <h1 class="h1">Qu'est-ce que le compte Premium ? </h1>
 
-        <footer>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="<?php echo base_url('/assets/images/website/calendar-icon.png'); ?>"  width=100px>
+                    </td>
+                    <td class="align-middle">
+                        Grâce à la prise de rendez-vous en ligne, vous n'aurez plus besoin de gérer le secrétariat. Les patients pourront prendre directement rendez-vous via la plateforme suivant les disponibilités affichées dans votre calendrier. 
+                        De plus, la prise de rendez-vous sera disponible 24h/24 et 7j/7 ! 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="<?php echo base_url('/assets/images/website/smartphone-icon.png'); ?>"  width=100px>
+                    </td>
+                    <td class="align-middle">
+                        Les patients ayant pris rendez-vous via notre plateforme, recevront un message de rappel (SMS ou Mail) 24h avant le rendez-vous. 
+                        Cela est idéal pour n'oublier aucun rendez-vous ! 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="<?php echo base_url('/assets/images/website/message-icon.png'); ?>" width=100px>
+                    </td>
+                    <td class="align-middle">
+                        Les utilisateurs auront la possibilité de donner leur avis suite à leur consultation. Ils évalueront la consultation selon plusieurs critères : <br>
+                            - Qualité de l'accueil <br>
+                            - Propreté des lieux <br>
+                            - Temps d'attente (hors urgence) <br>
+                            - Mise en confiance <br>
+                        Vous pourrez ainsi avoir un retour de vos patients et avoir de la visibilité auprès des autres utilisateurs.
+                    </td>
+                </tr>
+            </tbody>
+        </table>        
+    </div>
+        </div>
+        <div class="col"></div>
+    </div>
+	
+	<footer>
 		<div id="containerFin">
 		<img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		<table class="table">
@@ -87,7 +107,6 @@
 		</table>
 	</div>
 	</footer>
-    </div>
 
 </body>
 </html>

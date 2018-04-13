@@ -167,17 +167,37 @@ class user extends CI_Controller
                 $data['user'] = $query['0'];
 			endif;
 
+            //Get all comments
             $query = $this->ComTable->get_user_comments($email);
-            //Get doctor info for each comment
             $data['comments'] = $query;
+            //Get user info for each comment            
+            $data['pro_comments'] = array();
+            foreach ($data['comments'] as $myComments) :
+                $query = $this->ProTable->get_info_pro($myComments['email_pro']); 
+                $data['pro_comments'] = $query;
+            endforeach;
 
+            //Merge arrays
+            $nbrComments = count($data['comments']);
+            for($i=0;$i<$nbrComments;$i++) {
+                $data['proComments'][$i] = array_merge($data['comments'][$i], $data['pro_comments'][$i]);
+            }
+
+            //Get all rdv
             $query = $this->RdvTable->get_user_rdv($email);
-            //Get doctor info for each rdv            
             $data['rdv'] = $query;
+            //Get pro info for each rdv            
+            $data['pro_rdv'] = array();
+            foreach ($data['rdv'] as $myRdv) :
+                $query = $this->ProTable->get_info_pro($myComments['email_pro']); 
+                $data['pro_rdv'] = $query;
+            endforeach;
 
-            //$query = $this->UserTable->raph($email);
-            //Get doctor info for each rdv            
-            $data['pro_comments'] = $query;
+            //Merge arrays
+            $nbrRdv = count($data['rdv']);
+            for($i=0;$i<$nbrRdv;$i++) {
+                $data['proRdv'][$i] = array_merge($data['rdv'][$i], $data['pro_rdv'][$i]);
+            }
 
             $this->load->view('user/profile', $data, false);                  
         //}

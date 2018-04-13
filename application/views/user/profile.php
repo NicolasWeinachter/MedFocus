@@ -1,5 +1,3 @@
-<?php var_dump($comments) ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,26 +33,24 @@
 
 <body>
 
-    <div id="container1_user">
-        <header>
+    <header class="container1_search">
             <div id="head">
-                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-01.png'); ?>" width=200px></a></div>
+                <div class="logo"><a href="<?php echo site_url("home/homepage"); ?>"><img src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px></a></div>
                 <div class="connexion">
                     <ul id="onglets">
-                        <li><a class="btn btn-outline-info" href="<?php echo site_url("user/login"); ?>" role="button">Mon compte</a></li>
-                        <li><a class="btn btn-outline-info" href="<?php echo site_url("pro/login"); ?>" role="button">Professionnel de santé ?</a></li>
+                        <li><a class="btn btn-outline-light" href="#" role="button">Deconnexion</a></li>
+                        <li><a class="btn btn-outline-light" href="<?php echo site_url("user/profil"); ?>" role="button">Mon compte</a></li>
                     </ul>
                 </div>
-            </div>
-        </header>
-    </div>
+            </div> 
+    </header>
     
         <h1>Mon espace personnel</h1>
         <div class="systeme_onglets center_onglets">
             <!--<div class="onglets">-->
                     <div class="row row_onglets">
                         <div class="col">
-                            <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Presentation</span>
+                            <span class="onglet_0 onglet" id="onglet_presentation" onclick="javascript:change_onglet('presentation');">Présentation</span>
                         </div>
                         <div class="col">
                             <span class="onglet_0 onglet" id="onglet_avis" onclick="javascript:change_onglet('avis');">Avis</span>
@@ -73,7 +69,23 @@
 
                         <h1 class="light border-bottom">Mes informations</h1>
                         <div class="row">
-                          <div class="col-2"></div>
+                          <div class="col-3">
+                            <div class="row">
+                              <div class="col"></div>
+                              <div class="col">
+                                <!--Si Fille-->
+                                <img src="<?php echo base_url('/assets/images/avatar/user_profile_female.png'); ?>" width=200px>
+                                <!--Si Garçon
+                                  avatar/user_profile_mal.png
+                                -->
+
+                              </div>
+                              <div class="col"></div>
+                        
+                          
+                            </div>  
+                          </div>
+
                           <div class="col-8">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">Mon nom : <?= $user['name'] ?></li>
@@ -85,7 +97,7 @@
                             </ul>
                           
                           </div>
-                          <div class="col-2"></div>
+                          <div class="col"></div>
                         </div>
                   </div>
                   <br>
@@ -107,22 +119,25 @@
             <div class="contenu_onglet" id="contenu_onglet_avis">
                     <h1 class="light border-bottom">Mes avis</h1>
                     
-                    <?php foreach ($comments as $myComment) : ?>
+                    <?php foreach ($proComments as $myComment) : ?>
                     
                                 <td>
                                     Nom : <?= $myComment['email_pro'] ?><br>
-                                    Spécialité : <?= $myComment['email_pro'] ?><br>
-                                    Adresse : <?= $myComment['email_pro'] ?><br>
+                                    Spécialité : <?= $myComment['speciality'] ?><br>
+                                    Adresse : <?= $myComment['address'] ?><br>
                                 </td>
                                 <td>
-                                    Note : <?= $myComment['email_pro'] ?><br>
+                                    Note : <?php echo (($myComment['reception'] + 
+                                                        $myComment['clean_place'] + 
+                                                        $myComment['feel_good'] + 
+                                                        $myComment['on_time'])/4)?> / 5<br>
                                     <br>
-                                    Autres infos : <br>
+                                    Commentaire : <?= $myComment['comment'] ?><br>
                                 </td>  
                                 <td>
                                     <a href="#" class="btn btn-info btn-sm btn-200 btn-center">Prendre un rendez-vous</a>
                                     <br>
-                                    <a href="#">En savoir plus</a>
+                                    <a href="<?php echo site_url("home/profil_doc_rdv"); ?>">En savoir plus</a>
                                 </td>
                     
                     <?php endforeach; ?>
@@ -141,30 +156,34 @@
 
                               </div>
                               <div class="info_rdv">
-                                <div id="carouselExampleControls" class="height-inherit carousel slide" data-ride="carousel">
+                                <div id="carouselExampleControl" class="height-inherit carousel slide" data-ride="carousel">
                                   <div class="carousel-inner">
 
-                                    <?php foreach ($rdv as $myRdv) : ?>
-                                  
                                     <div class="carousel-item active">
-                                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                                      <p class="center"><?php echo $proRdv[0]['date']; ?> - <?php echo $proRdv[0]['time']; ?></p>
                                       <table class="table">
                                       <tr>
-                                        <td>Nom : <?= $myRdv['email_pro'] ?><br>
-                                            Téléphone : <br>
+                                        <td>Nom : <?= $proRdv[0]['name'] ?><br>
+                                            Téléphone : 0<?= $proRdv[0]['num_tel'] ?><br>
                                         </td>
-                                      <td>Prénom : <br>
+<<<<<<< HEAD
+                                      <td>Prénom : <?= $proRdv[0]['surname'] ?><br>
+                                        <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" class="text-info">Voir la fiche complète</a>
+                                      </td> 
+=======
+                                        <td>Prénom : <br>
                                         <a href="#" class="text-info">Voir la fiche complète</a>
-                                      </td> 
+                                        </td> 
+>>>>>>> ba4570f5a5eb163b979c65de077153e0f568801d
                                       </tr>
-                                    </table>
-                                    <table class="table">
+                                      </table>
+                                      <table class="table">
                                       <tr>
-                                        <td>Informations rendez-vous : <br>
+                                        <td>Informations rendez-vous : <?= $proRdv[0]['cause'] ?><br>
                                       </td> 
                                       </tr>
-                                    </table>
-                                    <table class="table">
+                                      </table>
+                                      <table class="table">
                                       <tr>
                                         <td>
                                             <a class="btn btn-info btn-100 btn-center" href="modif_rdv.php">Modifier</a>
@@ -173,29 +192,29 @@
                                             <a class="btn btn-info btn-100 btn-center" href="supp_rdv.php">Annuler</a>
                                         </td>
                                       </tr>
-                                    </table>
-                                </div>
+                                      </table>
+                                    </div>
 
-                                    <?php endforeach; ?>
-                                
-
-                                     <?php foreach ($rdv as $myRdv) : ?>
+                                    <?php foreach ($proRdv as $myRdv) : 
+                                  
+                                    if($myRdv['date'] > date("Y-m-d")) :
+                                    ?>
 
                                     <div class="carousel-item">
-                                      <p class="center">Vendredi 3 février 2018 - 11h</p>
+                                      <p class="center"><?= $myRdv['date'] ?> - <?= $myRdv['time'] ?></p>
                                       <table class="table">
                                       <tr>
-                                        <td>Nom : <?= $myRdv['email_pro'] ?><br>
-                                            Téléphone : <br>
+                                        <td>Nom : <?= $myRdv['name'] ?><br>
+                                            Téléphone : 0<?= $myRdv['num_tel'] ?><br>
                                         </td>
-                                      <td>Prénom : <br>
-                                        <a href="#" class="text-info">Voir la fiche complète</a>
+                                      <td>Prénom : <?= $myRdv['surname'] ?><br>
+                                        <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" class="text-info">Voir la fiche complète</a>
                                       </td> 
                                       </tr>
                                     </table>
                                     <table class="table">
                                       <tr>
-                                        <td>Informations rendez-vous : <br>
+                                        <td>Informations rendez-vous : <?= $myRdv['cause'] ?><br>
                                       </td> 
                                       </tr>
                                     </table>
@@ -212,14 +231,16 @@
                                     </div>
                                   </div>
 
+                                    <?php endif; ?>
+
                                     <?php endforeach; ?>
                                   
 
-                                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                  <a class="carousel-control-prev" href="#carouselExampleControl" role="button" data-slide="prev">
                                   <span class="carousel-control-prev-icon fleche-caroussel-gauche" aria-hidden="true"></span>
                                   <span class="sr-only">Previous</span>
                                   </a>
-                                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                  <a class="carousel-control-next" href="#carouselExampleControl" role="button" data-slide="next">
                                   <span class="carousel-control-next-icon fleche-caroussel-droite" aria-hidden="true"></span>
                                   <span class="sr-only">Next</span>
                                   </a>
@@ -236,56 +257,86 @@
                 <div class="contenu_onglet" id="contenu_onglet_historique">
 
                 <br>
+
+                <?php foreach ($proRdv as $myRdv) : 
+                                  
+                if($myRdv['date'] < date("Y-m-d")) :
+                ?>
+
                   <div id="container4_historique_rdv">
                     <div class="info-medecin-rdv">
                       <table class="table">
                         <tr>
                           <td>
-                              Nom : <br>
-                              Adresse : <br>
-                              Note : <br>
+                              Nom : <?= $myRdv['name'] ?><br>
+                              Adresse : <?= $myRdv['address'] ?><br>
+                              <!--
+                              Note : <?php /* echo (($myRdv['reception'] + 
+                                                $myRdv['clean_place'] + 
+                                                $myRdv['feel_good'] + 
+                                                $myRdv['on_time'])/4)*/ ?> / 5<br> -->
                           </td>
                           <td>
-                              Spécialité : <br>
-                              Téléphone : <br>
+                              Spécialité : <?= $myRdv['speciality'] ?><br>
+                              Téléphone : 0<?= $myRdv['num_tel'] ?><br>
                               <a href="#" class="text-info">Voir la fiche complète</a>
                           </td> 
                         </tr>
                       </table>
                     </div>
                     <div class="info-rdv">
-                      <p class="center">Vendredi 17 novembre 2017 - 15h</p>
+                      <p class="center"><?= $myRdv['date'] ?> - <?= $myRdv['time'] ?></p>
                       <div class="info-rdv2">
-                        <p class="center">Informations relatives au rendez-vous :</p>
+                        <p class="center">Informations relatives au rendez-vous : <?= $myRdv['cause'] ?></p>
                       </div>
                     </div>
                     <div class="partage-exp">
                       <button type="button" class="btn btn-info" id="btn-partage-exp" ><a class="lien-normal text-blanc" href="#">Partager <br> mon expérience</a></button>
                     </div>
                   </div>
+
+                  <?php endif; ?>
+
+                    <?php endforeach; ?>
+
                 </div>
 
                 <div class="contenu_onglet" id="contenu_onglet_liste_med">
                     <h1 class="light ">Mes médecins</h1>
+
+                <?php if(!$proRdv) : ?> 
+                    <h5>Vous n'avez pris aucun rdv pour le moment !</h5>
+                <?php else : 
+                    
+                    foreach ($proRdv as $myPro) : ?>
+                    
                     <table class="table">
                     <tr>
                         <td>
-                            Nom : <br>
-                            Spécialité : <br>
-                            Adresse : <br>
+                            Nom : <?= $myPro['name'] ?><br>
+                            Spécialité : <?= $myPro['speciality'] ?><br>
+                            Adresse : <?= $myPro['address'] ?><br>
                             <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" >Voir la fiche complète</a>
                         </td>
                         <td>
-                            Note : <br>
-                            <br>
+                        <!-- 
+                            Note : <?php /* echo (($myPro['reception'] + 
+                                                $myPro['clean_place'] + 
+                                                $myPro['feel_good'] + 
+                                                $myPro['on_time'])/4) */?> / 5<br>
+                            <br> -->
                         </td>  
                         <td>
                             <a href="<?php echo site_url("home/profil_doc_rdv"); ?>" class="btn btn-info btn-sm btn-center btn-200">Prendre un rendez-vous</a>
                             <br>
-                            <a href="#" class="btn btn-info btn-sm btn-center btn-200">Partager mon expérience</a>
+                            <a href="<?php echo site_url("user/avis"); ?>" class="btn btn-info btn-sm btn-center btn-200">Partager mon expérience</a>
                         </td>
                     </tr>         
                     </table>
+
+                <?php endforeach; 
+                        endif;?> 
+                    
                 </div>
             </div>
         </div>
