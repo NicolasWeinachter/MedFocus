@@ -206,6 +206,7 @@ img.logo-fin {
     margin-bottom: 0;
     padding: 0;
     margin: 0;
+    position: relative;
 
 }
 
@@ -621,6 +622,17 @@ img.logo-fin {
     padding: 2% !important;
 }
 
+.border_search {
+    border:0.4 solid darkslategrey;
+    margin-top: 50px;
+    margin-bottom: 10%;
+    border-radius: 0.2em;
+    height: auto;
+    padding: 2%;
+    padding-bottom: 0;
+    padding-left: 5%; 
+}
+
 .nom_prenom_spe_adresse {
     margin-top: 2%;
     height: 30%
@@ -838,4 +850,8 @@ footer{
 .btn-info{
     margin-left: 2%;
     padding-bottom: 0;
+}
+
+.photo_profile_med{
+    width: 130%;
 }

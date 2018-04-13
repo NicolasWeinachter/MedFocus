@@ -153,7 +153,7 @@
                  </tr>
              </table>
         </header>
-        <main class="col-md-11 site-content d-flex flex-column p-2">
+        <main class="col-md-11 site-content d-flex flex-column">
             <div class="container_lumiere">
                 <h2 class="title_h2 lumiere_title">
                     <?php if($speciality != "") : ?>
@@ -182,14 +182,14 @@
                 <div class="d-flex flex-column">
                     <!--affichage du 1er medecin-->
                     <?php foreach ($results as $myResults) : ?>
-                        <div class="d-flex flex-column col-md-10 border">
+                    <div class="d-flex flex-column col-md-10 border_search">
                             <div class="row row1_search">
                                 <div class="d-flex flex-row">
                                     <div class="col-md-5 container_row1_col1 d-flex flex-column">
                                         <div class="row row11">
                                             <div class="d-flex flex-row">
                                                 <div class="col-md-6">
-                                                    <img class="col-md-10" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" >
+                                                    <img class="photo_profile_med" src="<?php echo base_url('/assets/images/avatar/photo_profile_med_default.png'); ?>" >
                                                 </div>
                                                 <div class="col-md-6">
                                                     <p class="light"><b><?php echo $myResults['name'] ?></b> <?php echo $myResults['surname'] ?></p> 
@@ -200,10 +200,10 @@
                                             </div>
                                         </div>
                                         <div class="row row12">
-                                            <p class="light col-md-12">Qualité de l'accueil : 3</p> <br>
-                                            <p class="light col-md-12">Mise en confiance : 4</p> <br>
-                                            <p class="light col-md-12">Propreté des lieux : 4</p> <br>
-                                            <p class="light col-md-12">Ponctualité (hors urgences) : 5</p>
+                                            <p class="light ">Qualité de l'accueil : 3</p> <br>
+                                            <p class="light ">Mise en confiance : 4</p> <br>
+                                            <p class="light ">Propreté des lieux : 4</p> <br>
+                                            <p class="light ">Ponctualité (hors urgences) : 5</p>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
@@ -215,12 +215,12 @@
                                 <a class="lien-normal" href="<?php echo site_url("home/profil_doc_rdv"); ?>"><button type="button" class="btn btn-info" >Accédez à tous les détails et prendre rendez-vous.</button></a>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                     <!--affichage du 2eme medecin-->
                 </div>
                 <!--affichage de la map-->
                 <div class="col-md-5">
-                    <div class ="col-md-12 maps" id="map_div" style="height: 500px; width: 900px"></div>
+                    <div class =" maps" id="map_div"></div>
                 </div>
             </div>
         </main>
