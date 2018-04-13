@@ -225,7 +225,7 @@
             </div>
         </main>
         <footer>
-		    <div id="containerFin">
+		    <div class="containerFin">
 		        <img class="logo-fin" src="<?php echo base_url('/assets/images/website/Logo-03.png'); ?>" width=200px>
 		        <table class="table">
                     <thead>
